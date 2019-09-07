@@ -18,8 +18,8 @@
   
   <entry>
     <title>Windows(10)环境下搭建JSP开发环境</title>
-    <link href="http://www.codingpy.cn/2019/09/04/JSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AJSP%E7%AE%80%E4%BB%8B/"/>
-    <id>http://www.codingpy.cn/2019/09/04/JSP学习笔记（一）：JSP简介/</id>
+    <link href="http://www.codingpy.cn/2019/09/04/JSP_init/"/>
+    <id>http://www.codingpy.cn/2019/09/04/JSP_init/</id>
     <published>2019-09-04T00:30:00.000Z</published>
     <updated>2019-09-06T00:30:00.000Z</updated>
     
@@ -43,8 +43,8 @@
   
   <entry>
     <title>matplotlib - Pyplot 教程</title>
-    <link href="http://www.codingpy.cn/2019/08/08/matplotlib%20%E6%95%99%E7%A8%8B%20-%20Pyplot%20%E6%95%99%E7%A8%8B/"/>
-    <id>http://www.codingpy.cn/2019/08/08/matplotlib 教程 - Pyplot 教程/</id>
+    <link href="http://www.codingpy.cn/2019/08/08/matplotlib_course%20-%20Pyplot%20/"/>
+    <id>http://www.codingpy.cn/2019/08/08/matplotlib_course - Pyplot /</id>
     <published>2019-08-08T00:30:00.000Z</published>
     <updated>2019-08-12T00:30:00.000Z</updated>
     
@@ -68,8 +68,8 @@
   
   <entry>
     <title>matplotlib - matplotlib 教程</title>
-    <link href="http://www.codingpy.cn/2019/08/04/matplotlib%20%E6%95%99%E7%A8%8B/"/>
-    <id>http://www.codingpy.cn/2019/08/04/matplotlib 教程/</id>
+    <link href="http://www.codingpy.cn/2019/08/04/matplotlib_course/"/>
+    <id>http://www.codingpy.cn/2019/08/04/matplotlib_course/</id>
     <published>2019-08-04T00:30:00.000Z</published>
     <updated>2019-08-10T00:30:00.000Z</updated>
     
@@ -118,8 +118,8 @@
   
   <entry>
     <title>SQL学习日记（二）</title>
-    <link href="http://www.codingpy.cn/2019/07/21/SQL%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
-    <id>http://www.codingpy.cn/2019/07/21/SQL学习日记（二）/</id>
+    <link href="http://www.codingpy.cn/2019/07/21/SQL_learndiary2/"/>
+    <id>http://www.codingpy.cn/2019/07/21/SQL_learndiary2/</id>
     <published>2019-07-21T00:30:00.000Z</published>
     <updated>2019-07-24T00:30:00.000Z</updated>
     
@@ -143,8 +143,8 @@
   
   <entry>
     <title>SQL学习日记（一）</title>
-    <link href="http://www.codingpy.cn/2019/07/18/SQL%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"/>
-    <id>http://www.codingpy.cn/2019/07/18/SQL学习日记/</id>
+    <link href="http://www.codingpy.cn/2019/07/18/SQL_learndiary1/"/>
+    <id>http://www.codingpy.cn/2019/07/18/SQL_learndiary1/</id>
     <published>2019-07-18T00:30:00.000Z</published>
     <updated>2019-07-20T00:30:00.000Z</updated>
     
@@ -168,8 +168,8 @@
   
   <entry>
     <title>windows环境下搭建spark开发环境(IDEA)</title>
-    <link href="http://www.codingpy.cn/2019/07/14/windows%E7%8E%AF%E5%A2%83%E4%B8%8B%E6%90%AD%E5%BB%BAspark%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83(IDEA)/"/>
-    <id>http://www.codingpy.cn/2019/07/14/windows环境下搭建spark开发环境(IDEA)/</id>
+    <link href="http://www.codingpy.cn/2019/07/14/spark_init/"/>
+    <id>http://www.codingpy.cn/2019/07/14/spark_init/</id>
     <published>2019-07-14T00:30:00.000Z</published>
     <updated>2020-05-08T00:30:00.000Z</updated>
     
@@ -193,8 +193,8 @@
   
   <entry>
     <title>软件合集（持续更新中ing……）</title>
-    <link href="http://www.codingpy.cn/2019/07/10/%E8%BD%AF%E4%BB%B6%E5%90%88%E9%9B%86/"/>
-    <id>http://www.codingpy.cn/2019/07/10/软件合集/</id>
+    <link href="http://www.codingpy.cn/2019/07/10/extensions_gallery/"/>
+    <id>http://www.codingpy.cn/2019/07/10/extensions_gallery/</id>
     <published>2019-07-10T00:30:00.000Z</published>
     <updated>2019-07-12T00:30:00.000Z</updated>
     
