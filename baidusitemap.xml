@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://www.codingpy.cn/2019/07/14/spark_init/</loc>
-    <lastmod>2020-05-08</lastmod>
-  </url>  <url>
     <loc>http://www.codingpy.cn/2019/09/04/JSP_init/</loc>
-    <lastmod>2019-09-06</lastmod>
-  </url>  <url>
-    <loc>http://www.codingpy.cn/2019/08/08/matplotlib_course%20-%20Pyplot%20/</loc>
-    <lastmod>2019-08-12</lastmod>
+    <lastmod>2019-09-19</lastmod>
   </url>  <url>
     <loc>http://www.codingpy.cn/2019/08/04/matplotlib_course/</loc>
-    <lastmod>2019-08-10</lastmod>
+    <lastmod>2019-09-19</lastmod>
   </url>  <url>
     <loc>http://www.codingpy.cn/2019/07/25/seaborn/</loc>
-    <lastmod>2019-07-29</lastmod>
+    <lastmod>2019-09-19</lastmod>
   </url>  <url>
     <loc>http://www.codingpy.cn/2019/07/21/SQL_learndiary2/</loc>
-    <lastmod>2019-07-24</lastmod>
+    <lastmod>2019-09-19</lastmod>
   </url>  <url>
     <loc>http://www.codingpy.cn/2019/07/18/SQL_learndiary1/</loc>
-    <lastmod>2019-07-20</lastmod>
+    <lastmod>2019-09-19</lastmod>
   </url>  <url>
-    <loc>http://www.codingpy.cn/2019/07/10/extensions_gallery/</loc>
-    <lastmod>2019-07-12</lastmod>
+    <loc>http://www.codingpy.cn/2019/07/14/spark_init/</loc>
+    <lastmod>2019-09-19</lastmod>
   </url>  <url>
     <loc>http://www.codingpy.cn/2019/07/04/hello-world/</loc>
-    <lastmod>2019-07-08</lastmod>
+    <lastmod>2019-09-19</lastmod>
+  </url>  <url>
+    <loc>http://www.codingpy.cn/2019/07/10/extensions_gallery/</loc>
+    <lastmod>2019-09-19</lastmod>
+  </url>  <url>
+    <loc>http://www.codingpy.cn/2019/08/08/matplotlib-%20Pyplot%20/</loc>
+    <lastmod>2019-08-12</lastmod>
   </url>
 </urlset>
