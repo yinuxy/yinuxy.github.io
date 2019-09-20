@@ -2,23 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.codingpy.cn/2019/07/04/hello-world/</loc>
+    
+    <lastmod>2019-09-20T14:20:45.640Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codingpy.cn/2019/07/10/extensions_gallery/</loc>
+    
+    <lastmod>2019-09-20T14:19:52.435Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codingpy.cn/2019/07/14/spark_init/</loc>
+    
+    <lastmod>2019-09-20T14:19:11.805Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codingpy.cn/2019/09/04/JSP_init/</loc>
     
-    <lastmod>2019-09-19T15:07:24.028Z</lastmod>
+    <lastmod>2019-09-20T14:18:35.706Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.codingpy.cn/2019/08/04/matplotlib_course/</loc>
     
-    <lastmod>2019-09-19T14:58:47.356Z</lastmod>
+    <lastmod>2019-09-20T14:17:48.058Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.codingpy.cn/2019/07/25/seaborn/</loc>
     
-    <lastmod>2019-09-19T14:55:41.568Z</lastmod>
+    <lastmod>2019-09-20T14:17:00.812Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codingpy.cn/comments/index.html</loc>
+    
+    <lastmod>2019-09-20T14:15:03.683Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codingpy.cn/about/index.html</loc>
+    
+    <lastmod>2019-09-20T13:44:34.350Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codingpy.cn/friends/index.html</loc>
+    
+    <lastmod>2019-09-20T13:41:11.780Z</lastmod>
     
   </url>
   
@@ -33,34 +75,6 @@
     <loc>http://www.codingpy.cn/2019/07/18/SQL_learndiary1/</loc>
     
     <lastmod>2019-09-19T14:26:23.462Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codingpy.cn/2019/07/14/spark_init/</loc>
-    
-    <lastmod>2019-09-19T14:25:06.614Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codingpy.cn/2019/07/04/hello-world/</loc>
-    
-    <lastmod>2019-09-19T14:18:47.594Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codingpy.cn/2019/07/10/extensions_gallery/</loc>
-    
-    <lastmod>2019-09-19T14:18:14.015Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codingpy.cn/about/index.html</loc>
-    
-    <lastmod>2019-09-18T03:43:12.606Z</lastmod>
     
   </url>
   
