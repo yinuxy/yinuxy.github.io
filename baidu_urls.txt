@@ -1,5 +1,5 @@
-https://www.codingpy.cn/2019/09/20/script_dontcry/
 https://www.codingpy.cn/2019/09/20/datacode_1/
+https://www.codingpy.cn/2019/09/20/script_dontcry/
 https://www.codingpy.cn/2019/09/04/JSP_init/
 https://www.codingpy.cn/2019/08/10/matplotlib_Pyplot/
 https://www.codingpy.cn/2019/08/04/matplotlib_course/
