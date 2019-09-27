@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.codingpy.cn/box/VisualEditing/index.html</loc>
+    <loc>https://www.codingpy.cn/box/index.html</loc>
     
-    <lastmod>2019-09-26T16:35:36.704Z</lastmod>
+    <lastmod>2019-09-27T03:09:50.750Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.codingpy.cn/box/thumbnail/index.html</loc>
     
-    <lastmod>2019-09-26T16:34:45.848Z</lastmod>
+    <lastmod>2019-09-27T03:08:41.117Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.codingpy.cn/box/VisualEditing/index.html</loc>
+    
+    <lastmod>2019-09-26T16:35:36.704Z</lastmod>
     
   </url>
   
@@ -103,13 +110,6 @@
     <loc>https://www.codingpy.cn/box/ASCII/index.html</loc>
     
     <lastmod>2019-09-26T16:20:51.820Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.codingpy.cn/box/index.html</loc>
-    
-    <lastmod>2019-09-26T16:15:57.734Z</lastmod>
     
   </url>
   
