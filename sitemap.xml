@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.codingpy.cn/comments/index.html</loc>
+    
+    <lastmod>2019-09-29T07:57:53.989Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.codingpy.cn/box/index.html</loc>
     
     <lastmod>2019-09-27T03:09:50.750Z</lastmod>
@@ -173,13 +180,6 @@
     <loc>https://www.codingpy.cn/2019/07/25/seaborn/</loc>
     
     <lastmod>2019-09-20T14:17:00.812Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.codingpy.cn/comments/index.html</loc>
-    
-    <lastmod>2019-09-20T14:15:03.683Z</lastmod>
     
   </url>
   
