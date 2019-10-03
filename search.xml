@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>Hexo博客——Material -x主题接入谷歌广告</title>
+      <link href="/2019/10/04/addAdsence/"/>
+      <url>/2019/10/04/addAdsence/</url>
+      
+        <content type="html"><![CDATA[<blockquote><center><font size="5" color="red" face="黑体">Hexo博客——Material -x主题接入谷歌广告</font></center></blockquote><a id="more"></a><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于本人的<a href="https://www.codingpy.cn">博客</a>站点：<a href="https://www.codingpy.cn">https://www.codingpy.cn</a> 已经建立几个月，一直安静地躺在那里做美男子。今天心血来草想着接点小广告，让自己的博客看起来更加高大上一点（手动滑稽）。于是搜索发现了Google AdSense ，发现它可以在hexo博客上挂上广告位进行展示，于是乎注册了一个账号去试了一下，下面分享一下具体的执行步骤</p><h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><ol><li>使用hexo搭建的博客</li><li>已翻墙，可以登录google adsense网站（请自行找梯子）</li></ol><h1 id="注册AdSense账号"><a href="#注册AdSense账号" class="headerlink" title="注册AdSense账号"></a>注册AdSense账号</h1><blockquote><p>注册链接：<a href="https://www.google.com/adsense/start/#/?modal_active=none" target="_blank" rel="noopener">Google Adsense</a></p></blockquote><p><fancybox><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/pageimg/transparent.png"></fancybox><br>点击“Get Started”,进行注册。如果你有谷歌账号那就很方便了，直接点击右上角的“SIGN IN”就好。<br><fancybox><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/pageimg/transparent.png"></fancybox><br>登陆之后的界面是这样的，语言取决于你使用哪个地方的梯子，对我来说直接右键翻译成中文就完事鸟……<br><fancybox><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/pageimg/transparent.png"></fancybox><br>点击申请后会跳转到如下页面：第一个选项输入你的网址，第二个选项输入你的Gmail，第三个单选按钮好像点不动…然后下一步。<br><fancybox><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/pageimg/transparent.png"></fancybox><br>接下来选择地区，勾选同意协议<br><fancybox><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/pageimg/transparent.png"></fancybox><br>点击建立账号以后就需要填写自己的信息了，这里不做赘述<br><fancybox><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/pageimg/transparent.png"></fancybox><br>填完之后就可以获取到广告代码了</p><h1 id="添加广告代码"><a href="#添加广告代码" class="headerlink" title="添加广告代码"></a>添加广告代码</h1><p>注册账号完成之后，AdSense要求要在 <head><meta name="generator" content="Hexo 3.9.0"> 标记中添加自动广告代码,只需在\themes\material-x\layout_partial\head.ejs中添加任意一个位置添加你获取到的代码。<br>例如：我将AdSense的代码放在了最下面</head></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 添加获取的代码 --&gt;</span><br><span class="line">&lt;script data-ad-client=&quot;ca-pub-8471277732760123&quot; async src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><h1 id="个性化配置广告位"><a href="#个性化配置广告位" class="headerlink" title="个性化配置广告位"></a>个性化配置广告位</h1><h2 id="自动广告"><a href="#自动广告" class="headerlink" title="自动广告"></a>自动广告</h2><h2 id="广告单元"><a href="#广告单元" class="headerlink" title="广告单元"></a>广告单元</h2><h1 id><a href="#" class="headerlink" title="#"></a>#</h1>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>An error occurred with the Html rendering component</title>
+      <link href="/2019/10/03/markdown_error/"/>
+      <url>/2019/10/03/markdown_error/</url>
+      
+        <content type="html"><![CDATA[<blockquote><center><font size="4" color="red" face="黑体">An error occurred with the Html rendering component</font></center></blockquote><a id="more"></a><h3 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h3><p>MarkdownPad 2 使用时候出现如下字样,(如图)不能编辑…..<br>An error occurred with the Html rendering component</p><p><fancybox><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/pageimg/transparent.png"></fancybox></p><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>MarkdownPad 2 在win10下 出现HTML 渲染错误(This view has crashed) 的问题.<br>解决办法:安装一个SDK的工具包,名叫:awesomium_v1.6.6_sdk_win</p><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe" target="_blank" rel="noopener">http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe</a><br>官网下载速度非常慢，所以这里准备了另一个连接：<a href="https://pan.baidu.com/s/1D770-26tjhdvZKD5mEkmUg" target="_blank" rel="noopener">点击下载</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>热烈庆祝中华人民共和国成立70周年</title>
       <link href="/2019/10/01/seventyanniversary/"/>
       <url>/2019/10/01/seventyanniversary/</url>
