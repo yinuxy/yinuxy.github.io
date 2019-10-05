@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.codingpy.cn/friends/index.html</loc>
+    
+    <lastmod>2019-10-05T11:30:10.262Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.codingpy.cn/2019/10/01/seventyanniversary/</loc>
     
     <lastmod>2019-09-30T16:46:04.702Z</lastmod>
@@ -194,13 +201,6 @@
     <loc>https://www.codingpy.cn/about/index.html</loc>
     
     <lastmod>2019-09-20T13:44:34.350Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.codingpy.cn/friends/index.html</loc>
-    
-    <lastmod>2019-09-20T13:41:11.780Z</lastmod>
     
   </url>
   
