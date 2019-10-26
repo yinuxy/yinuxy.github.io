@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://blog.yinuxy.com/box/7-html/index5.html -->
+<html class="gr__blog.yinuxy.com/box"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>demo5</title>
+<style>
+body {
+  background: #060e1b;
+  overflow: hidden;
+}
+
+<p>canvas {<br>  //opacity: 0.5;<br>}</p>
+<p>/* Demo Buttons Style */<br>.codrops-demos {<br>    font-size: 0.8em;<br>    text-align:center;<br>    position:absolute;<br>    z-index:99;<br>    width:96%;<br>}</p>
+<p>.codrops-demos a {<br>    display: inline-block;<br>    margin: 0.35em 0.1em;<br>    padding: 0.5em 1.2em;<br>    outline: none;<br>    text-decoration: none;<br>    text-transform: uppercase;<br>    letter-spacing: 1px;<br>    font-weight: 700;<br>    border-radius: 2px;<br>    font-size: 110%;<br>    border: 2px solid transparent;<br>    color:#fff;<br>}</p>
+<p>.codrops-demos a:hover,<br>.codrops-demos a.current-demo {<br>    border-color: #0080ff;<br>}<br></style><p></p>
+<style type="text/css">
+.tb960x90 {display:none!important;display:none}</style>
+</head>
+
+<body data-gr-c-s-loaded="true">
+
+<nav class="codrops-demos">
+    <a href="http://blog.yinuxy.com/box/7-html/index.html">Demo 1</a>
+    <a href="http://blog.yinuxy.com/box/7-html/index2.html">Demo 2</a>
+    <a href="http://blog.yinuxy.com/box/7-html/index3.html">Demo 3</a>
+    <a href="http://blog.yinuxy.com/box/7-html/index4.html">Demo 4</a>
+    <a class="current-demo" href="http://blog.yinuxy.com/box/7-html/index5.html">Demo 5</a>
+    <a href="http://blog.yinuxy.com/box/7-html/index6.html">Demo 6</a>
+    <a href="http://blog.yinuxy.com/box/7-html/index7.html">Demo 7</a>
+</nav>
+
+<p><canvas id="canvas" width="1536" height="722"></canvas></p>
+<script>
+"use strict";
+
+var canvas = document.getElementById('canvas'),
+  ctx = canvas.getContext('2d'),
+  w = canvas.width = window.innerWidth,
+  h = canvas.height = window.innerHeight,
+
+  hue = 217,
+  stars = [],
+  count = 0,
+  maxStars = 1200;
+
+var canvas2 = document.createElement('canvas'),
+  ctx2 = canvas2.getContext('2d');
+canvas2.width = 100;
+canvas2.height = 100;
+var half = canvas2.width / 2,
+  gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+gradient2.addColorStop(0.025, '#fff');
+gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
+gradient2.addColorStop(1, 'transparent');
+
+ctx2.fillStyle = gradient2;
+ctx2.beginPath();
+ctx2.arc(half, half, half, 0, Math.PI * 2);
+ctx2.fill();
+
+// End cache
+
+function random(min, max) {
+  if (arguments.length < 2) {
+    max = min;
+    min = 0;
+  }
+
+  if (min > max) {
+    var hold = max;
+    max = min;
+    min = hold;
+  }
+
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function maxOrbit(x, y) {
+  var max = Math.max(x, y),
+    diameter = Math.round(Math.sqrt(max * max + max * max));
+  return diameter / 2;
+}
+
+var Star = function() {
+
+  this.orbitRadius = random(maxOrbit(w, h));
+  this.radius = random(60, this.orbitRadius) / 12;
+  this.orbitX = w / 2;
+  this.orbitY = h / 2;
+  this.timePassed = random(0, maxStars);
+  this.speed = random(this.orbitRadius) / 900000;
+  this.alpha = random(2, 10) / 10;
+
+  count++;
+  stars[count] = this;
+}
+
+Star.prototype.draw = function() {
+  var x = Math.sin(this.timePassed) * this.orbitRadius + this.orbitX,
+    y = Math.cos(this.timePassed) * this.orbitRadius + this.orbitY,
+    twinkle = random(10);
+
+  if (twinkle === 1 && this.alpha > 0) {
+    this.alpha -= 0.05;
+  } else if (twinkle === 2 && this.alpha < 1) {
+    this.alpha += 0.05;
+  }
+
+  ctx.globalAlpha = this.alpha;
+  ctx.drawImage(canvas2, x - this.radius / 2, y - this.radius / 2, this.radius, this.radius);
+  this.timePassed += this.speed;
+}
+
+for (var i = 0; i < maxStars; i++) {
+  new Star();
+}
+
+function animation() {
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.globalAlpha = 0.8;
+  ctx.fillStyle = 'hsla(' + hue + ', 64%, 6%, 1)';
+  ctx.fillRect(0, 0, w, h)
+
+  ctx.globalCompositeOperation = 'lighter';
+  for (var i = 1, l = stars.length; i < l; i++) {
+    stars[i].draw();
+  };
+
+  window.requestAnimationFrame(animation);
+}
+
+animation();
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
