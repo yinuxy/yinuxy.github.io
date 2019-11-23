@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.yinuxy.com/comments/index.html</loc>
+    
+    <lastmod>2019-11-23T14:19:35.708Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.yinuxy.com/friends/index.html</loc>
     
-    <lastmod>2019-11-23T13:16:57.530Z</lastmod>
+    <lastmod>2019-11-23T13:47:17.632Z</lastmod>
     
   </url>
   
@@ -292,13 +299,6 @@
     <loc>https://blog.yinuxy.com/404.html</loc>
     
     <lastmod>2019-10-25T15:58:53.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.yinuxy.com/comments/index.html</loc>
-    
-    <lastmod>2019-10-09T15:49:50.337Z</lastmod>
     
   </url>
   
