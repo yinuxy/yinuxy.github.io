@@ -405,4 +405,23 @@
     
   </entry>
   
+  <entry>
+    <title>Hello Stranger</title>
+    <link href="https://blog.yinuxy.com/2019/07/04/Anniversary/hello-world/"/>
+    <id>https://blog.yinuxy.com/2019/07/04/Anniversary/hello-world/</id>
+    <published>2019-07-04T00:30:00.000Z</published>
+    <updated>2019-12-03T12:45:57.869Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://www.codingpy.cn" target="_blank" rel="noopener">Yinxu’s Blog</a>! This is your very first post. Check <a href="https://xaoxuu.com/wiki/" target="_blank" rel="noopener">documentation</a> for more info. </p><a id="more"></a><center><h1>Hi,it's Yinux's Blog.Nice to meet you!</h1><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/assets@master/biaoqing/paopao/E5A4AAE5BC80E5BF83_2x.png"></center>]]></content>
+    
+    <summary type="html">
+    
+      matplotlib - Pyplot 教程
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
 </feed>
