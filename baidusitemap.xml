@@ -1,52 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://blog.yinuxy.com/2019/10/31/OJContest/AlgorithmNote0002/</loc>
-    <lastmod>2019-10-31</lastmod>
-  </url>  <url>
     <loc>https://blog.yinuxy.com/2019/10/26/OJContest/AlgorithmNote0001/</loc>
-    <lastmod>2019-10-26</lastmod>
+    <lastmod>2019-12-03</lastmod>
   </url>  <url>
-    <loc>https://blog.yinuxy.com/2019/10/01/Anniversary/seventyanniversary/</loc>
-    <lastmod>2019-10-26</lastmod>
-  </url>  <url>
-    <loc>https://blog.yinuxy.com/2019/07/04/Anniversary/hello-world/</loc>
-    <lastmod>2019-10-26</lastmod>
-  </url>  <url>
-    <loc>https://blog.yinuxy.com/2019/09/20/Reptiles/script_dontcry/</loc>
-    <lastmod>2019-10-26</lastmod>
-  </url>  <url>
-    <loc>https://blog.yinuxy.com/2019/07/10/Application/extensions_gallery/</loc>
-    <lastmod>2019-10-26</lastmod>
-  </url>  <url>
-    <loc>https://blog.yinuxy.com/2019/07/14/Lessons/spark_init/</loc>
-    <lastmod>2019-10-26</lastmod>
-  </url>  <url>
-    <loc>https://blog.yinuxy.com/2019/07/25/Lessons/seaborn/</loc>
-    <lastmod>2019-10-26</lastmod>
-  </url>  <url>
-    <loc>https://blog.yinuxy.com/2019/08/10/Lessons/matplotlib_Pyplot/</loc>
-    <lastmod>2019-10-26</lastmod>
-  </url>  <url>
-    <loc>https://blog.yinuxy.com/2019/08/04/Lessons/matplotlib_course/</loc>
-    <lastmod>2019-10-26</lastmod>
-  </url>  <url>
-    <loc>https://blog.yinuxy.com/2019/09/04/Lessons/JSP_init/</loc>
-    <lastmod>2019-10-26</lastmod>
+    <loc>https://blog.yinuxy.com/2019/10/31/OJContest/AlgorithmNote0002/</loc>
+    <lastmod>2019-12-03</lastmod>
   </url>  <url>
     <loc>https://blog.yinuxy.com/2019/07/21/Study/SQL_learndiary2/</loc>
-    <lastmod>2019-10-26</lastmod>
-  </url>  <url>
-    <loc>https://blog.yinuxy.com/2019/10/17/Study/kettle_proj1/</loc>
-    <lastmod>2019-10-26</lastmod>
+    <lastmod>2019-12-03</lastmod>
   </url>  <url>
     <loc>https://blog.yinuxy.com/2019/07/18/Study/SQL_learndiary1/</loc>
-    <lastmod>2019-10-26</lastmod>
+    <lastmod>2019-12-03</lastmod>
+  </url>  <url>
+    <loc>https://blog.yinuxy.com/2019/10/17/Study/kettle_proj1/</loc>
+    <lastmod>2019-12-03</lastmod>
+  </url>  <url>
+    <loc>https://blog.yinuxy.com/2019/09/20/Reptiles/script_dontcry/</loc>
+    <lastmod>2019-12-03</lastmod>
   </url>  <url>
     <loc>https://blog.yinuxy.com/2019/10/09/OJContest/WythoffGame/</loc>
-    <lastmod>2019-10-26</lastmod>
+    <lastmod>2019-12-03</lastmod>
   </url>  <url>
     <loc>https://blog.yinuxy.com/2019/09/20/OJContest/number_theory/</loc>
-    <lastmod>2019-10-26</lastmod>
+    <lastmod>2019-12-03</lastmod>
+  </url>  <url>
+    <loc>https://blog.yinuxy.com/2019/07/14/Lessons/spark_init/</loc>
+    <lastmod>2019-12-03</lastmod>
+  </url>  <url>
+    <loc>https://blog.yinuxy.com/2019/07/25/Lessons/seaborn/</loc>
+    <lastmod>2019-12-03</lastmod>
+  </url>  <url>
+    <loc>https://blog.yinuxy.com/2019/08/10/Lessons/matplotlib_Pyplot/</loc>
+    <lastmod>2019-12-03</lastmod>
+  </url>  <url>
+    <loc>https://blog.yinuxy.com/2019/08/04/Lessons/matplotlib_course/</loc>
+    <lastmod>2019-12-03</lastmod>
+  </url>  <url>
+    <loc>https://blog.yinuxy.com/2019/09/04/Lessons/JSP_init/</loc>
+    <lastmod>2019-12-03</lastmod>
+  </url>  <url>
+    <loc>https://blog.yinuxy.com/2019/10/01/Anniversary/seventyanniversary/</loc>
+    <lastmod>2019-12-03</lastmod>
+  </url>  <url>
+    <loc>https://blog.yinuxy.com/2019/07/10/Application/extensions_gallery/</loc>
+    <lastmod>2019-12-03</lastmod>
   </url>
 </urlset>
