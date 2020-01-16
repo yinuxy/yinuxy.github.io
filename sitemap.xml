@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.yinuxy.com/2020/01/16/Lessons/Word2Vec_GloVe/</loc>
+    
+    <lastmod>2020-01-16T11:09:17.937Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.yinuxy.com/friends/index.html</loc>
     
     <lastmod>2020-01-14T12:21:28.757Z</lastmod>
