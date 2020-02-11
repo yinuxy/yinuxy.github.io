@@ -1,3 +1,5 @@
+https://blog.yinuxy.com/2020/02/11/Experience/conda_python_down/
+https://blog.yinuxy.com/2020/02/10/Error/error_0001/
 https://blog.yinuxy.com/2020/01/16/Lessons/Word2Vec_GloVe/
 https://blog.yinuxy.com/2020/01/03/Activity/0001/jdzns/
 https://blog.yinuxy.com/2019/10/31/OJContest/AlgorithmNote0002/
