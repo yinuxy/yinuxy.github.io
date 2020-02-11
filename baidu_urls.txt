@@ -7,8 +7,8 @@ https://blog.yinuxy.com/2019/10/26/OJContest/AlgorithmNote0001/
 https://blog.yinuxy.com/2019/10/17/Study/kettle_proj1/
 https://blog.yinuxy.com/2019/10/09/OJContest/WythoffGame/
 https://blog.yinuxy.com/2019/10/01/Anniversary/seventyanniversary/
-https://blog.yinuxy.com/2019/09/20/Reptiles/script_dontcry/
 https://blog.yinuxy.com/2019/09/20/OJContest/number_theory/
+https://blog.yinuxy.com/2019/09/20/Reptiles/script_dontcry/
 https://blog.yinuxy.com/2019/09/04/Lessons/JSP_init/
 https://blog.yinuxy.com/2019/08/10/Lessons/matplotlib_Pyplot/
 https://blog.yinuxy.com/2019/08/04/Lessons/matplotlib_course/
