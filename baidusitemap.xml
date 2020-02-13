@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.yinuxy.com/2020/02/13/Study/Docker_learndiary001/</loc>
+    <lastmod>2020-02-13</lastmod>
+  </url>  <url>
     <loc>https://blog.yinuxy.com/2020/02/10/Error/error_0001/</loc>
-    <lastmod>2020-02-11</lastmod>
+    <lastmod>2020-02-13</lastmod>
   </url>  <url>
     <loc>https://blog.yinuxy.com/2020/02/11/Experience/conda_python_down/</loc>
-    <lastmod>2020-02-11</lastmod>
+    <lastmod>2020-02-13</lastmod>
   </url>  <url>
     <loc>https://blog.yinuxy.com/2019/07/10/Application/extensions_gallery/</loc>
     <lastmod>2020-01-21</lastmod>
