@@ -1,3 +1,4 @@
+https://blog.yinuxy.com/2020/02/14/Study/Maven_learndiary001/
 https://blog.yinuxy.com/2020/02/13/Study/Docker_learndiary001/
 https://blog.yinuxy.com/2020/02/11/Experience/conda_python_down/
 https://blog.yinuxy.com/2020/02/10/Error/error_0001/
