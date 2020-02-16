@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.yinuxy.com/2019/09/04/Lessons/JSP_init/</loc>
+    <lastmod>2020-02-16</lastmod>
+  </url>  <url>
     <loc>https://blog.yinuxy.com/2020/02/14/Study/Maven_learndiary001/</loc>
     <lastmod>2020-02-14</lastmod>
   </url>  <url>
@@ -59,9 +62,6 @@
     <lastmod>2019-12-03</lastmod>
   </url>  <url>
     <loc>https://blog.yinuxy.com/2019/08/04/Lessons/matplotlib_course/</loc>
-    <lastmod>2019-12-03</lastmod>
-  </url>  <url>
-    <loc>https://blog.yinuxy.com/2019/09/04/Lessons/JSP_init/</loc>
     <lastmod>2019-12-03</lastmod>
   </url>  <url>
     <loc>https://blog.yinuxy.com/2019/10/01/Anniversary/seventyanniversary/</loc>
