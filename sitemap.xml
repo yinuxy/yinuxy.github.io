@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.yinuxy.com/friends/index.html</loc>
+    
+    <lastmod>2020-02-16T11:27:07.465Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.yinuxy.com/2020/02/14/Study/Maven_learndiary001/</loc>
     
     <lastmod>2020-02-14T04:02:13.816Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://blog.yinuxy.com/2020/02/11/Experience/conda_python_down/</loc>
     
     <lastmod>2020-02-13T11:46:57.264Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.yinuxy.com/friends/index.html</loc>
-    
-    <lastmod>2020-02-13T02:31:35.962Z</lastmod>
     
   </url>
   
