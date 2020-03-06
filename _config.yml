@@ -154,15 +154,17 @@ theme: volantis
 ## Docs: https://hexo.io/docs/deployment.html
 #################deploy#######################
 deploy:
-  type: git
-  repository:
-    coding: git@e.coding.net:YINUXY/YINUXY/Test.git
+- type: git
+  repository: 
+    github: git@github.com:InfiniteYinux/InfiniteYinux.github.io.git
+    coding: git@e.coding.net:YINUXY/YINUXY/blog.git
   branch: master
+- type: baidu_url_submitter                         # 这是新加的主动推送
 #################backup#######################
 backup:
   type: git
   theme: volantis
   message: Back up my blog.yinuxy.com blog
-  repository: git@e.coding.net:YINUXY/YINUXY/Test.git, backup
-  # github: git@github.com:TRHX/TRHX.github.io.git,backup
-  # coding: git@git.dev.tencent.com:TRHX/TRHX.git,backup
+  repository:
+    github: git@github.com:InfiniteYinux/InfiniteYinux.github.io.git,backup
+    coding: git@e.coding.net:YINUXY/YINUXY/blog.git,backup

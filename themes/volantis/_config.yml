@@ -154,13 +154,13 @@ navbar:
         icon: fas fa-link
         url: friends/
         rel: nofollow
-      - name: 关于
-        icon: fas fa-info-circle
-        url: about/
-        rel: nofollow
       - name: 导航
         icon: fas fa-map-signs
         url: box/
+        rel: nofollow
+      - name: 关于
+        icon: fas fa-info-circle
+        url: about/
         rel: nofollow
     # 手机端导航菜单（从右上角的按钮点击展开）
     on_mobile:
