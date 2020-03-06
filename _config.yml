@@ -162,7 +162,7 @@ deploy:
 backup:
   type: git
   theme: volantis
-  message: Back up my www.itrhx.com blog
-  repository: git@e.coding.net:YINUXY/YINUXY/Test.git,backup
+  message: Back up my blog.yinuxy.com blog
+  repository: git@e.coding.net:YINUXY/YINUXY/Test.git, backup
   # github: git@github.com:TRHX/TRHX.github.io.git,backup
   # coding: git@git.dev.tencent.com:TRHX/TRHX.git,backup
