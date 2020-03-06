@@ -161,7 +161,7 @@ deploy:
 #################backup#######################
 backup:
   type: git
-  theme: volantis-1.7.3
+  theme: volantis
   message: Back up my www.itrhx.com blog
   repository: git@e.coding.net:YINUXY/YINUXY/Test.git,backup
   # github: git@github.com:TRHX/TRHX.github.io.git,backup
