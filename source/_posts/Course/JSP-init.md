@@ -59,7 +59,7 @@ JSP是Java Server Page的缩写，是由Sun Microsystems公司主导创建的一
 
 ![image.png](https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/img/jspone/output_7.png)
 
-5、测试Tomcat是否配置成功：打开浏览器，输入在地址栏中输入：[http://localhost:8080](http://localhost:8080)运行结果如下图所示即为配置成功！（因为Tomcat已经在运行再次打开会报错）
+5、测试Tomcat是否配置成功：打开浏览器，输入在地址栏中输入：[localhost:8080](http://localhost:8080)运行结果如下图所示即为配置成功！（因为Tomcat已经在运行再次打开会报错）
 ![image.png](https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/img/jspone/output_8.png)
 6、关闭tomcat:进入命令行cmd，输入shutdown.bat
 

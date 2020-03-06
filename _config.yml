@@ -155,7 +155,8 @@ theme: volantis
 #################deploy#######################
 deploy:
   type: git
-  repository: git@e.coding.net:YINUXY/YINUXY/Test.git
+  repository:
+    coding: git@e.coding.net:YINUXY/YINUXY/Test.git
   branch: master
 #################backup#######################
 backup:

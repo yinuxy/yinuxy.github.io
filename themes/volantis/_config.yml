@@ -158,8 +158,8 @@ navbar:
         icon: fas fa-info-circle
         url: about/
         rel: nofollow
-      - name: 工具箱
-        icon: fas fa-tools fa-fw  
+      - name: 导航
+        icon: fas fa-map-signs
         url: box/
         rel: nofollow
     # 手机端导航菜单（从右上角的按钮点击展开）
