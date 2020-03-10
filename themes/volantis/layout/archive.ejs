@@ -1,10 +1,12 @@
 <%- partial('_pre') %>
 <div class='l_main<%- page.sidebar == false ? ' no_sidebar' : '' %>'>
+	
 	<% if (page.year || page.month) { %>
 		<%- partial('_partial/archive') %>
 	<% } else { %>
 	  <article id="archive-page" class="post article white-box <%- theme.style.shadow.card ? 'card-shadow' : '' %> <%- theme.style.blur && theme.style.blur.widget ? 'widget-blur' : '' %>">
-	    <section class="archive">
+			<%- partial('_widget/post-calendar') %>
+		<section class="archive">
 	      <%
 	        var year = -1, postid = -1;
 	        site.posts.sort('date', -1).each(function(post) {

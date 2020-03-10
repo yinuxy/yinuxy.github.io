@@ -4,7 +4,7 @@ layout: post
 date: 2019-07-04 08:30:00
 
 author: 
-  name: YINUXY'S BLOG
+  name: YINUXY
   avatar: https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/avatar/avatar.png
   url: httpS://blog.yinuxy.com
 

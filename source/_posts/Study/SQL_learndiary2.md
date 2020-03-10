@@ -4,7 +4,7 @@ date: 2019-07-21 08:30:00
 
 title: SQL学习日记（二）
 author: 
-  name: YINUXY'S BLOG
+  name: YINUXY
   avatar: https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/avatar/avatar.png
   url: httpS://blog.yinuxy.com
 categories: 数据库

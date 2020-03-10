@@ -30,14 +30,6 @@ links:
       - Python
       - Java
 
-    - name: 喵喵喵~
-      avatar: https://cdn.jsdelivr.net/gh/xb2016/kratos-pjax@0.4.0/static/images/favicon.ico
-      url: https://giligili.top/
-      backgroundColor: '#FF3366' 
-      textColor: '#FFFFFF'
-      tags:
-      - 一只死宅猫-喵~
-
     - name: 凉风's Blog
       avatar: https://cdn.jsdelivr.net/gh/liangfeng2333/cdn@1.1/custom/avatar.jpg
       url:  https://www.liangfeng.tk
@@ -114,8 +106,16 @@ links:
       tags: 
       -  社长の论坛|交流论坛
 
-
-
+  - group: 404 NOT FOUND
+    icon: fas fa-link fa-fw
+    items:
+    - name: 喵喵喵~
+      avatar: https://cdn.jsdelivr.net/gh/xb2016/kratos-pjax@0.4.0/static/images/favicon.ico
+      url: https://giligili.top/
+      backgroundColor: '#FF3366' 
+      textColor: '#FFFFFF'
+      tags:
+      - 一只死宅猫-喵~
 
 
 

@@ -3,7 +3,7 @@ layout: post
 date: 2019-09-20 20:30:00
 title: 用Python来分析一波周董新曲《说好不哭》为何如此火爆！
 author: 
-  name: YINUXY'S BLOG
+  name: YINUXY
   avatar: https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/avatar/avatar.png
   url: httpS://blog.yinuxy.com
 categories: Python

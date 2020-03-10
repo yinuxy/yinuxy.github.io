@@ -128,6 +128,47 @@ leancloud:
   app_key: TW2Yq6YcP29dgWbQrGMzMApR
 #----------------- ----百度统计---------------------------------
 baidu_analytics_key: ce3c8ec886c87762491dd2124ab106ff
+#----------------- ----Markdown---------------------------------
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+    - markdown-it-deflist
+    - markdown-it-imsize
+    - markdown-it-mark
+    - markdown-it-regexp
+    - markdown-it-task-checkbox
+    - name: markdown-it-container
+      options: success
+    - name: markdown-it-container
+      options: info
+    - name: markdown-it-container
+      options: warning
+    - name: markdown-it-container
+      options: danger
+    - markdown-it-deflist
+    - name: markdown-it-emoji
+      options:
+        shortcuts: {}
+  anchors:
+    level: 2
+    collisionSuffix: ''
+    permalink: false
+    permalinkClass: 'header-anchor'
+    permalinkSide: 'left'
+    permalinkSymbol: '¶'
+    case: 0
+    separator: ''
 #################sitemap#######################
 baidusitemap:
     path: baidusitemap.xml

@@ -1,0 +1,11 @@
+
+<%- partial('_pre') %>
+
+<div class='l_main<%- page.sidebar == false ? ' no_sidebar' : '' %>'>
+<%- partial('_widget/post-charts') %>
+</div>
+<%- partial('_partial/side') %>
+<%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+
+
+

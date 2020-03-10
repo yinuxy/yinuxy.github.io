@@ -3,7 +3,7 @@ layout: post
 date: 2019/10/17 19:13:47 
 title: kettle 利用 HTTP Client 获取猫眼电影API近期上映相关信息，并解析json
 author: 
-  name: YINUXY'S BLOG
+  name: YINUXY
   avatar: https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/avatar/avatar.png
   url: httpS://blog.yinuxy.com
 categories: 大数据预处理
