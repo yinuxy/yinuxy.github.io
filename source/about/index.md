@@ -5,18 +5,18 @@ layout: false
 
 
 <!-- saved from url=(0028)https://blog.yinuxy.com/about/ -->
-<html lang="zh-CN" class="gr__itrhx_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/about/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/about/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+<html lang="zh-CN" class="gr__itrhx_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/about/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/about/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
 
 
 
 
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<title>Yinux'S Blog | ABOUT</title>
+	<title>YINUXY'S BLOG | ABOUT</title>
 	<meta name="keywords" content="YINUXY,关于">
 	<meta name="description" content="关于YINUXY">
-	<meta name="author" content="infiniteyinux@stmail.hbtcm.edu.cn">
-	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/favicon/favicons/favicon-32X32.png" type="image/x-icon">
+	<meta name="author" content="admin@yinuxy.com">
+	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/favicon/favicons/favicon-32X32.png" type="image/x-icon">
 	<script src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.10/about/sakura.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.10/about/about.css">
 	<link href="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.10/about/all.css" rel="stylesheet">
@@ -31,23 +31,23 @@ layout: false
 			}
 		};
 	</script>
-	<audio autoplay="autoplay" loop="loop">
-		<source src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/music/Yunomi.mp3" type="audio/mpeg">
+	<audio autoplay="" loop="">
+		<source src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.4/music/sillyboy.mp3" type="audio/mpeg">
 		您的浏览器不支持audio标签，无法播放音乐！
 	</audio>
 	<div class="mdui-container">
 		<div class="showarea-1">
 			<a href="https://blog.yinuxy.com/" target="_blank">
-				<img id="mainicon" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/avatar/avatar.png">
+				<img id="mainicon" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/avatar/avatar.png">
 			</a>
 			<table>
 				<tbody><tr>
-					<td> <i class="fas fa-user-graduate"></i> 江湖名称：YINUXY</td>
-					<td> <i class="fas fa-map-marker-alt"></i> 常驻之地：中国 | 湖北 | 武汉</td>
+					<td><i class="fas fa-user-tie"></i> 江湖名称：YINUXY</td>
+					<td><i class="fa fa-map-marker-alt fa-fw"></i> 常驻之地：中国 | 湖北 | 武汉</td>
 				</tr>
 				<tr>
-					<td> <i class="fas fa-birthday-cake"></i> 初度之辰：1999</td>
-					<td> <i class="fas fa-biking"></i> 兴趣爱好：算法 | 前端 | 爬虫</td>
+					<td><i class="fa fa-birthday-cake fa-fw"></i> 初度之辰：1999</td>
+					<td><i class="fas fa-code"></i> 兴趣爱好：算法 | 前端 | Python</td>
 				</tr>
 			</tbody></table>
 		</div>
@@ -130,15 +130,15 @@ layout: false
 			<a href="https://music.163.com/#/user/home?id=641108605" target="_blank"><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.10/about/netease.png" class="icon" title="网易云音乐"></a>
 			<a href="https://space.bilibili.com/335204769" target="_blank"><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.10/about/bilibili.png" class="icon" title="哔哩哔哩"></a>
 			<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1154418252&amp;site=qq&amp;menu=yes" target="_blank"><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.10/about/qq.png" class="icon" title="QQ"></a>
-			<a href="infiniteyinux@stmail.hbtcm.edu.cn" target="_blank"><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.10/about/mail.png" class="icon" title="邮件"></a>
+			<a href="mailto:admin@yinuxy.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.10/about/mail.png" class="icon" title="邮件"></a>
 			<a href="https://t.me/Yinux" target="_blank"><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.10/about/telegram.png" class="icon" title="Telegram"></a>
-			<!-- <a href="https://twitter.com/TRHX6" target="_blank"><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.10/about/twitter.png" class="icon" title="Twitter"></a> -->
+			<!-- <a href="https://twitter.com/Yinux" target="_blank"><img src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.10/about/twitter.png" class="icon" title="Twitter"></a> -->
 			<!--<a href="https://www.facebook.com/profile.php?id=100039716302318" target="_blank"><img
 					src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@2.1.4/about/icon/facebook.png" class="icon" title="Facebook"></a>-->
 		</div>
 	</div>
 	<footer id="footer">
-		Copyright © 2019 <a href="https://blog.yinuxy.com/" target="_blank">YINUXY'S BLOG</a>. All rights reserved.
+		Copyright © 2020 <a href="https://blog.yinuxy.com/" target="_blank">YINUXY'S BLOG</a>. All rights reserved.
 	</footer>
 	<canvas id="sakura" width="1536" height="722"></canvas>
 	<script>

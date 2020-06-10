@@ -160,7 +160,7 @@
   <% if (config.use_cdn && theme.info && theme.info.cdn && theme.info.cdn.js && theme.info.cdn.js.valine) { %>
     <%- js(theme.info.cdn.js.valine) %>
   <% } else { %>
-    <%- js(['js/valine.js']) %>
+    <%- js(['https://cdn.jsdelivr.net/gh/drew233/css/lvaline.min.js']) %>
   <% } %>
   <script>
   var GUEST_INFO = ['nick','mail','link'];
@@ -195,12 +195,12 @@
 <% if (config.use_cdn && theme.info && theme.info.cdn && theme.info.cdn.js && theme.info.cdn.js.app) { %>
   <%- js(theme.info.cdn.js.app) %>
 <% } else { %>
-  <%- js(['js/app.js']) %>
+  <%- js(['https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/app.js']) %>
 <% } %>
 <% if (config.use_cdn && theme.info && theme.info.cdn && theme.info.cdn.js && theme.info.cdn.js.search) { %>
   <%- js(theme.info.cdn.js.search) %>
 <% } else { %>
-  <%- js(['js/search.js']) %>
+  <%- js(['https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/search.js']) %>
 <% } %>
 <% if (theme.plugins.comment_typing) { %>
   <%- js(theme.plugins.comment_typing) %>

@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: YINUXY | 理想的生活就是生活的理想
-subtitle: ''
-description: ''
+title: 'YINUXY | 理想的生活就是生活的理想'
+subtitle: WELCOME TO YINUXY'S BLOG
+description: '不怕念起 就怕觉迟 理可顿悟 事需渐修'
 keywords: Python,编程,大数据
 author: YINUXY
 language: 
@@ -39,7 +39,7 @@ import:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://blog.yinuxy.com
 root: /
-permalink: :year/:month/:day/:title/
+permalink: /post/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -124,8 +124,11 @@ lazyload:
   loadingImg: https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif
 #-----------------------Valine-----------------------------------
 leancloud:
-  app_id: kISuzf8thVesufx29NhqXTwU-gzGzoHsz
-  app_key: TW2Yq6YcP29dgWbQrGMzMApR
+  app_id: kISuzf8thVesufx29NhqXTwU-gzGzoHsz #ozNjrScFDX4VSvFT7pqKLUc5-gzGzoHsz #
+  app_key: TW2Yq6YcP29dgWbQrGMzMApR #XgR4nABO41nhV5Ev9zb6HT6N # 
+#-----------------------Gitalk-----------------------------------
+
+
 #----------------- ----百度统计---------------------------------
 baidu_analytics_key: ce3c8ec886c87762491dd2124ab106ff
 #----------------- ----Markdown---------------------------------
@@ -174,7 +177,9 @@ baidusitemap:
     path: baidusitemap.xml
 sitemap:
     path: sitemap.xml
-
+    tag: false
+    category: false
+#################百度推送#######################
 baidu_url_submit:
   count: 1000               # 提交最新的多少个链接
   host: blog.yinuxy.com    # 在百度站长平台中添加的域名
@@ -186,6 +191,12 @@ include:
 exclude:
 ignore:
 
+#################SEO优化#######################
+nofollow:
+	enable: true
+#	exclude:
+#    - exclude1.com
+#    - exclude2.com
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/

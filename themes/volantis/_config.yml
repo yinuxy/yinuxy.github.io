@@ -5,11 +5,11 @@ info:
   docs: https://volantis.js.org/
   cdn: # 要使用CDN，请在根目录的config文件中写上 use_cdn: true
     css:
-    # style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/css/style.css
+      style: https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.49/blog/source/css/style.css
     js:
       app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/js/app.js
       search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/js/search.js
-      valine: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/js/valine.js
+      valine: https://cdn.jsdelivr.net/gh/drew233/css/lvaline.min.js
 
 
 
@@ -20,28 +20,32 @@ plugins:
   jquery: https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js
   ################################################## 提升速度类的服务
   # 鼠标放在链接上就提前开始加载了 [站内的url一定要以‘/’结尾]
-  instant_page: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/js/instant_page.js
+  # instant_page: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/js/instant_page.js
   ################################################## 优化体验类的服务
   # 图片放大预览
-  fancybox:
-    css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
-    js: https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js
+  # fancybox:
+  #   css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
+  #   js: https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js
   # 页面滚动显示动画
-  scrollreveal: #https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js
+  # scrollreveal: https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js
   # 代码块复制按钮
   clipboard: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
   ################################################## 运维服务
   # 访问量统计【加载非常缓慢】
   busuanzi: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
   # 文章字数统计、阅读时长，开启需要安装插件: npm i --save hexo-wordcount
-  wordcount: true
+  # wordcount: true
   ################################################## 美化类的服务
   # 按钮点击涟漪效果
-  nodewaves:
-    css: https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css
-    js: https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js
+  # nodewaves:
+  #   css: https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css
+  #   js: https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js
   # 文本框打字机特效
-  comment_typing: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/js/comment_typing.js
+  # comment_typing: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@1.7.3/js/comment_typing.js
+  #语法高亮
+  highlightjs:
+    js: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js
+    css: https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css
 
 
 
@@ -125,7 +129,7 @@ navbar:
     # 显示图片，使用图片时将不会显示icon和title
   # img: https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.33/mylogo/name.png
     # 显示图标
-    icon: https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/favicon/favicon.ico
+    icon: https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/favicon/favicon.ico
     # 显示标题
     title: YINUXY'S BLOG
   # logo后面的导航菜单
@@ -200,7 +204,7 @@ layout: # 下面的内容可以写在 `blog/source/_data/layout.yml` 中
     # 列表中每一篇文章的meta信息
     meta: [title, author, date, category, wordcount, top]
     # 列表类页面的侧边栏
-    sidebar: [blogger, dao_hang, huan_ying, WeChat, category, tagcloud]
+    sidebar: [blogger, dao_hang, huan_ying, category, WeChat, tagcloud] #, guestMap]
   # 页面布局
   on_page:
     # 文章页面主体元素，你也可以在页面的Front-matter中设置
@@ -226,7 +230,7 @@ meta:
   title: # 暂无配置
   # 默认文章作者（可在front-matter中覆盖）
   author:
-    avatar: https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/avatar/avatar.png
+    avatar: https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/avatar/avatar.png
     name: YINUXY
     url: https://blog.yinuxy.com
   # 文章创建日期
@@ -306,7 +310,7 @@ widget: # 下面的内容可以写在 `blog/source/_data/widget.yml` 中
   blogger:
     class: blogger
     display: [desktop] # [desktop, mobile]
-    avatar: https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/avatar/avatar.png
+    avatar: https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/avatar/avatar.png
     title: YINUXY'S BLOG
     subtitle: 不怕念起 就怕觉迟 理可顿悟 事须渐修
     jinrishici: # true # 今日诗词。可以设置字符串，加载失败时会显示占位字符串。
@@ -345,9 +349,10 @@ widget: # 下面的内容可以写在 `blog/source/_data/widget.yml` 中
       - name: RSS订阅
         icon: fas fa-rss
         url: /atom.xml
-      - name: 我的友链
-        icon: fas fa-link
-        url: friends/
+      - name: 免费图床
+        # icon: fas fa-link
+        icon: fas fa-images
+        url: https://img.yinuxy.com/
         rel: nofollow
   # ---------------------------------------
   # 欢迎语
@@ -358,6 +363,15 @@ widget: # 下面的内容可以写在 `blog/source/_data/widget.yml` 中
       title: 欢迎光临
     content: 
     - '<center><font  size = "5" color = "#FFB6C1"  face = "楷体">欢</font><font  size = "5" color = "#FFC0CB"  face = "楷体">迎</font><font  size = "5" color = "#DC143C"  face = "楷体">光</font><font  size = "5" color = "#7B68EE "  face = "楷体">临</font><font  size = "5" color = "#DB7093"  face = "楷体">本</font><font  size = "5" color = "#FF69B4"  face = "楷体">站</center><center></font><font  size = "5" color = "#FF1493"  face = "楷体">如</font><font  size = "5" color = "#C71585"  face = "楷体">果</font><font  size = "5" color = "#DA70D6"  face = "楷体">对</font><font  size = "5" color = "#D8BFD8"  face = "楷体">您</font><font  size = "5" color = "#DDA0DD"  face = "楷体">有</font><font  size = "5" color = "#EE82EE"  face = "楷体">帮</font><font  size = "5" color = "#FF00FF"  face = "楷体">助</font><font  size = "5" color = "#FF00FF"  face = "楷体">的</font><font  size = "5" color = "#8B008B"  face = "楷体">话</center><center></font><font  size = "5" color = "#800080"  face = "楷体">记</font><font  size = "5" color = "#BA55D3"  face = "楷体">得</font><font  size = "5" color = "#9400D3"  face = "楷体">分</font><font  size = "5" color = "#9932CC"  face = "楷体">享</font><font  size = "5" color = "#4B0082"  face = "楷体">转</font><font  size = "5" color = "#8A2BE2"  face = "楷体">发</font><font  size = "5" color = "#9370DB"  face = "楷体">哦</font></center>'
+# ---------------------------------------
+  # 欢迎语
+  guestMap: # 唯一标识，自己命名，建议全英文
+    class: text # 小部件类型，对应_widget文件夹中的文件名
+    header:
+      icon: fas fa-map-marked
+      title: 访客地图
+    content: 
+    - '<script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=syr-DUezHmE9-grk5MP-lrEgvSI5E-CYVShbLSS_wig"></script>'
   # ---------------------------------------
   # 公众号二维码
   WeChat: # 唯一标识，自己命名，建议全英文
@@ -369,7 +383,7 @@ widget: # 下面的内容可以写在 `blog/source/_data/widget.yml` 中
     height: # 128px  # 不设置则自动高度
     fancybox: true # 是否允许点击放大
     images:
-      - https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/qrcode.jpg
+      - https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/qrcode.jpg
   # ---------------------------------------
   # 文章分类小部件配置
   category:
@@ -424,7 +438,7 @@ widget: # 下面的内容可以写在 `blog/source/_data/widget.yml` 中
     height: #64px  # 不设置则自动高度
     fancybox: #true # 是否允许点击放大
     images:
-      - https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@master/qrcode.jpg
+      - https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/qrcode.jpg
   # 打赏
   donate:
     class: text
@@ -441,7 +455,7 @@ footer:
   # APlayer配置 https://github.com/metowolf/MetingJS
   aplayer:
     # 是否启用，注释此项则不加载服务
-    enable: true
+    enable: false
     # 必选参数
     server: netease   # netease, tencent, kugou, xiami, baidu
     type: playlist    # song, playlist, album, search, artist
@@ -460,7 +474,7 @@ footer:
     - icon: fas fa-rss
       url: atom.xml
     - icon: fas fa-envelope
-      url: mailto:1154418252@qq.com
+      url: mailto:admin@yinuxy.com
     - icon: fab fa-qq
       url: http://wpa.qq.com/msgrd?v=3&amp;uin=1154418252&amp;site=qq&amp;menu=yes
     - icon: fab fa-github
@@ -504,12 +518,13 @@ reward:
 ############################### 评论系统 ###############################
 # disqus_shortname: 要使用哪个请复制到根目录配置文件！
 # livere_uid: 要使用哪个请复制到根目录配置文件！
-# gitalk: 要使用哪个请复制到根目录配置文件！
-#   clientID: 你的clientID
-#   clientSecret: 你的clientSecret
-#   repo: 你的repo名
-#   owner: 你的GitHub名
-#   admin: [] 至少填写你的GitHub名
+gitalk: # 要使用哪个请复制到根目录配置文件！
+  enable: false
+  clientID: c617dfbc3bf9a2f4a4ac
+  clientSecret: d728caf04c661a3754f48195880f7d6c46b7932e
+  repo: git@github.com:InfiniteYinux/InfiniteYinux.github.io.git
+  owner: InfiniteYinux
+  admin: [InfiniteYinux, YINUXY]
 # leancloud: 要使用哪个请复制到根目录配置文件！
 #   app_id: 你的appId
 #   app_key: 你的appKey
@@ -527,16 +542,17 @@ valine:
   leancloud:
     app_id: kISuzf8thVesufx29NhqXTwU-gzGzoHsz
     app_key: TW2Yq6YcP29dgWbQrGMzMApR
-  #   valine_path: 全站采用同一个path（共用同一个评论框数据）
-  guest_info: nick,mail,link #valine comment header info
-  placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
-  avatar: mp # gravatar style https://valine.js.org/avatar
-  pageSize: 10 # comment list page size
-  verify: true # valine verify code (true/false)
-  notify: true # valine mail notify (true/false)
-  lang: zh-cn
-  highlight: true
-  visitor: false # 阅读统计，按照官网文档接入了，但是依然不能用。
+  #  valine_path: 全站采用同一个path（共用同一个评论框数据）
+    guest_info: nick,mail,link #valine comment header info
+    placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
+    avatar: wavatar  # gravatar style https://valine.js.org/avatar
+    enableQQ: true
+    pageSize: 10 # comment list page size
+    verify: true # valine verify code (true/false)
+    notify: true # valine mail notify (true/false)
+    lang: zh-cn
+    highlight: true
+    visitor: false # 阅读统计，按照官网文档接入了，但是依然不能用。
 
 # 搜索配置
 search:
