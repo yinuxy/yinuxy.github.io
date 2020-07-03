@@ -188,6 +188,14 @@ links:
       tags: 
       desc: 文歌的小站，主要关注与人工智能和web开发技术。
 
+    - name: 无岸海
+      avatar: ：https://kyun.ltyuanfang.cn/tc/2020/05/23/20bacbe044e56.jpg
+      url: https://noshore.cn
+      backgroundColor: '#201e20' 
+      textColor: '#FFFFFF'
+      tags: 
+      desc: 你眼里银河有迹可循
+
 
 
   - group: 友情站点

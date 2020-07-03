@@ -24,7 +24,7 @@ yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel r
 ```
 
 ### 下载 ###
-浏览器打开 [https://www.python.org/ftp/python/](https://www.python.org/ftp/python/) 查看寻找Python版本，由于Tensorflow还不支持Python3.6版本，因此安装Python3.5.4
+浏览器打开 [https://www.python.org/ftp/python/](https://www.python.org/ftp/python/) 本文在此安装Python3.5.4
 ```
 wget https://www.python.org/ftp/python/3.5.4/Python-3.5.4.tgz
 ```
