@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#3.0-beta1'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>matplotlib - Pyplot 教程 - YINUXY | 理想的生活就是生活的理想</title>
+  
+    <meta name="keywords" content="Python可视化,matplotlib">
+  
+
+  
+    <meta name="description" content="提供类似MATLAB的绘图框架。">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="YINUXY | 理想的生活就是生活的理想">
+  
+
+  <!-- import meta -->
+  
+    
+      <meta name='theme-color' content='#FFFFFF'>
+    
+      <meta name='msapplication-TileColor' content='#1BC3FB'>
+    
+      <meta name='msapplication-config' content='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicons/browserconfig.xml'>
+    
+  
+
+  <!-- link -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/css/matery.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+  
+
+  
+    <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicons/favicon-32X32.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel='shortcut icon' type='image/x-icon' href='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicon.ico'>
+  <link rel='icon' type='image/x-icon' sizes='32x32' href='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicons/favicon-32X32.png'>
+  <link rel='apple-touch-icon' type='image/png' sizes='180x180' href='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicons/apple-touch-icon.png'>
+  <link rel='mask-icon' color='#1BC3FB' href='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicons/safari-pinned-tab.svg'>
+  <link rel='manifest' href='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicons/site.webmanifest'>
+  
+
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/dracula.css">
+
+    
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+	  setTimeout(function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?ce3c8ec886c87762491dd2124ab106ff";
+		hm.defer=true;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+	  }, 5000);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post' style="display: none;">
+      <div class='cover-body'>
+  <div class='a'>
+    
+      <img class='logo' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.23/mylogo/logo.png'/>
+    
+    
+    
+      <p class="subtitle">WELCOME TO YINUXY'S BLOG</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="Please search here..." />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+          
+            <li>
+              <a class="nav home"
+                href="/"
+                
+                
+                id="home">
+                <i class='fas fa-home fa-fw'></i>主页
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/archives/"
+                
+                
+                id="archives">
+                <i class='fas fa-archive fa-fw'></i>归档
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/categories/"
+                
+                
+                id="categories">
+                <i class='fas fa-folder-open fa-fw'></i>分类
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/tags/"
+                
+                
+                id="tags">
+                <i class='fas fa-tags fa-fw'></i>标签
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+                <i class='fas fa-info-circle fa-fw'></i>关于
+              </a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+    </cover>
+    <header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+            <i class='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/favicon/favicon.ico'></i>
+          
+          
+            YINUXY'S BLOG
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/comments/
+                  
+                  
+                  
+                    id="comments"
+                  >
+                  <i class='fas fa-comments fa-fw'></i>留言
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/box/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="box"
+                  >
+                  <i class='fas fa-map-signs fa-fw'></i>导航
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Please search here..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/comments/
+                  
+                  
+                  
+                    id="comments"
+                  >
+                  <i class='fas fa-comments fa-fw'></i>留言
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/box/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="box"
+                  >
+                  <i class='fas fa-map-signs fa-fw'></i>导航
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  </div>
+  
+
+  <div class="l_body nocover">
+    <div class='body-wrapper' id="pjax-container">
+      
+        <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">matplotlib - Pyplot 教程</div>
+  <div id="pjax-enable-cover">true</div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
+  
+  
+  <div id="minivaline-path">none</div>
+  <div id="minivaline-placeholder">none</div>
+  
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover')[0].style.display = "none";
+    document.getElementsByClassName('l_body')[0].classList.add("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "blog") { // 半屏
+      document.getElementsByClassName('cover')[0].classList.remove("full");
+      document.getElementsByClassName('cover')[0].classList.add("half");
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "docs") { // 全屏
+      document.getElementsByClassName('cover')[0].classList.remove("half");
+      document.getElementsByClassName('cover')[0].classList.add("full");
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover')[0].style.display = "";
+    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+      
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow blur article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+        <a title='matplotlib - Pyplot 教程' href='/post/Experience/matplotlib-2/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/matplotlib.jpg'></a>
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/post/Experience/matplotlib-2/">
+      matplotlib - Pyplot 教程
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="httpS://blog.yinuxy.com" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
+    <p>YINUXY</p>
+  </a>
+</div>
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布日期：2019年8月10日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E5%8F%AF%E8%A7%86%E5%8C%96/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>可视化</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/post/Experience/matplotlib-2/" class="leancloud_visitors" data-flag-title="matplotlib - Pyplot 教程">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>提供类似MATLAB的绘图框架。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/matplotlibPyplot/fengmian.png" alt="png"></p>
+<a id="more"></a>
+<h1 id="Pyplot-教程"><a href="#Pyplot-教程" class="headerlink" title="Pyplot 教程"></a>Pyplot 教程</h1><p>关于pylot接口的介绍。</p>
+<h2 id="pyplot-简介"><a href="#pyplot-简介" class="headerlink" title="pyplot 简介"></a>pyplot 简介</h2><p><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html#module-matplotlib.pyplot" target="_blank" rel="noopener">matplotlib.pyplot</a> 是命令样式函数的集合，使matplotlib像MATLAB一样工作。 每个pyplot函数对图形进行一些更改：例如，创建图形，在图形中创建绘图区域，在绘图区域中绘制一些线条，用标签装饰图形等。</p>
+<p>在<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html#module-matplotlib.pyplot" target="_blank" rel="noopener">matplotlib.pyplot</a>中，各种状态在函数调用中保留，以便跟踪当前图形和绘图区域等内容，并且绘图函数指向当前轴（请注意“轴”在此处以及在大多数位置 文档是指<a href="https://matplotlib.org/tutorials/introductory/usage.html#figure-parts" target="_blank" rel="noopener">图形的轴部分</a>，而不是多个轴的严格数学术语。</p>
+<p>注意: pyplot API通常不如面向对象的API灵活。您在此处看到的大多数函数调用也可以作为Axes对象中的方法调用。 我们建议您浏览教程和示例以了解其工作原理。</p>
+<p>使用pyplot生成可视化非常快速：</p>
+<pre><code class="python">import matplotlib.pyplot as plt
+plt.plot([1, 2, 3, 4])
+plt.ylabel(&#39;some numbers&#39;)
+plt.show()</code></pre>
+<pre><code>&lt;Figure size 640x480 with 1 Axes&gt;</code></pre><p>您可能想知道为什么x轴的范围是0-3，y轴的范围是1-4。如果为<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" target="_blank" rel="noopener">plot()</a>命令提供单个列表或数组，则matplotlib假定它是一系列y值，并自动为您生成x值。由于python范围以0开头，因此默认的x向量与y具有相同的长度，但从0开始。因此x数据为 [0,1,2,3]。</p>
+<pre><code class="python">plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
+</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x1de069a2a20&gt;]</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/matplotlibPyplot/output_3_1.png" alt="png"></p>
+<h2 id="格式化绘图的样式"><a href="#格式化绘图的样式" class="headerlink" title="格式化绘图的样式"></a>格式化绘图的样式</h2><p>对于每对x，y对的参数，有一个可选的第三个参数，它是指示绘图的颜色和线型的格式字符串。格式字符串的字母和符号来自MATLAB，您可以将颜色字符串与线型字符串连接起来。默认格式字符串为“b-”，为蓝色实线。例如，要用红色圆圈绘制上述内容，您将发出：</p>
+<pre><code class="python">#plt.plot(x,y,format_string,**kwargs) 
+#x轴数据，y轴数据，format_string控制曲线的格式字串 
+#format_string 由颜色字符，风格字符，和标记字符 
+
+plt.plot([1, 2, 3, 4], [1, 4, 9, 16], &#39;ro&#39;)
+plt.axis([0, 6, 0, 20])
+plt.show()</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/matplotlibPyplot/output_5_0.png" alt="png"></p>
+<p>有关线型和格式字符串的完整列表，请参阅 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" target="_blank" rel="noopener">plot()</a> 文档。 上例中的 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axis.html#matplotlib.pyplot.axis" target="_blank" rel="noopener">axis()</a> 命令采用 [xmin, xmax, ymin, ymax] 列表并指定轴的视口。</p>
+<p>如果matplotlib仅限于使用列表，那么数字处理将毫无用处。通常，您将使用numpy数组。实际上，所有序列都在内部转换为numpy数组。 下面的示例说明了使用数组在一个命令中绘制具有不同格式样式的多行。</p>
+<pre><code class="python">import numpy as np
+
+# 每隔200ms均匀采样一次
+t = np.arange(0., 5., 0.2)
+
+# 红色的破折号，蓝色的正方形和绿色的三角形
+plt.plot(t, t, &#39;r--&#39;, t, t**2, &#39;bs&#39;, t, t**3, &#39;g^&#39;)
+plt.show()</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/matplotlibPyplot/output_7_0.png" alt="png"></p>
+<h2 id="使用关键字字符串绘图"><a href="#使用关键字字符串绘图" class="headerlink" title="使用关键字字符串绘图"></a>使用关键字字符串绘图</h2><p>在某些情况下，您可以使用允许您使用字符串访问特定变量的格式的数据。例如，使用 <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" target="_blank" rel="noopener">numpy.recarray</a> 或<a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" target="_blank" rel="noopener">pandas.DataFrame</a>。</p>
+<p>Matplotlib允许您使用data关键字参数提供此类对象。如果提供，那么您可以生成包含与这些变量对应的字符串的图。</p>
+<pre><code>matplotlib.pyplot.scatter(x, y, s=None, c=None, marker=None, cmap=None, norm=None, vmin=None, vmax=None, alpha=None, linewidths=None, verts=None, edgecolors=None, *, data=None, **kwargs)</code></pre><p>x，y：表示的是大小为(n,)的数组，也就是我们即将绘制散点图的数据点<br>s:是一个实数或者是一个数组大小为(n,)，这个是一个可选的参数。<br>c:表示的是颜色，也是一个可选项。默认是蓝色’b’,表示的是标记的颜色，或者可以是一个表示颜色的字符，或者是一个长度为n的表示颜色的序列等等，感觉还没用到过现在不解释了。但是c不可以是一个单独的RGB数字，也不可以是一个RGBA的序列。可以是他们的2维数组（只有一行）。<br>marker:表示的是标记的样式，默认的是’o’。<br>cmap:Colormap实体或者是一个colormap的名字，cmap仅仅当c是一个浮点数数组的时候才使用。如果没有申明就是image.cmap<br>norm:Normalize实体来将数据亮度转化到0-1之间，也是只有c是一个浮点数的数组的时候才使用。如果没有申明，就是默认为colors.Normalize。<br>vmin,vmax:实数，当norm存在的时候忽略。用来进行亮度数据的归一化。<br>alpha：实数，0-1之间。<br>linewidths:也就是标记点的长度。    </p>
+<pre><code class="python">data = {&#39;a&#39;: np.arange(50),
+        &#39;c&#39;: np.random.randint(0, 50, 50),
+        &#39;d&#39;: np.random.randn(50)}
+data[&#39;b&#39;] = data[&#39;a&#39;] + 10 * np.random.randn(50)
+data[&#39;d&#39;] = np.abs(data[&#39;d&#39;]) * 100
+
+plt.scatter(&#39;a&#39;, &#39;b&#39;, c=&#39;c&#39;, s=&#39;d&#39;, data=data)
+plt.xlabel(&#39;entry a&#39;)
+plt.ylabel(&#39;entry b&#39;)
+plt.show()</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/matplotlibPyplot/output_10_0.png" alt="png"></p>
+<pre><code class="python">data = {&#39;a&#39;: np.arange(50),
+        &#39;c&#39;: np.random.randint(0, 50, 50),
+        &#39;d&#39;: np.random.randn(50)}
+print(data)
+data[&#39;b&#39;] = data[&#39;a&#39;] + 10 * np.random.randn(50)
+data[&#39;d&#39;] = np.abs(data[&#39;d&#39;]) * 100
+print(data)</code></pre>
+<pre><code>{&#39;a&#39;: array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+       34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]), &#39;c&#39;: array([47,  5, 29, 21, 15, 12, 29, 23, 10, 25, 26, 45, 32, 30, 37, 27, 43,
+        9, 26, 45, 48, 14, 23, 30, 22,  0,  5, 47, 21, 26, 35,  7,  2, 19,
+       24, 41, 26,  9, 20, 16, 15, 29, 23,  4, 21, 12, 23, 30, 41, 19]), &#39;d&#39;: array([ 0.91474741,  1.4102975 , -0.09708013, -1.47629846, -1.57769092,
+       -0.46290149,  1.23430367,  0.38467709, -0.01272562, -1.44240598,
+       -0.21927709, -0.30498565, -0.11862153, -1.24972745, -1.32424128,
+       -1.5610827 ,  1.26963903,  0.62084676, -1.0549506 ,  0.37044246,
+       -0.39299613,  0.42897231, -0.33461671, -0.86706857, -0.76486767,
+       -1.3074562 , -0.33973554, -1.08680383,  0.27878669,  1.0599157 ,
+       -0.38176051,  0.79680669, -0.6874751 ,  1.38240815, -0.1344723 ,
+        0.7627456 ,  0.36115735,  0.83799247,  0.02523584,  0.81839594,
+       -0.77025921, -0.06682006,  0.06934268,  0.36251595, -0.99875799,
+        1.23386736, -0.32016664,  0.45225071,  0.55994446,  0.47643056])}
+{&#39;a&#39;: array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+       34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]), &#39;c&#39;: array([47,  5, 29, 21, 15, 12, 29, 23, 10, 25, 26, 45, 32, 30, 37, 27, 43,
+        9, 26, 45, 48, 14, 23, 30, 22,  0,  5, 47, 21, 26, 35,  7,  2, 19,
+       24, 41, 26,  9, 20, 16, 15, 29, 23,  4, 21, 12, 23, 30, 41, 19]), &#39;d&#39;: array([ 91.4747409 , 141.02975036,   9.70801323, 147.6298458 ,
+       157.76909222,  46.29014854, 123.43036704,  38.46770907,
+         1.27256168, 144.24059782,  21.92770893,  30.49856537,
+        11.86215303, 124.972745  , 132.42412769, 156.10827022,
+       126.96390267,  62.0846764 , 105.49506   ,  37.0442464 ,
+        39.29961326,  42.89723069,  33.46167088,  86.70685708,
+        76.48676738, 130.74561997,  33.97355351, 108.68038257,
+        27.87866927, 105.9915699 ,  38.17605117,  79.68066907,
+        68.74750955, 138.2408153 ,  13.44723023,  76.27455996,
+        36.1157352 ,  83.79924741,   2.52358383,  81.83959391,
+        77.02592105,   6.68200567,   6.93426756,  36.25159505,
+        99.87579944, 123.38673588,  32.01666378,  45.22507109,
+        55.99444581,  47.6430561 ]), &#39;b&#39;: array([  4.62276015,   7.74528096,  -4.77823695, -11.7847356 ,
+        18.05816585,  -8.1731315 ,   4.98414606,  18.1539417 ,
+        11.06732176,  15.32465307,   5.923213  ,   6.77520583,
+        -8.72986134,  19.414693  ,  22.05933889,  10.92443259,
+        16.1005237 ,  28.55305548,   7.16710341,  19.82975597,
+        35.25631478,  13.32137703,   9.26598849,  14.25528353,
+        17.70779422,  18.62234998,  41.83152657,  26.02409203,
+        23.25997035,  20.38161932,   2.84095495,  36.00225335,
+        46.69340509,  22.75167791,  34.33249818,  25.09595488,
+        41.37140253,  16.54690243,  32.4532621 ,  31.12442736,
+        40.99257063,  49.49197597,  55.91868808,  55.13338215,
+        33.1365961 ,  48.95821962,  25.50538193,  58.72572039,
+        49.63841177,  41.7925894 ])}</code></pre><h2 id="用分类变量绘图"><a href="#用分类变量绘图" class="headerlink" title="用分类变量绘图"></a>用分类变量绘图</h2><p>也可以使用分类变量创建绘图。Matplotlib允许您将分类变量直接传递给许多绘图函数。例如：</p>
+<pre><code class="python">names = [&#39;group_a&#39;, &#39;group_b&#39;, &#39;group_c&#39;]
+values = [1, 10, 100]
+
+# 表示figure 的大小为宽、长（单位为inch）
+plt.figure(1, figsize=(18, 6))
+
+# plt.subplot(ABC)表示第A行,B图形的总数量，C第几个图形
+plt.subplot(131)
+
+# 直方图
+plt.bar(names, values)
+plt.subplot(132)
+#散点图
+plt.scatter(names, values)
+plt.subplot(133)
+#折线图
+plt.plot(names, values)
+plt.suptitle(&#39;Categorical Plotting&#39;)
+plt.show()</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/matplotlibPyplot/output_13_0.png" alt="png"></p>
+<h2 id="控制线的属性"><a href="#控制线的属性" class="headerlink" title="控制线的属性"></a>控制线的属性</h2><p>线可以设置许多属性：linewidth，dash style，antialiased等; 请参阅 <a href="https://matplotlib.org/api/_as_gen/matplotlib.lines.Line2D.html#matplotlib.lines.Line2D" target="_blank" rel="noopener">matplotlib.lines.Line2D</a>。 有几种方法可以设置线属性。</p>
+<p>使用关键字args：</p>
+<pre><code>plt.plot(x, y, linewidth=2.0)</code></pre><p>使用Line2D实例的setter方法。 plot返回Line2D对象列表; 例如，line1，line2 = plot（x1，y1，x2，y2）。 在下面的代码中，我们假设我们只有一行，因此返回的列表的长度为1.我们使用tuple解压缩为line，以获取该列表的第一个元素：</p>
+<pre><code>line, = plt.plot(x, y, &#39;-&#39;)
+line.set_antialiased(False) # turn off antialising</code></pre><p>使用 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.setp.html#matplotlib.pyplot.setp" target="_blank" rel="noopener">setp()</a> 命令。 下面的示例使用MATLAB样式命令在行列表上设置多个属性。setp透明地使用对象列表或单个对象。您可以使用python关键字参数或MATLAB样式的字符串/值对：</p>
+<pre><code>lines = plt.plot(x1, y1, x2, y2)
+# use keyword args
+plt.setp(lines, color=&#39;r&#39;, linewidth=2.0)
+# or MATLAB style string value pairs
+plt.setp(lines, &#39;color&#39;, &#39;r&#39;, &#39;linewidth&#39;, 2.0)</code></pre><p>以下是可用的<a href="https://matplotlib.org/api/_as_gen/matplotlib.lines.Line2D.html#matplotlib.lines.Line2D" target="_blank" rel="noopener">Line2D</a>属性。</p>
+<table align="center">
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>值类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>alpha</th>
+            <th>float</th>
+        </tr>
+        <tr>
+            <th>animated</th>
+            <th>[True | False]</th>
+        </tr>
+        <tr>
+            <th>antialiased 或 aa</th>
+            <th>[True | False]</th>
+        </tr>
+        <tr>
+            <th>clip_box</th>
+            <th>matplotlib.transform.Bbox实例</th>
+        </tr>
+        <tr>
+            <th>clip_on</th>
+            <th>[True | False]</th>
+        </tr>
+        <tr>
+            <th>clip_path</th>
+            <th>路径实例和变换实例(修补程序)</th>
+        </tr>
+        <tr>
+            <th>color 或 c</th>
+            <th>任何Matplotlib颜色</th>
+        </tr>
+        <tr>
+            <th>contains</th>
+            <th>the hit testing function</th>
+        </tr>
+        <tr>
+            <th>dash_capstyle</th>
+            <th>['butt' | 'round' | 'projecting']</th>
+        </tr>
+        <tr>
+            <th>dash_joinstyle</th>
+            <th>['miter' | 'round' | 'bevel']</th>
+        </tr>
+        <tr>
+            <th>dashes</th>
+            <th>以点为单位的开/关油墨顺序</th>
+        </tr>
+        <tr>
+            <th>data</th>
+            <th>(np.array xdata, np.array ydata)</th>
+        </tr>
+        <tr>
+            <th>figure</th>
+            <th>matplotlib.quire.Figure实例</th>
+        </tr>
+        <tr>
+            <th>label</th>
+            <th>任何字符串</th>
+        </tr>
+        <tr>
+            <th>linestyle or ls</th>
+            <th>[ '-' | '--' | '-.' | ':' | 'steps' | ...]</th>
+        </tr>
+        <tr>
+            <th>linewidth or lw</th>
+            <th>浮点值</th>
+        </tr>
+        <tr>
+            <th>lod</th>
+            <th>[True | False]</th>
+        </tr>
+        <tr>
+            <th>marker</th>
+            <th>[ '+' | ',' | '.' | '1' | '2' | '3' | '4' ]</th>
+        </tr>
+        <tr>
+            <th>markeredgecolor or mec</th>
+            <th>任何Matplotlib颜色</th>
+        </tr>
+        <tr>
+            <th>markeredgewidth or mew</th>
+            <th>浮点值</th>
+        </tr>
+        <tr>
+            <th>markerfacecolor or mfc</th>
+            <th>任何Matplotlib颜色</th>
+        </tr>
+        <tr>
+            <th>markersize or ms</th>
+            <th>浮点数</th>
+        </tr>
+        <tr>
+            <th>markevery</th>
+            <th>[ None | integer | (startind, stride) ]</th>
+        </tr>
+        <tr>
+            <th>picker</th>
+            <th>用于交互式选线</th>
+        </tr>
+        <tr>
+            <th>pickradius</th>
+            <th>线拾取选择半径</th>
+        </tr>
+        <tr>
+            <th>solid_capstyle</th>
+            <th>['butt' | 'round' | 'projecting']</th>
+        </tr>
+        <tr>
+            <th>solid_joinstyle</th>
+            <th>['miter' | 'round' | 'bevel']</th>
+        </tr>
+        <tr>
+            <th>transform</th>
+            <th>matplotlib.transforms.Transform实例</th>
+        </tr>
+        <tr>
+            <th>visible</th>
+            <th>[True | False]</th>
+        </tr>
+        <tr>
+            <th>xdata</th>
+            <th>np.array</th>
+        </tr>
+        <tr>
+            <th>ydata</th>
+            <th>np.array</th>
+        </tr>
+        <tr>
+            <th>zorder</th>
+            <th>任意数字</th>
+        </tr>
+    </tbody>
+</table>
+
+<p>若要获取可设置行属性的列表，请使用一行或多行作为参数调用<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.setp.html#matplotlib.pyplot.setp" target="_blank" rel="noopener">setp()</a> 函数。</p>
+<h2 id="使用多个图形和轴"><a href="#使用多个图形和轴" class="headerlink" title="使用多个图形和轴"></a>使用多个图形和轴</h2><p>MATLAB和<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html#module-matplotlib.pyplot" target="_blank" rel="noopener">pyplot</a>，都有当前图形和当前轴的概念。所有打印命令都适用于当前轴。函数gca() 返回当前轴(<a href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" target="_blank" rel="noopener">matplotlib.axes.Axes</a>实例)，<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.gcf.html#matplotlib.pyplot.gcf" target="_blank" rel="noopener">gcf()</a> 返回当前地物(<a href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" target="_blank" rel="noopener">matplotlib.figure.Figure</a>实例)。通常情况下，你不必担心这一点，因为这一切都是在幕后处理的。下面是创建两个子图的脚本。</p>
+<pre><code class="python">def f(t):
+    return np.exp(-t) * np.cos(2*np.pi*t)
+
+t1 = np.arange(0.0, 5.0, 0.1)
+t2 = np.arange(0.0, 5.0, 0.02)
+
+plt.figure(1)
+plt.subplot(211)
+plt.plot(t1, f(t1), &#39;bo&#39;, t2, f(t2), &#39;k&#39;)
+
+plt.subplot(212)
+plt.plot(t2, np.cos(2*np.pi*t2), &#39;r--&#39;)
+plt.show()</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/matplotlibPyplot/output_16_0.png" alt="png"></p>
+<p>这里的 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" target="_blank" rel="noopener">figure()</a> 命令是可选的，因为默认情况下将创建 figure(1)，就像默认情况下创建 subplot(111) 一样，如果不手动指定任何轴。<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" target="_blank" rel="noopener">subplot()</a>命令指定numrows, numcols, plot_number，其中 plot_number 的范围 从1到numrows*numcols。如果 numrows * numcols &lt;10，则subplot命令中的逗号是可选的。因此 subplot(211) 与 subplot(2, 1, 1) 相同。</p>
+<p>您可以创建任意数量的子图和轴。如果要手动放置轴，即不在矩形网格上，请使用 axes() 命令，该命令允许您将位置指定为axes([left，bottom，width，height])，其中所有值均为小数（0到1）坐标。有关手动放置轴的示例，请参阅<a href="https://matplotlib.org/gallery/subplots_axes_and_figures/axes_demo.html" target="_blank" rel="noopener">Axes Demo</a>;有关具有大量子图的示例，请参阅 <a href="https://matplotlib.org/gallery/subplots_axes_and_figures/subplot_demo.html" target="_blank" rel="noopener">Basic Subplot Demo</a>。</p>
+<p>您可以使用具有增加的图号的多个<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" target="_blank" rel="noopener">figure()</a> 调用来创建多个数字。当然，每个图形可以包含您心中所需的轴和子图：</p>
+<pre><code class="python">import matplotlib.pyplot as plt
+plt.figure(1)                # the first figure
+plt.subplot(211)             # the first subplot in the first figure
+plt.plot([1, 2, 3])
+plt.subplot(212)             # the second subplot in the first figure
+plt.plot([4, 5, 6])
+
+
+plt.figure(2)                # a second figure
+plt.plot([4, 5, 6])          # creates a subplot(111) by default
+
+plt.figure(1)                # figure 1 current; subplot(212) still current
+plt.subplot(211)             # make subplot(211) in figure1 current
+plt.title(&#39;Easy as 1, 2, 3&#39;) # subplot 211 title</code></pre>
+<pre><code>Text(0.5, 1.0, &#39;Easy as 1, 2, 3&#39;)</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/matplotlibPyplot/output_18_1.png" alt="png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/matplotlibPyplot/output_18_2.png" alt="png"></p>
+<p>您可以使用 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.clf.html#matplotlib.pyplot.clf" target="_blank" rel="noopener">clf()</a> 清除当前图形，使用 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.cla.html#matplotlib.pyplot.cla" target="_blank" rel="noopener">cla()</a> 清除当前轴。如果您发现在幕后为您维护状态（特别是当前图像，图形和轴）很烦人，请不要绝望：这只是围绕面向对象API的瘦状态包装器，您可以使用它（见<a href="https://matplotlib.org/tutorials/intermediate/artists.html" target="_blank" rel="noopener">Artist tutorial</a>）</p>
+<p>如果你要制作大量的图像，你还需要注意一件事：在用 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.close.html#matplotlib.pyplot.close" target="_blank" rel="noopener">close()</a> 显式关闭数字之前，数字所需的内存不会完全释放。删除对图的所有引用，和/或使用窗口管理器来杀死屏幕上出现图形的窗口是不够的，因为pyplot会保持内部引用，直到调用close()。</p>
+<h2 id="使用文本"><a href="#使用文本" class="headerlink" title="使用文本"></a>使用文本</h2><p><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" target="_blank" rel="noopener">text()</a> 命令可用于在任意位置添加文本，而<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" target="_blank" rel="noopener">xlabel()</a>, <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" target="_blank" rel="noopener">ylabel()</a> 和 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" target="_blank" rel="noopener">title()</a> 用于在指定位置添加文本(有关更详细的示例，请参见Matplotlib图中的文本)</p>
+<pre><code class="python">mu, sigma = 100, 15
+x = mu + sigma * np.random.randn(10000)
+
+# the histogram of the data
+n, bins, patches = plt.hist(x, 50, density=1, facecolor=&#39;g&#39;, alpha=0.75)
+
+
+plt.xlabel(&#39;Smarts&#39;)
+plt.ylabel(&#39;Probability&#39;)
+plt.title(&#39;Histogram of IQ&#39;)
+plt.text(60, .025, r&#39;$\mu=100,\ \sigma=15$&#39;)
+plt.axis([40, 160, 0, 0.03])
+plt.grid(True)
+plt.show()</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/matplotlibPyplot/output_20_0.png" alt="png"></p>
+<p>所有<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" target="_blank" rel="noopener">text()</a> 命令都返回一个<a href="https://matplotlib.org/api/text_api.html#matplotlib.text.Text" target="_blank" rel="noopener">matplotlib.text.Text</a>实例。与上面的行一样，您可以通过将关键字参数传递给文本函数或使用<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.setp.html#matplotlib.pyplot.setp" target="_blank" rel="noopener">setp()</a>来自定义属性：</p>
+<pre><code>t = plt.xlabel(&#39;my data&#39;, fontsize=14, color=&#39;red&#39;)</code></pre><p><a href="https://matplotlib.org/tutorials/text/text_props.html" target="_blank" rel="noopener">文本属性和布局</a>中更详细地介绍了这些属性。</p>
+<h3 id="在文本中使用数学表达式"><a href="#在文本中使用数学表达式" class="headerlink" title="在文本中使用数学表达式"></a>在文本中使用数学表达式</h3><p>matplotlib在任何文本表达式中接受TeX方程表达式。 例如，要在标题中写入表达式σi= 15，您可以编写由美元符号包围的TeX表达式：</p>
+<pre><code>plt.title(r&#39;$\sigma_i=15$&#39;)</code></pre><p>标题字符串前面的r很重要 - 它表示该字符串是一个原始字符串，而不是将反斜杠视为python转义。matplotlib有一个内置的TeX表达式解析器和布局引擎，并提供自己的数学字体 - 有关详细信息，请参阅编写<a href="https://matplotlib.org/tutorials/text/mathtext.html" target="_blank" rel="noopener">数学表达式</a>。因此，您可以跨平台使用数学文本，而无需安装TeX。 对于安装了LaTeX和dvipng的用户，您还可以使用LaTeX格式化文本并将输出直接合并到显示图或保存的postscript中 - 请参阅使用<a href="https://matplotlib.org/tutorials/text/usetex.html" target="_blank" rel="noopener">LaTeX</a>进行文本渲染。</p>
+<h2 id="注释文本"><a href="#注释文本" class="headerlink" title="注释文本"></a>注释文本</h2><p>上面的基本<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" target="_blank" rel="noopener">text()</a> 命令的使用将文本放在Axes上的任意位置。文本的常见用途是注释绘图的某些功能，而<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" target="_blank" rel="noopener">annotate()</a>方法提供帮助功能以使注释变得容易。在注释中，有两点需要考虑：由参数xy表示的注释位置和文本xytext的位置。 这两个参数都是（x，y）元组。</p>
+<pre><code class="python">ax = plt.subplot(111)
+
+t = np.arange(0.0, 5.0, 0.01)
+s = np.cos(2*np.pi*t)
+line, = plt.plot(t, s, lw=2)
+
+plt.annotate(&#39;local max&#39;, xy=(2, 1), xytext=(3, 1.5),
+             arrowprops=dict(facecolor=&#39;red&#39;, shrink=0.05),
+             )
+
+plt.ylim(-2, 2)
+plt.show()</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/matplotlibPyplot/output_22_0.png" alt="png"></p>
+<p>在此基本示例中，xy（箭头提示）和xytext位置（文本位置）都在数据坐标中。 可以选择各种其他坐标系 - 有关详细信息，请参阅<a href="https://matplotlib.org/tutorials/text/annotations.html#annotations-tutorial" target="_blank" rel="noopener">基本注释</a>和<a href="https://matplotlib.org/tutorials/text/annotations.html#plotting-guide-annotation" target="_blank" rel="noopener">高级注释</a>。更多示例可以在<a href="https://matplotlib.org/gallery/text_labels_and_annotations/annotation_demo.html" target="_blank" rel="noopener">Annotating Plots</a>中找到。</p>
+<h2 id="对数和其他非线性轴"><a href="#对数和其他非线性轴" class="headerlink" title="对数和其他非线性轴"></a>对数和其他非线性轴</h2><p><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html#module-matplotlib.pyplot" target="_blank" rel="noopener">matplotlib.pyplot</a> 不仅支持线性轴刻度，还支持对数和logit刻度。 如果数据跨越许多数量级，则通常使用此方法。 更改轴的比例很容易：</p>
+<pre><code>plt.xscale(&#39;log&#39;)</code></pre><p>下面显示了具有相同数据和y轴不同比例的四个图的示例。</p>
+<pre><code class="python">from matplotlib.ticker import NullFormatter  # useful for `logit` scale
+
+# Fixing random state for reproducibility
+np.random.seed(19680801)
+
+# make up some data in the interval ]0, 1[
+y = np.random.normal(loc=0.5, scale=0.4, size=1000)
+y = y[(y &gt; 0) &amp; (y &lt; 1)]
+y.sort()
+x = np.arange(len(y))
+
+# plot with various axes scales
+plt.figure(1)
+
+# linear
+plt.subplot(221)
+plt.plot(x, y)
+plt.yscale(&#39;linear&#39;)
+plt.title(&#39;linear&#39;)
+plt.grid(True)
+
+
+# log
+plt.subplot(222)
+plt.plot(x, y)
+plt.yscale(&#39;log&#39;)
+plt.title(&#39;log&#39;)
+plt.grid(True)
+
+
+# 对称 log
+plt.subplot(223)
+plt.plot(x, y - y.mean())
+plt.yscale(&#39;symlog&#39;, linthreshy=0.01)
+plt.title(&#39;symlog&#39;)
+plt.grid(True)
+
+# logit
+plt.subplot(224)
+plt.plot(x, y)
+plt.yscale(&#39;logit&#39;)
+plt.title(&#39;logit&#39;)
+plt.grid(True)
+
+# 使用“NullFormatter”将y轴上的小标记标签格式化为空字符串，以避免轴上有太多标签。
+plt.gca().yaxis.set_minor_formatter(NullFormatter())
+
+# 调整subplot布局，因为logit 1可能比平常占用更多的空间，这是由于像“1 - 10^{-3}”这样的y-tick标签造成的。
+plt.subplots_adjust(top=0.92, bottom=0.08, left=0.10, right=0.95, hspace=0.25,
+                    wspace=0.35)
+
+plt.show()</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/matplotlibPyplot/output_24_0.png" alt="png"></p>
+<p>您也可以添加自己的比例，有关详细信息，请参阅<a href="https://matplotlib.org/devel/add_new_projection.html#adding-new-scales" target="_blank" rel="noopener">开发人员指南</a>以创建比例和转换。</p>
+<pre><code class="python"></code></pre>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)<br> 如需转载请注明出处@<a href="https://blog.yinuxy.com">Copyright © 2019-2020 YINUXY</a></p>
+
+          
+        
+          
+            
+          
+        
+          
+            <p>本文永久链接是：<a href=https://blog.yinuxy.com/post/Experience/matplotlib-2/>https://blog.yinuxy.com/post/Experience/matplotlib-2/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/InfiniteYinux/yinuxypic@1.06/source/css/reward.css">
+<div id="reward">
+    
+    <div class="reward">
+      <a href="https://github.com/Kaiyuan/donate-page" target="_blank" class=" tr3" title="Github"><span
+          id="github"></span></a>
+      <ul id="RewardBox" class="list pos-f tr3">
+        
+        <li id="PayPal" title="PayPal打赏"><a href="https://paypal.me/yyy7111" target="_blank">PayPal</a></li>
+        
+        
+        <li id="AliPayOR" title="支付宝打赏">AliPay</li>
+        
+        
+        <li id="WeChatPayOR" title="微信打赏">WeChatPay</li>
+        
+        
+        <li id="QQPayOR" title="QQ打赏">QQPay</li>
+        
+      </ul>
+      <div id="RewardText" class="tr3">Donate</div>
+      <div id="QRBox" class="pos-f left-100">
+        <div id="MainBox"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+  <script>
+    jQuery(document).ready(function () {
+      var QRBox = $('#QRBox');
+      var MainBox = $('#MainBox');
+      var AliPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/alipay.png';
+      var WeChatPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/wechat.png';
+      var QQPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/qq.png';
+  
+      function showQR(QR) {
+        if (QR) {
+          MainBox.css('background-image', 'url(' + QR + ')');
+        }
+        $('#RewardText,#RewardBox,#github').addClass('blureward');
+        QRBox.fadeIn(300, function (argument) {
+          MainBox.addClass('showQR');
+        });
+      }
+  
+      $('#RewardBox>li').click(function (event) {
+        var thisID = $(this).attr('id');
+        if (thisID === 'AliPayOR') {
+          showQR(AliPayOR);
+        } else if (thisID === 'WeChatPayOR') {
+          showQR(WeChatPayOR);
+        } else if (thisID === 'QQPayOR') {
+          showQR(QQPayOR);
+        }
+      });
+  
+      MainBox.click(function (event) {
+        MainBox.removeClass('showQR').addClass('hideQR');
+        setTimeout(function (a) {
+          QRBox.fadeOut(300, function (argument) {
+            MainBox.removeClass('hideQR');
+          });
+          $('#RewardText,#RewardBox,#github').removeClass('blureward');
+        }, 600);
+  
+      });
+    });
+  </script>
+  
+        
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-01T13:14:20+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save fa-fw" aria-hidden="true"></i>
+    <p>本页文档最后更新于：2020年4月1日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python%E5%8F%AF%E8%A7%86%E5%8C%96/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Python可视化</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/matplotlib/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>matplotlib</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.yinuxy.com/post/Experience/matplotlib-2/&title=matplotlib - Pyplot 教程 - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/matplotlib.jpg&summary=提供类似MATLAB的绘图框架。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.yinuxy.com/post/Experience/matplotlib-2/&title=matplotlib - Pyplot 教程 - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/matplotlib.jpg&summary=提供类似MATLAB的绘图框架。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://blog.yinuxy.com/post/Experience/matplotlib-2/&title=matplotlib - Pyplot 教程 - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/matplotlib.jpg&summary=提供类似MATLAB的绘图框架。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/post/Experience/jspEnvBulid/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Windows(10)环境下搭建JSP开发环境</p>
+                <p class='content'>JSP是Java Server Page的缩写，是由Sun Microsystems公司主导创建的一种动态网页技术标准。JSP部署于网络服务器上，可以响应客户端发送的请求，并根据请求内容动态地生...</p>
+              </a>
+            
+            
+              <a class='next' href='/post/Experience/matplotlib-1/'>
+                <p class='title'>matplotlib - matplotlib 教程<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Matplotlib 是 Python 的绘图库。 它可与 NumPy 一起使用，提供了一种有效的 MatLab 开源替代方案。
+
+
+Pyplot 教程关于pylot接口的介绍。
+matplot...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  <article class="post white-box reveal comments shadow blur">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="minivaline_container">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget blogger shadow blur desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/avatar/avatar.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>YINUXY'S BLOG</h2>
+        
+        
+          <p>理想的生活就是生活的理想</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:admin@yinuxy.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1154418252&amp;site=qq&amp;menu=yes"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/InfiniteYinux"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=641108605"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#pyplot-简介"><span class="toc-text">pyplot 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式化绘图的样式"><span class="toc-text">格式化绘图的样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用关键字字符串绘图"><span class="toc-text">使用关键字字符串绘图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用分类变量绘图"><span class="toc-text">用分类变量绘图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制线的属性"><span class="toc-text">控制线的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用多个图形和轴"><span class="toc-text">使用多个图形和轴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用文本"><span class="toc-text">使用文本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在文本中使用数学表达式"><span class="toc-text">在文本中使用数学表达式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释文本"><span class="toc-text">注释文本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对数和其他非线性轴"><span class="toc-text">对数和其他非线性轴</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow blur desktop">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/ACM%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" href="/categories/ACM%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/"
+            id="categoriesACME8A7A3E9A298E68AA5E5918A"
+            ><div class='name'>ACM解题报告</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Algorithm/" href="/categories/Algorithm/"
+            id="categoriesAlgorithm"
+            ><div class='name'>Algorithm</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Docker/" href="/categories/Docker/"
+            id="categoriesDocker"
+            ><div class='name'>Docker</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Hexo/" href="/categories/Hexo/"
+            id="categoriesHexo"
+            ><div class='name'>Hexo</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Linux/" href="/categories/Linux/"
+            id="categoriesLinux"
+            ><div class='name'>Linux</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Python/" href="/categories/Python/"
+            id="categoriesPython"
+            ><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%8F%AF%E8%A7%86%E5%8C%96/" href="/categories/%E5%8F%AF%E8%A7%86%E5%8C%96/"
+            id="categoriesE58FAFE8A786E58C96"
+            ><div class='name'>可视化</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+            id="categoriesE695B0E68DAEE5BA93"
+            ><div class='name'>数据库</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%B4%BB%E5%8A%A8%E7%BA%BF%E6%8A%A5/" href="/categories/%E6%B4%BB%E5%8A%A8%E7%BA%BF%E6%8A%A5/"
+            id="categoriesE6B4BBE58AA8E7BABFE68AA5"
+            ><div class='name'>活动线报</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/" href="/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/"
+            id="categoriesE7BD91E7AB99E5BC80E58F91"
+            ><div class='name'>网站开发</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow blur desktop mobile">
+    
+  <header>
+    
+      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/ACM/" style="font-size: 19px; color: #777">ACM</a> <a href="/tags/Anaconda/" style="font-size: 14px; color: #999">Anaconda</a> <a href="/tags/CentOS/" style="font-size: 14px; color: #999">CentOS</a> <a href="/tags/DDOS/" style="font-size: 14px; color: #999">DDOS</a> <a href="/tags/HTML/" style="font-size: 14px; color: #999">HTML</a> <a href="/tags/HTTP-Client/" style="font-size: 14px; color: #999">HTTP Client</a> <a href="/tags/Hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/" style="font-size: 19px; color: #777">Hexo主题美化</a> <a href="/tags/JSP/" style="font-size: 14px; color: #999">JSP</a> <a href="/tags/Linux-Shell/" style="font-size: 19px; color: #777">Linux Shell</a> <a href="/tags/Plotly/" style="font-size: 14px; color: #999">Plotly</a> <a href="/tags/Python/" style="font-size: 19px; color: #777">Python</a> <a href="/tags/Python%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 24px; color: #555">Python可视化</a> <a href="/tags/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/" style="font-size: 19px; color: #777">Python小技巧</a> <a href="/tags/SQL/" style="font-size: 19px; color: #777">SQL</a> <a href="/tags/Word2Vec/" style="font-size: 14px; color: #999">Word2Vec</a> <a href="/tags/Wythoff-s-game/" style="font-size: 14px; color: #999">Wythoff's game</a> <a href="/tags/basemap/" style="font-size: 14px; color: #999">basemap</a> <a href="/tags/kettle/" style="font-size: 14px; color: #999">kettle</a> <a href="/tags/matplotlib/" style="font-size: 19px; color: #777">matplotlib</a> <a href="/tags/pyproj/" style="font-size: 14px; color: #999">pyproj</a> <a href="/tags/seaborn/" style="font-size: 14px; color: #999">seaborn</a> <a href="/tags/spark/" style="font-size: 14px; color: #999">spark</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 14px; color: #999">动态规划</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14px; color: #999">大数据</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" style="font-size: 14px; color: #999">数据分析</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 19px; color: #777">数据库</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84/" style="font-size: 19px; color: #777">最优子结构</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 19px; color: #777">爬虫</a> <a href="/tags/%E8%AF%8D%E5%90%91%E9%87%8F/" style="font-size: 14px; color: #999">词向量</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">贪心算法</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90/" style="font-size: 14px; color: #999">软件资源</a> <a href="/tags/%E9%87%8D%E5%8F%A0%E5%AD%90%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">重叠子问题</a> <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="font-size: 14px; color: #999">防火墙</a>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow blur desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Experience\matplotlib-1\" title="matplotlib - matplotlib 教程" rel="bookmark">matplotlib - matplotlib 教程</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Experience\Seaborn\" title="Seaborn中文教程（转）" rel="bookmark">Seaborn中文教程（转）</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Python\Visual\2020nCovVisualization\" title="使用 Python可视化神器 Plotly 动态演示全球疫情变化趋势" rel="bookmark">使用 Python可视化神器 Plotly 动态演示全球疫情变化趋势</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+    </div>
+    
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='987444580'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:admin@yinuxy.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="http://wpa.qq.com/msgrd?v=3&amp;amp;uin=1154418252&amp;amp;site=qq&amp;amp;menu=yes"
+                class="social fab fa-qq flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/InfiniteYinux"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=641108605"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+
+    <!-- Copyright -->
+    Copyright © 2019-2020
+    <a href="https://blog.yinuxy.com/" target="_blank"> YINUXY
+    </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+    <!-- 备案 -->
+    <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.9/images/icp.png" style="width:18px;height:18px;margin-bottom:-2px" alt="ICP">
+    <a href="http://www.beian.miit.gov.cn/" target="_blank">鄂ICP备20002395号	</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.9/images/moeicp.png" style="width:18px;height:18px;margin-bottom:-3px" alt="MOE ICP">
+    <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20200022" target="_blank"> 20200022号</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <!-- 网站运行时间 -->
+    <span id="timeDate">正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+    <script>
+    var now = new Date(); 
+    function createtime() {
+      var grt= new Date("07/04/2019 08:30:00");//建站时间2019-07-04
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已运行 "
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      /*document.getElementById("times").style.color="#0056FF";*/
+      }
+      setInterval("createtime()",250);
+    </script>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+
+    <!--
+    Powered by <a href="https://hexo.io/zh-cn/" target="_blank" class="codename">Hexo</a>
+    Theme <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> by <a href="https://xaoxuu.com/" target="_blank" class="codename">xaoxuu</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <i class="fab fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可" target="_blank">BY-NC-SA 4.0</a>
+    -->
+
+     <!-- 站点地图 --> 
+    <a href="https://blog.yinuxy.com/sitemap.xml" target="_blank">站点地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+    <!-- CNZZ统计 --> 
+    <script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1278005237&web_id=1278005237"></script><br /><br />
+
+    <div class="github-badge">
+    <a style="color: #fff" rel="license" href="https://hexo.io/" target="_blank" title="由 Hexo 框架搭载">
+      <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span>
+    </a>
+    </div>
+    <div class="github-badge">
+    <a style="color: #fff" rel="license" href="https://github.com/" target="_blank" title="静态网页托管于 GitHub Pages 和 Coding Pages">
+      <span class="badge-subject">Hosted</span><span class="badge-value bg-brightgreen">GitHub &amp; Coding</span>
+    </a>
+    </div>
+    <div class="github-badge">
+    <a style="color: #fff" rel="license" href="https://huaweicloud.com/" target="_blank" title="域名由华为云提供">
+      <span class="badge-subject">DNR</span><span class="badge-value bg-blueviolet">HuaweiCloud</span>
+    </a>
+    </div>
+    <div class="github-badge">
+    <a style="color: #fff" rel="license" href="https://www.upyun.com/" target="_blank" title="又拍云 提供 CDN 加速服务">
+      <span class="badge-subject">CDN</span><span class="badge-value bg-orange">又拍云</span>
+    </a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://volantis.js.org/" target="_blank" title="本站使用 Volantis 主题">
+      <span class="badge-subject">Theme</span><span class="badge-value bg-blue">Volantis</span>
+    </a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
+      <span class="badge-subject"><i class="fa fa-copyright"></i></span><span class="badge-value bg-lightgrey">BY-NC-SA 4.0</span>
+    </a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://996.icu/" target="_blank" title="Star 996.ICU">
+      <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
+    </div>
+    <div class="github-badge">
+      <span class="badge-subject">UV</span><span class="badge-value bg-orange" id="busuanzi_value_site_uv"></span>
+    </div>
+    <div class="github-badge">
+      <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
+    </div>
+
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <div>
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/35F12181-F0E9-45BD-B134-37E4B4A660CF.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/00E0F0ED-9F1C-407A-9AA6-545649D919F4.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/67239FBB-E15D-4F4F-8EE8-0F1C9F3C4E7C.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B951AE18-D431-417F-B3FE-A382403FF21B.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/AEB33F9D-7294-4CF1-B8C5-3020748A9D45.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/2884F904-F1F3-479E-AE27-5EBC291B63B0.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/10A0FCE5-36A1-4AD0-8CF0-019259A89E03.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/250662D4-5A21-4AAA-BB63-CD25CF97CFF1.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/298468D7-E388-44A8-8CC5-8213BDC33CED.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+<!-- 评论 （PS：只对 valine 做了 Pjax 兼容） -->
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/minivaline@3.0.0-alpha.10/dist/MiniValine.min.js"></script>
+
+
+
+
+
+
+<script>
+function pjax_minivaline() {
+  var minivalinePath = $.trim($('#minivaline-path').text()) === "none" ?
+      window.location.pathname : $.trim($('#minivaline-path').text());
+  var minivalinePlaceholder = $.trim($('#minivaline-placeholder').text()) === "none" ?
+      "快来评论吧~" : $.trim($('#minivaline-placeholder').text());
+  var ALLPATH = '';
+  if(ALLPATH != '') minivalinePath = ALLPATH;
+new MiniValine({
+  el: '#minivaline_container',
+  appId: 'U9OdTDHgTOJI55c10xHM6h9y-gzGzoHsz',
+  appKey: 'CoeIhTz2oLfa5Pp7EVNfAUQa',
+  mode: 'xCss',
+  placeholder: minivalinePlaceholder,
+  pathname: minivalinePath,
+  lang: '',
+  adminEmailMd5: '10c8cf610da00464fcde646651d2b471',
+  tagMeta: ["管理员", "小伙伴", "访客"],
+  master: ["10c8cf610da00464fcde646651d2b471"],
+  friends: ["5f3ac0628f92ca389ce613423c71ae2e", "f9ef8984b65e6ded92e6c4ffc588e80a"],
+  math: true,  /*布尔值 字符串无效 下同*/
+  md: true,
+  enableQQ: false,
+  NoRecordIP: false,
+  visitor: true,
+  maxNest: 6,
+  pageSize: 6,
+  emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
+  serverURLs: ''
+  });
+}
+  $(function () {
+    pjax_minivaline();
+  });
+</script>
+
+
+
+
+<!-- darkmodejs -->
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+
+    function pjax_initCopyCode() {
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        var clipboard = new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+                return trigger.nextElementSibling
+            }
+        });
+        clipboard.on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+<!-- scrollreveal -->
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    function pjax_scrollrebeal() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '32px',
+        duration: '800',
+        interval: '20',
+        scale: '1',
+        easing: 'ease-out'
+      });
+    }
+
+    $(function () {
+      pjax_scrollrebeal();
+    });
+  </script>
+
+<!-- ******************************** -->
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+<!-- ******************************** -->
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+
+
+
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+      var currentUrl = window.location.pathname;
+      var targetUrl = e.triggerElement.href;
+      var banUrl = [""];
+      if (banUrl[0] != "") {
+        banUrl.forEach(item => {
+          if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+            window.location.href = targetUrl;
+          }
+        });
+      }
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.nav-main').find('.list-v').not('.menu-phone').css("display","none"); // 移除小尾巴
+      $('.menu-phone.list-v').css("display","none"); // 移除小尾巴
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+      $(window).unbind('resize');    // 解绑
+      $(window).unbind('scroll');    // 解绑
+      $(window).unbind('click');     // 解绑
+      $(document).unbind('scroll');  // 解绑
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+      // _hmt.push(['_trackPageview', document.location.pathname]);
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+
+      try{
+        pjax_fancybox();
+        
+          
+          if ('.cover') {
+            $('.cover').backstretch("resize");
+          } else {
+            $.backstretch("resize");
+          }
+        
+        
+          pjax_scrollrebeal();
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+          pjax_minivaline();
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      // 刷新 hljs
+      
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+      
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/love.js"></script>
+
+  <!--单击显示文字
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/click_show_text.js"></script>-->
+
+  <!--添加鼠标点击烟花爆炸效果
+  <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+  <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/fireworks.js"></script>-->
+
+  <!--动态线条背景
+  <script type="text/javascript"
+  color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>-->
+
+  <!-- 雪花特效 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/snow.js"></script>-->
+
+  <!-- 样式一（鼠标点击更换样式） 
+  <script src="https://g.joyinshare.com/hc/ribbon.min.js" type="text/javascript"></script>-->
+
+  <!-- 样式二（飘动的彩带） 
+  <script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>-->
+
+  <!-- 数字雨-->
+  <canvas id="canvas" width="1440" height="900" ></canvas>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/DigitalRain.js"></script>
+
+  <!--浏览器搞笑标题 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/FunnyTitle.js"></script>
+
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>

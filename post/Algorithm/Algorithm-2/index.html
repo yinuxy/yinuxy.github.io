@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#3.0-beta1'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>算法笔记（0002） - 【贪心算法】活动安排问题 - YINUXY | 理想的生活就是生活的理想</title>
+  
+    <meta name="keywords" content="最优子结构,贪心算法">
+  
+
+  
+    <meta name="description" content="
+算法笔记（0002） - 【贪心算法】活动安排问题
+">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="YINUXY | 理想的生活就是生活的理想">
+  
+
+  <!-- import meta -->
+  
+    
+      <meta name='theme-color' content='#FFFFFF'>
+    
+      <meta name='msapplication-TileColor' content='#1BC3FB'>
+    
+      <meta name='msapplication-config' content='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicons/browserconfig.xml'>
+    
+  
+
+  <!-- link -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/css/matery.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+  
+
+  
+    <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicons/favicon-32X32.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel='shortcut icon' type='image/x-icon' href='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicon.ico'>
+  <link rel='icon' type='image/x-icon' sizes='32x32' href='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicons/favicon-32X32.png'>
+  <link rel='apple-touch-icon' type='image/png' sizes='180x180' href='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicons/apple-touch-icon.png'>
+  <link rel='mask-icon' color='#1BC3FB' href='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicons/safari-pinned-tab.svg'>
+  <link rel='manifest' href='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.15/favicon/favicons/site.webmanifest'>
+  
+
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/dracula.css">
+
+    
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+	  setTimeout(function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?ce3c8ec886c87762491dd2124ab106ff";
+		hm.defer=true;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+	  }, 5000);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post' style="display: none;">
+      <div class='cover-body'>
+  <div class='a'>
+    
+      <img class='logo' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.23/mylogo/logo.png'/>
+    
+    
+    
+      <p class="subtitle">WELCOME TO YINUXY'S BLOG</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="Please search here..." />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+          
+            <li>
+              <a class="nav home"
+                href="/"
+                
+                
+                id="home">
+                <i class='fas fa-home fa-fw'></i>主页
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/archives/"
+                
+                
+                id="archives">
+                <i class='fas fa-archive fa-fw'></i>归档
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/categories/"
+                
+                
+                id="categories">
+                <i class='fas fa-folder-open fa-fw'></i>分类
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/tags/"
+                
+                
+                id="tags">
+                <i class='fas fa-tags fa-fw'></i>标签
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+                <i class='fas fa-info-circle fa-fw'></i>关于
+              </a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+    </cover>
+    <header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+            <i class='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/favicon/favicon.ico'></i>
+          
+          
+            YINUXY'S BLOG
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/comments/
+                  
+                  
+                  
+                    id="comments"
+                  >
+                  <i class='fas fa-comments fa-fw'></i>留言
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/box/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="box"
+                  >
+                  <i class='fas fa-map-signs fa-fw'></i>导航
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Please search here..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/comments/
+                  
+                  
+                  
+                    id="comments"
+                  >
+                  <i class='fas fa-comments fa-fw'></i>留言
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/box/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="box"
+                  >
+                  <i class='fas fa-map-signs fa-fw'></i>导航
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  </div>
+  
+
+  <div class="l_body nocover">
+    <div class='body-wrapper' id="pjax-container">
+      
+        <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">算法笔记（0002） - 【贪心算法】活动安排问题</div>
+  <div id="pjax-enable-cover">true</div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
+  
+  
+  <div id="minivaline-path">none</div>
+  <div id="minivaline-placeholder">none</div>
+  
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover')[0].style.display = "none";
+    document.getElementsByClassName('l_body')[0].classList.add("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "blog") { // 半屏
+      document.getElementsByClassName('cover')[0].classList.remove("full");
+      document.getElementsByClassName('cover')[0].classList.add("half");
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "docs") { // 全屏
+      document.getElementsByClassName('cover')[0].classList.remove("half");
+      document.getElementsByClassName('cover')[0].classList.add("full");
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover')[0].style.display = "";
+    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+      
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow blur article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+        <a title='算法笔记（0002） - 【贪心算法】活动安排问题' href='/post/Algorithm/Algorithm-2/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/algorithm.jpg'></a>
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/post/Algorithm/Algorithm-2/">
+      算法笔记（0002） - 【贪心算法】活动安排问题
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="httpS://blog.yinuxy.com" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
+    <p>YINUXY</p>
+  </a>
+</div>
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布日期：2019年10月31日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Algorithm/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Algorithm</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/post/Algorithm/Algorithm-2/" class="leancloud_visitors" data-flag-title="算法笔记（0002） - 【贪心算法】活动安排问题">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <blockquote>
+<center><font  size = "5" color = "#1BC3FB"  face = "楷体">算法笔记（0002） - 【贪心算法】活动安排问题</font></center>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>在对问题求解时，总是做出在<font face="黑体" color="red">当前看来是最好的选择。也就是说，不从整体最优上加以考虑，他所做出的仅是在某种意义上的局部最优解。</font>贪心算法不是对所有问题都能得到整体最优解，但对范围相当广泛的许多问题他能产生整体最优解或者是整体最优解的近似解。</p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>贪心算法采用<font face="黑体" color="red">自顶向下</font>，以迭代的方法做出相继的贪心选择，每做一次贪心选择就将所求问题简化为一个规模更小的子问题，通过每一步贪心选择，可得到问题的一个最优解，虽然每一步上都要保证能获得局部最优解，但由此产生的全局解有时不一定是最优的，所以贪婪法不要回溯。能够用贪心算法求解的问题一般具有两个重要特性：<font face="黑体" color="red">贪心选择性质</font>和<font face="黑体" color="red">最优子结构性质。</font></p>
+<h3 id="1、贪心选择性质"><a href="#1、贪心选择性质" class="headerlink" title="1、贪心选择性质"></a>1、贪心选择性质</h3><p>所谓贪心选择性质是指所求问题的整体最优解可以通过一系列局部最优的选择，即贪心选择来达到。这是贪心算法可行的第一个基本要素。贪心算法则通常以自顶向下的方式进行，以迭代的方式作出相继的贪心选择，每作一次贪心选择就将所求问题简化为规模更小的子问题。</p>
+<p>对于一个具体问题，要确定它是否具有贪心选择性质，必须证明每一步所作的贪心选择最终导致问题的整体最优解。证明的大致过程为：首先考察问题的一个整体最优解，并证明可修改这个最优解，使其以贪心选择开始。做了贪心选择后，原问题简化为规模更小的类似子问题。然后用数学归纳法证明通过每一步做贪心选择，最终可得到问题的整体最优解。其中，证明贪心选择后的问题简化为规模更小的类似子问题的关键在于利用该问题的最优子结构性质。</p>
+<h3 id="2、最优子结构性质"><a href="#2、最优子结构性质" class="headerlink" title="2、最优子结构性质"></a>2、最优子结构性质</h3><p>当一个问题的最优解包含其子问题的最优解时，称此问题具有最优子结构性质。</p>
+<h3 id="3、贪心算法与动态规划算法的差异"><a href="#3、贪心算法与动态规划算法的差异" class="headerlink" title="3、贪心算法与动态规划算法的差异"></a>3、贪心算法与动态规划算法的差异</h3><p>动态规划和贪心算法都是一种递推算法，均有最优子结构性质，通过局部最优解来推导全局最优解。两者之间的区别在于：<font face="黑体" color="red">贪心算法中作出的每步贪心决策都无法改变，因为贪心策略是由上一步的最优解推导下一步的最优解，而上一部之前的最优解则不作保留，贪心算法每一步的最优解一定包含上一步的最优解。动态规划算法中全局最优解中一定包含某个局部最优解，但不一定包含前一个局部最优解，因此需要记录之前的所有最优解。</font></p>
+<h3 id="4、基本思路："><a href="#4、基本思路：" class="headerlink" title="4、基本思路："></a>4、基本思路：</h3><ol>
+<li>建立数学模型来描述问题。</li>
+<li>把求解的问题分成若干个子问题。</li>
+<li>对每一子问题求解，得到子问题的局部最优解。</li>
+<li>把子问题的解局部最优解合成原来解问题的一个解。</li>
+</ol>
+<h1 id="活动安排问题"><a href="#活动安排问题" class="headerlink" title="活动安排问题"></a>活动安排问题</h1><p>活动安排问题就是要在所给的活动集合中选出最大的相容活动子集合，是可以用贪心算法有效求解的很好例子。该问题要求高效地安排一系列争用某一公共资源的活动。贪心算法提供了一个简单、漂亮的方法使得尽可能多的活动能兼容地使用公共资源。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p> 设有n个活动的集合E={1,2,…,n}，其中每个活动都要求使用同一资源，如演讲会场等，而在同一时间内只有一个活动能使用这一资源。每个活动i都有一个要求使用该资源的起始时间si和一个结束时间fi,且si &lt;fi。如果选择了活动i，则它在半开时间区间[si, fi)内占用资源。若区间[si, fi)与区间[sj, fj)不相交,则称活动i与活动j是相容的。也就是说，当si≥fj或sj≥fi时，活动i与活动j相容。活动安排问题就是要在所给的活动集合中选出最大的相容活动子集合。 </p>
+<h2 id="求解思路"><a href="#求解思路" class="headerlink" title="求解思路"></a>求解思路</h2><p>将活动按照结束时间进行从小到大排序。然后用i代表第i个活动，s[i]代表第i个活动开始时间，f[i]代表第i个活动的结束时间。按照从小到大排序，挑选出结束时间尽量早的活动，并且满足后一个活动的起始时间晚于前一个活动的结束时间，全部找出这些活动就是最大的相容活动子集合。事实上系统一次检查活动i是否与当前已选择的所有活动相容。若相容活动i加入已选择活动的集合中，否则，不选择活动i，而继续下一活动与集合A中活动的相容性。若活动i与之相容，则i成为最近加入集合A的活动，并取代活动j的位置。</p>
+<p>下面给出求解活动安排问题的贪心算法，各活动的起始时间和结束时间存储于数组s和f中，且按结束时间的非减序排列。如果所给的活动未按此序排列，可以用O(nlogn)的时间重排。具体代码如下：</p>
+<pre><code>
+#include &quot;stdafx.h&quot;
+#include &lt;iostream&gt; 
+using namespace std; 
+
+template&lt;class Type&gt;
+void GreedySelector(int n, Type s[], Type f[], bool A[]);
+
+const int N = 11;
+
+int main()
+{
+    //下标从1开始,存储活动开始时间
+    int s[] = {0,1,3,0,5,3,5,6,8,8,2,12};
+
+    //下标从1开始,存储活动结束时间
+    int f[] = {0,4,5,6,7,8,9,10,11,12,13,14};
+
+    bool A[N+1];
+
+    cout&lt;&lt;&quot;各活动的开始时间,结束时间分别为：&quot;&lt;&lt;endl;
+    for(int i=1;i&lt;=N;i++)
+    {
+        cout&lt;&lt;&quot;[&quot;&lt;&lt;i&lt;&lt;&quot;]:&quot;&lt;&lt;&quot;(&quot;&lt;&lt;s[i]&lt;&lt;&quot;,&quot;&lt;&lt;f[i]&lt;&lt;&quot;)&quot;&lt;&lt;endl;
+    }
+    GreedySelector(N,s,f,A);
+    cout&lt;&lt;&quot;最大相容活动子集为：&quot;&lt;&lt;endl;
+    for(int i=1;i&lt;=N;i++)
+    {
+        if(A[i]){
+            cout&lt;&lt;&quot;[&quot;&lt;&lt;i&lt;&lt;&quot;]:&quot;&lt;&lt;&quot;(&quot;&lt;&lt;s[i]&lt;&lt;&quot;,&quot;&lt;&lt;f[i]&lt;&lt;&quot;)&quot;&lt;&lt;endl;
+        }
+    }
+
+    return 0;
+}
+
+template&lt;class Type&gt;
+void GreedySelector(int n, Type s[], Type f[], bool A[])
+{
+    A[1]=true;
+    int j=1;//记录最近一次加入A中的活动
+
+    for (int i=2;i&lt;=n;i++)//依次检查活动i是否与当前已选择的活动相容
+    {
+        if (s[i]&gt;=f[j])
+        { 
+            A[i]=true;
+            j=i;
+        }
+        else
+        {
+            A[i]=false;
+        }
+    }
+}</code></pre><p>由于输入的活动以其完成时间的非减序排列，所以算法greedySelector每次总是选择<font face="黑体" color="red">具有最早完成时间</font>的相容活动加入集合A中。直观上，按这种方法选择相容活动<font face="黑体" color="red">为未安排活动留下尽可能多的时间。</font>也就是说，该算法的贪心选择的意义是<font face="黑体" color="red">使剩余的可安排时间段极大化，以便安排尽可能多的相容活动。</font>算法greedySelector的效率极高。当输入的活动已按结束时间的非减序排列，算法只需O(n)的时间安排n个活动，使最多的活动能相容地使用公共资源。如果所给出的活动未按非减序排列，可以用O(nlogn)的时间重排。 </p>
+<p>例：设待安排的11个活动的开始时间和结束时间按结束时间的非减序排列如下：<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/Algorithm_Note0002/output_2.jpg" alt=""><br>算法greedySelector 的计算过程如下图所示。图中每行相应于算法的一次迭代。阴影长条表示的活动是已选入集合A的活动，而空白长条表示的活动是当前正在检查相容性的活动。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/Algorithm_Note0002/output_3.jpg" alt=""><br>若被检查的活动i的开始时间Si小于最近选择的活动j的结束时间fi，则不选择活动i，否则选择活动i加入集合A中。贪心算法并不总能求得问题的整体最优解。但对于活动安排问题，贪心算法greedySelector却总能求得的整体最优解，即它最终所确定的相容活动集合A的规模最大。这个结论可以用数学归纳法证明。</p>
+<p> 证明如下：设E=｛0，1，2，…，n-1｝为所给的活动集合。由于E中活动安排安结束时间的非减序排列，所以活动0具有最早完成时间。首先证明活动安排问题有一个最优解以贪心选择开始，即该最优解中包含活动0.设a是所给的活动安排问题的一个最优解，且a中活动也按结束时间非减序排列，a中的第一个活动是活动k。如k=0，则a就是一个以贪心选择开始的最优解。若k&gt;0，则我们设b=a-｛k｝∪｛0｝。由于end[0] ≤end[k],且a中活动是互为相容的，故b中的活动也是互为相容的。又由于b中的活动个数与a中活动个数相同，且a是最优的，故b也是最优的。也就是说b是一个以贪心选择活动0开始的最优活动安排。因此，证明了总存在一个以贪心选择开始的最优活动安排方案，也就是算法具有贪心选择性质。</p>
+<h2 id="例题练手"><a href="#例题练手" class="headerlink" title="例题练手"></a>例题练手</h2><p>题目地址：<a href="https://www.51nod.com/tutorial/course.html#!courseId=14" target="_blank" rel="noopener">点击打开链接</a></p>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>有若干个活动，第i个开始时间和结束时间是[Si,fi)，只有一个教室，活动之间不能交叠，求最多安排多少个活动？</p>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><ol>
+<li>开始最早的活动优先，目标是想尽早结束活动，让出教室。</li>
+</ol>
+<p>然而， 这个显然不行，因为最早的活动可能很长，影响我们进行后面的活动。例如活动开始和结束时间分别为[0, 100), [1,2) ,[2, 3), [3, 4),[4,5]，安排［0，100)的这个活动之后，其他活动无法安排，可是最优解是安排除它外的4个活动。<br>2. 短活动优先， 目标也是尽量空出教室。但是不难构造如下反例： [0,5) [5,10) [3, 7), 这里[3,7)最短，但如果我们安排了[3,7)，其它两个无法安排了。但是最优解显然是安排其它两个，而放弃[3,7)，可见这个贪心策略也是不行的。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/Algorithm_Note0002/output_4.jpg" alt=""><br>3. 最少冲突的活动优先， 既然上面安排活动是想减少冲突，那么如果我们优先安排冲突最少的活动可以么？至少从（1）和（2）看来，这个策略是有效的。真是对的么？ 尝试这个例子：<br>[0,2) [2,4) [4,6) [6,8)<br>[1,3) [1,3) [1,3) [3,5) [5,7) [5,7) [5,7)<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/Algorithm_Note0002/output_5.jpg" alt=""><br>看一下[0,2) 和3个活动冲突——3个[1,3)</p>
+<p>[2,4)和4个活动冲突3个[1,3)和一个[3,5)<br>[4,6)和也和4个活动冲突3个[5,7)和一个[3,5)<br>[6,8)和3个活动冲突——3个[5,7)</p>
+<p>下面[1,3)和[5,7)每个都和5个活动冲突，<br>而[3,5)只和两个活动冲突——[2,4)和[4,6)。</p>
+<p>那按照我们的策略应该先安排[3,5), 可是一旦选择了[3,5)，我们最多只可能安排3个活动。<br>但明显第一行的4个活动都可以安排下来，所以这种策略也是不对的。<br>4. 看似最不对的策略——结束时间越早的活动优先。这个策略是有效的，我们可以证明。假设最优解OPT中安排了m个活动，我们把这些活动也按照结束时间由小到大排序，显然是不冲突的。假设排好顺序后，这些活动是a(1) , a(2), a(3)….am</p>
+<p>假设按照我们的贪心策略，选出的活动自然是按照结束时间排好顺序的，并且也都是不冲突的，这些活动是b(1), b(2) …b(n)</p>
+<p>问题关键是，假设a(1) = b(1), a(2) = b(2)…. a(k) = b(k)，但是a(k+1) != b(k+1)，回答几个问题：</p>
+<ol>
+<li>b(k+1)会在a(k+2), a(k+3), …. a(m)中出现么？<br>不会。因为b(k+1)的结束时间是最早的，即f(b(k+1)) &lt;= f(a(k+1)),而a(k+2), a(k+3), …. a(m)的开始时间和结束时间都在f(a(k+1))之后，所以b(k+1)不在其中。</li>
+<li>b(k+1)和a(1), a(2), …. a(k) 冲突么？<br>不冲突，因为a(1), a(2), …. a(k)就是b(1), b(2), …. b(k)</li>
+<li>b(k+1)和a(k+2), a(k+3), …. a(m)冲突么？<br>不冲突，因为f(b(k+1)) &lt;= f(a(k+1))，而a(k+2), a(k+3), …. a(m)的开始时间都在f(a(k+1))之后，更在f(b(k+1))之后。</li>
+</ol>
+<p>因此我们可以把a(k+1) 换成b(k+1)， 从而最优解和我们贪心得到的解多了一个相同的，经过一个一个替换，我们可以把最优解完全替换成我们贪心策略得到的解。 从而证明了这个贪心策略的最优性。<br>最后，我们来提供输入输出数据，由你来写一段程序，实现这个算法，只有写出了正确的程序，才能继续后面的课程。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第1行：1个数N，线段的数量(2 &lt;= N &lt;= 10000)<br>第2 - N + 1行：每行2个数，线段的起点和终点(-10^9 &lt;= S,E &lt;= 10^9)</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>输出最多可以选择的线段数量。</p>
+<h3 id="输入示例"><a href="#输入示例" class="headerlink" title="输入示例"></a>输入示例</h3><p>3<br>1 5<br>2 3<br>3 6</p>
+<h3 id="输出示例"><a href="#输出示例" class="headerlink" title="输出示例"></a>输出示例</h3><p>2</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code>#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+struct Node{
+   int start;
+   int end;
+} a[10001];
+/**
+  自定义的排序规则
+*/
+bool cmp(Node x,Node y){
+    if(x.end&lt;y.end)
+        return true;
+    else if(x.end==y.end&amp;&amp;x.start&gt;y.start)
+        return true;
+    return false;
+}
+int main(){
+    int n;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;a[i].start&gt;&gt;a[i].end;
+    }
+    //a是待排序的数组的首地址，a+n是尾地址
+    //cmp是自定义排序规则
+    sort(a,a+n,cmp);
+    int ans =0;
+    int end = -1000000000;
+    for(int i=0;i&lt;n;i++){
+        if(a[i].start&gt;=end){
+            ans++;
+            end=a[i].end;
+        }
+    }
+    cout&lt;&lt;ans&lt;&lt;endl;
+    return 0;
+}</code></pre><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><blockquote>
+<p><a href="https://blog.csdn.net/liufeng_king/article/details/8709005" target="_blank" rel="noopener">贪心算法与活动安排问题</a><br><a href="https://blog.csdn.net/qq_26891045/article/details/51025619" target="_blank" rel="noopener">ACM–贪心算法–活动安排问题</a></p>
+</blockquote>
+<p>我的博客即将同步至腾讯云+社区，邀请大家一同入驻：<a href="https://cloud.tencent.com/developer/support-plan?invite_code=1mf6rgkiph5g5" target="_blank" rel="noopener">https://cloud.tencent.com/developer/support-plan?invite_code=1mf6rgkiph5g5</a></p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)<br> 如需转载请注明出处@<a href="https://blog.yinuxy.com">Copyright © 2019-2020 YINUXY</a></p>
+
+          
+        
+          
+            
+          
+        
+          
+            <p>本文永久链接是：<a href=https://blog.yinuxy.com/post/Algorithm/Algorithm-2/>https://blog.yinuxy.com/post/Algorithm/Algorithm-2/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/InfiniteYinux/yinuxypic@1.06/source/css/reward.css">
+<div id="reward">
+    
+    <div class="reward">
+      <a href="https://github.com/Kaiyuan/donate-page" target="_blank" class=" tr3" title="Github"><span
+          id="github"></span></a>
+      <ul id="RewardBox" class="list pos-f tr3">
+        
+        <li id="PayPal" title="PayPal打赏"><a href="https://paypal.me/yyy7111" target="_blank">PayPal</a></li>
+        
+        
+        <li id="AliPayOR" title="支付宝打赏">AliPay</li>
+        
+        
+        <li id="WeChatPayOR" title="微信打赏">WeChatPay</li>
+        
+        
+        <li id="QQPayOR" title="QQ打赏">QQPay</li>
+        
+      </ul>
+      <div id="RewardText" class="tr3">Donate</div>
+      <div id="QRBox" class="pos-f left-100">
+        <div id="MainBox"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+  <script>
+    jQuery(document).ready(function () {
+      var QRBox = $('#QRBox');
+      var MainBox = $('#MainBox');
+      var AliPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/alipay.png';
+      var WeChatPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/wechat.png';
+      var QQPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/qq.png';
+  
+      function showQR(QR) {
+        if (QR) {
+          MainBox.css('background-image', 'url(' + QR + ')');
+        }
+        $('#RewardText,#RewardBox,#github').addClass('blureward');
+        QRBox.fadeIn(300, function (argument) {
+          MainBox.addClass('showQR');
+        });
+      }
+  
+      $('#RewardBox>li').click(function (event) {
+        var thisID = $(this).attr('id');
+        if (thisID === 'AliPayOR') {
+          showQR(AliPayOR);
+        } else if (thisID === 'WeChatPayOR') {
+          showQR(WeChatPayOR);
+        } else if (thisID === 'QQPayOR') {
+          showQR(QQPayOR);
+        }
+      });
+  
+      MainBox.click(function (event) {
+        MainBox.removeClass('showQR').addClass('hideQR');
+        setTimeout(function (a) {
+          QRBox.fadeOut(300, function (argument) {
+            MainBox.removeClass('hideQR');
+          });
+          $('#RewardText,#RewardBox,#github').removeClass('blureward');
+        }, 600);
+  
+      });
+    });
+  </script>
+  
+        
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-01T13:13:14+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save fa-fw" aria-hidden="true"></i>
+    <p>本页文档最后更新于：2020年4月1日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>最优子结构</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>贪心算法</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.yinuxy.com/post/Algorithm/Algorithm-2/&title=算法笔记（0002） - 【贪心算法】活动安排问题 - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/algorithm.jpg&summary=
+算法笔记（0002） - 【贪心算法】活动安排问题
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.yinuxy.com/post/Algorithm/Algorithm-2/&title=算法笔记（0002） - 【贪心算法】活动安排问题 - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/algorithm.jpg&summary=
+算法笔记（0002） - 【贪心算法】活动安排问题
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://blog.yinuxy.com/post/Algorithm/Algorithm-2/&title=算法笔记（0002） - 【贪心算法】活动安排问题 - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/algorithm.jpg&summary=
+算法笔记（0002） - 【贪心算法】活动安排问题
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/post/Activity/jdzns/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>活动线报001——京东炸年兽脚本</p>
+                <p class='content'>
+活动线报001——京东炸年兽脚本
+
+
+
+
+使用电脑端登录一下http://m.jd.com登录自己账号
+登陆成功后再打开如下链接：https://bunearth.m.jd.com/babel...</p>
+              </a>
+            
+            
+              <a class='next' href='/post/Algorithm/Algorithm-1/'>
+                <p class='title'>算法笔记（0001） - 【动态规划】图像压缩问题<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+算法笔记（0001） - 【动态规划】图像压缩问题
+
+
+
+问题描述在计算机中，常用像素点的灰度值序列{p1,p1,……pn}表示图像。其中整数pi,1&lt;=i&lt;=n，表示像素点i的灰...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  <article class="post white-box reveal comments shadow blur">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="minivaline_container">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget blogger shadow blur desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/avatar/avatar.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>YINUXY'S BLOG</h2>
+        
+        
+          <p>理想的生活就是生活的理想</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:admin@yinuxy.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1154418252&amp;site=qq&amp;menu=yes"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/InfiniteYinux"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=641108605"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特性"><span class="toc-text">特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、贪心选择性质"><span class="toc-text">1、贪心选择性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、最优子结构性质"><span class="toc-text">2、最优子结构性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、贪心算法与动态规划算法的差异"><span class="toc-text">3、贪心算法与动态规划算法的差异</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、基本思路："><span class="toc-text">4、基本思路：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#求解思路"><span class="toc-text">求解思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例题练手"><span class="toc-text">例题练手</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题分析"><span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入"><span class="toc-text">输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出"><span class="toc-text">输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入示例"><span class="toc-text">输入示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出示例"><span class="toc-text">输出示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档"><span class="toc-text">参考文档</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow blur desktop">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/ACM%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" href="/categories/ACM%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/"
+            id="categoriesACME8A7A3E9A298E68AA5E5918A"
+            ><div class='name'>ACM解题报告</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Algorithm/" href="/categories/Algorithm/"
+            id="categoriesAlgorithm"
+            ><div class='name'>Algorithm</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Docker/" href="/categories/Docker/"
+            id="categoriesDocker"
+            ><div class='name'>Docker</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Hexo/" href="/categories/Hexo/"
+            id="categoriesHexo"
+            ><div class='name'>Hexo</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Linux/" href="/categories/Linux/"
+            id="categoriesLinux"
+            ><div class='name'>Linux</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Python/" href="/categories/Python/"
+            id="categoriesPython"
+            ><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%8F%AF%E8%A7%86%E5%8C%96/" href="/categories/%E5%8F%AF%E8%A7%86%E5%8C%96/"
+            id="categoriesE58FAFE8A786E58C96"
+            ><div class='name'>可视化</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+            id="categoriesE695B0E68DAEE5BA93"
+            ><div class='name'>数据库</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%B4%BB%E5%8A%A8%E7%BA%BF%E6%8A%A5/" href="/categories/%E6%B4%BB%E5%8A%A8%E7%BA%BF%E6%8A%A5/"
+            id="categoriesE6B4BBE58AA8E7BABFE68AA5"
+            ><div class='name'>活动线报</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/" href="/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/"
+            id="categoriesE7BD91E7AB99E5BC80E58F91"
+            ><div class='name'>网站开发</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow blur desktop mobile">
+    
+  <header>
+    
+      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/ACM/" style="font-size: 19px; color: #777">ACM</a> <a href="/tags/Anaconda/" style="font-size: 14px; color: #999">Anaconda</a> <a href="/tags/CentOS/" style="font-size: 14px; color: #999">CentOS</a> <a href="/tags/DDOS/" style="font-size: 14px; color: #999">DDOS</a> <a href="/tags/HTML/" style="font-size: 14px; color: #999">HTML</a> <a href="/tags/HTTP-Client/" style="font-size: 14px; color: #999">HTTP Client</a> <a href="/tags/Hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/" style="font-size: 19px; color: #777">Hexo主题美化</a> <a href="/tags/JSP/" style="font-size: 14px; color: #999">JSP</a> <a href="/tags/Linux-Shell/" style="font-size: 19px; color: #777">Linux Shell</a> <a href="/tags/Plotly/" style="font-size: 14px; color: #999">Plotly</a> <a href="/tags/Python/" style="font-size: 19px; color: #777">Python</a> <a href="/tags/Python%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 24px; color: #555">Python可视化</a> <a href="/tags/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/" style="font-size: 19px; color: #777">Python小技巧</a> <a href="/tags/SQL/" style="font-size: 19px; color: #777">SQL</a> <a href="/tags/Word2Vec/" style="font-size: 14px; color: #999">Word2Vec</a> <a href="/tags/Wythoff-s-game/" style="font-size: 14px; color: #999">Wythoff's game</a> <a href="/tags/basemap/" style="font-size: 14px; color: #999">basemap</a> <a href="/tags/kettle/" style="font-size: 14px; color: #999">kettle</a> <a href="/tags/matplotlib/" style="font-size: 19px; color: #777">matplotlib</a> <a href="/tags/pyproj/" style="font-size: 14px; color: #999">pyproj</a> <a href="/tags/seaborn/" style="font-size: 14px; color: #999">seaborn</a> <a href="/tags/spark/" style="font-size: 14px; color: #999">spark</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 14px; color: #999">动态规划</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14px; color: #999">大数据</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" style="font-size: 14px; color: #999">数据分析</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 19px; color: #777">数据库</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84/" style="font-size: 19px; color: #777">最优子结构</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 19px; color: #777">爬虫</a> <a href="/tags/%E8%AF%8D%E5%90%91%E9%87%8F/" style="font-size: 14px; color: #999">词向量</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">贪心算法</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90/" style="font-size: 14px; color: #999">软件资源</a> <a href="/tags/%E9%87%8D%E5%8F%A0%E5%AD%90%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">重叠子问题</a> <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="font-size: 14px; color: #999">防火墙</a>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow blur desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Algorithm\Algorithm-1\" title="算法笔记（0001） - 【动态规划】图像压缩问题" rel="bookmark">算法笔记（0001） - 【动态规划】图像压缩问题</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Algorithm\word2vec\" title="Word2Vec——使用GloVe训练中文词向量" rel="bookmark">Word2Vec——使用GloVe训练中文词向量</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+    </div>
+    
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='987444580'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:admin@yinuxy.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="http://wpa.qq.com/msgrd?v=3&amp;amp;uin=1154418252&amp;amp;site=qq&amp;amp;menu=yes"
+                class="social fab fa-qq flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/InfiniteYinux"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=641108605"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+
+    <!-- Copyright -->
+    Copyright © 2019-2020
+    <a href="https://blog.yinuxy.com/" target="_blank"> YINUXY
+    </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+    <!-- 备案 -->
+    <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.9/images/icp.png" style="width:18px;height:18px;margin-bottom:-2px" alt="ICP">
+    <a href="http://www.beian.miit.gov.cn/" target="_blank">鄂ICP备20002395号	</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.9/images/moeicp.png" style="width:18px;height:18px;margin-bottom:-3px" alt="MOE ICP">
+    <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20200022" target="_blank"> 20200022号</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <!-- 网站运行时间 -->
+    <span id="timeDate">正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+    <script>
+    var now = new Date(); 
+    function createtime() {
+      var grt= new Date("07/04/2019 08:30:00");//建站时间2019-07-04
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已运行 "
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      /*document.getElementById("times").style.color="#0056FF";*/
+      }
+      setInterval("createtime()",250);
+    </script>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+
+    <!--
+    Powered by <a href="https://hexo.io/zh-cn/" target="_blank" class="codename">Hexo</a>
+    Theme <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> by <a href="https://xaoxuu.com/" target="_blank" class="codename">xaoxuu</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <i class="fab fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可" target="_blank">BY-NC-SA 4.0</a>
+    -->
+
+     <!-- 站点地图 --> 
+    <a href="https://blog.yinuxy.com/sitemap.xml" target="_blank">站点地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+    <!-- CNZZ统计 --> 
+    <script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1278005237&web_id=1278005237"></script><br /><br />
+
+    <div class="github-badge">
+    <a style="color: #fff" rel="license" href="https://hexo.io/" target="_blank" title="由 Hexo 框架搭载">
+      <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span>
+    </a>
+    </div>
+    <div class="github-badge">
+    <a style="color: #fff" rel="license" href="https://github.com/" target="_blank" title="静态网页托管于 GitHub Pages 和 Coding Pages">
+      <span class="badge-subject">Hosted</span><span class="badge-value bg-brightgreen">GitHub &amp; Coding</span>
+    </a>
+    </div>
+    <div class="github-badge">
+    <a style="color: #fff" rel="license" href="https://huaweicloud.com/" target="_blank" title="域名由华为云提供">
+      <span class="badge-subject">DNR</span><span class="badge-value bg-blueviolet">HuaweiCloud</span>
+    </a>
+    </div>
+    <div class="github-badge">
+    <a style="color: #fff" rel="license" href="https://www.upyun.com/" target="_blank" title="又拍云 提供 CDN 加速服务">
+      <span class="badge-subject">CDN</span><span class="badge-value bg-orange">又拍云</span>
+    </a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://volantis.js.org/" target="_blank" title="本站使用 Volantis 主题">
+      <span class="badge-subject">Theme</span><span class="badge-value bg-blue">Volantis</span>
+    </a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
+      <span class="badge-subject"><i class="fa fa-copyright"></i></span><span class="badge-value bg-lightgrey">BY-NC-SA 4.0</span>
+    </a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://996.icu/" target="_blank" title="Star 996.ICU">
+      <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
+    </div>
+    <div class="github-badge">
+      <span class="badge-subject">UV</span><span class="badge-value bg-orange" id="busuanzi_value_site_uv"></span>
+    </div>
+    <div class="github-badge">
+      <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
+    </div>
+
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <div>
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/35F12181-F0E9-45BD-B134-37E4B4A660CF.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/00E0F0ED-9F1C-407A-9AA6-545649D919F4.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/67239FBB-E15D-4F4F-8EE8-0F1C9F3C4E7C.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B951AE18-D431-417F-B3FE-A382403FF21B.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/AEB33F9D-7294-4CF1-B8C5-3020748A9D45.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/2884F904-F1F3-479E-AE27-5EBC291B63B0.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/10A0FCE5-36A1-4AD0-8CF0-019259A89E03.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/250662D4-5A21-4AAA-BB63-CD25CF97CFF1.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/298468D7-E388-44A8-8CC5-8213BDC33CED.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+<!-- 评论 （PS：只对 valine 做了 Pjax 兼容） -->
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/minivaline@3.0.0-alpha.10/dist/MiniValine.min.js"></script>
+
+
+
+
+
+
+<script>
+function pjax_minivaline() {
+  var minivalinePath = $.trim($('#minivaline-path').text()) === "none" ?
+      window.location.pathname : $.trim($('#minivaline-path').text());
+  var minivalinePlaceholder = $.trim($('#minivaline-placeholder').text()) === "none" ?
+      "快来评论吧~" : $.trim($('#minivaline-placeholder').text());
+  var ALLPATH = '';
+  if(ALLPATH != '') minivalinePath = ALLPATH;
+new MiniValine({
+  el: '#minivaline_container',
+  appId: 'U9OdTDHgTOJI55c10xHM6h9y-gzGzoHsz',
+  appKey: 'CoeIhTz2oLfa5Pp7EVNfAUQa',
+  mode: 'xCss',
+  placeholder: minivalinePlaceholder,
+  pathname: minivalinePath,
+  lang: '',
+  adminEmailMd5: '10c8cf610da00464fcde646651d2b471',
+  tagMeta: ["管理员", "小伙伴", "访客"],
+  master: ["10c8cf610da00464fcde646651d2b471"],
+  friends: ["5f3ac0628f92ca389ce613423c71ae2e", "f9ef8984b65e6ded92e6c4ffc588e80a"],
+  math: true,  /*布尔值 字符串无效 下同*/
+  md: true,
+  enableQQ: false,
+  NoRecordIP: false,
+  visitor: true,
+  maxNest: 6,
+  pageSize: 6,
+  emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
+  serverURLs: ''
+  });
+}
+  $(function () {
+    pjax_minivaline();
+  });
+</script>
+
+
+
+
+<!-- darkmodejs -->
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+
+    function pjax_initCopyCode() {
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        var clipboard = new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+                return trigger.nextElementSibling
+            }
+        });
+        clipboard.on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+<!-- scrollreveal -->
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    function pjax_scrollrebeal() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '32px',
+        duration: '800',
+        interval: '20',
+        scale: '1',
+        easing: 'ease-out'
+      });
+    }
+
+    $(function () {
+      pjax_scrollrebeal();
+    });
+  </script>
+
+<!-- ******************************** -->
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+<!-- ******************************** -->
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+
+
+
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+      var currentUrl = window.location.pathname;
+      var targetUrl = e.triggerElement.href;
+      var banUrl = [""];
+      if (banUrl[0] != "") {
+        banUrl.forEach(item => {
+          if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+            window.location.href = targetUrl;
+          }
+        });
+      }
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.nav-main').find('.list-v').not('.menu-phone').css("display","none"); // 移除小尾巴
+      $('.menu-phone.list-v').css("display","none"); // 移除小尾巴
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+      $(window).unbind('resize');    // 解绑
+      $(window).unbind('scroll');    // 解绑
+      $(window).unbind('click');     // 解绑
+      $(document).unbind('scroll');  // 解绑
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+      // _hmt.push(['_trackPageview', document.location.pathname]);
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+
+      try{
+        pjax_fancybox();
+        
+          
+          if ('.cover') {
+            $('.cover').backstretch("resize");
+          } else {
+            $.backstretch("resize");
+          }
+        
+        
+          pjax_scrollrebeal();
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+          pjax_minivaline();
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      // 刷新 hljs
+      
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+      
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/love.js"></script>
+
+  <!--单击显示文字
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/click_show_text.js"></script>-->
+
+  <!--添加鼠标点击烟花爆炸效果
+  <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+  <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/fireworks.js"></script>-->
+
+  <!--动态线条背景
+  <script type="text/javascript"
+  color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>-->
+
+  <!-- 雪花特效 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/snow.js"></script>-->
+
+  <!-- 样式一（鼠标点击更换样式） 
+  <script src="https://g.joyinshare.com/hc/ribbon.min.js" type="text/javascript"></script>-->
+
+  <!-- 样式二（飘动的彩带） 
+  <script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>-->
+
+  <!-- 数字雨-->
+  <canvas id="canvas" width="1440" height="900" ></canvas>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/DigitalRain.js"></script>
+
+  <!--浏览器搞笑标题 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/FunnyTitle.js"></script>
+
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>
