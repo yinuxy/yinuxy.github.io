@@ -584,7 +584,7 @@ Centos7下搭建Jupyter Notebook服务
   
 
   
-    <article id="post" class="post white-box reveal shadow blur article-type-post" itemscope itemprop="blogPost">
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
       
 
 
@@ -704,36 +704,58 @@ c.NotebookApp.port =1234                         #随便指定一个端口  </co
 <li>编写<code>jupyter</code>启动脚本,在<code>/usr/sbin</code>目录下新建<code>jupyter.sh</code>文件<pre><code>sudo vim /usr/sbin/jupyter.sh</code></pre>在<code>jupyter.sh</code>中写入<pre><code>#!/bin/sh
 jupyter notebook --allow-root --ip=0.0.0.0</code></pre>此时创建的脚本文件还没有执行权限，所以执行下面这条命令<pre><code>sudo chmod +x /usr/sbin/jupyter.sh</code></pre></li>
 <li>编写守护进程配置文件:守护进程的配置文件存放在<code>/usr/lib/systemd/system/</code>目录下，在该目录下新建<code>jupyter.service</code>文件<pre><code>sudo vim /etc/systemd/system/jupyter.service  // centos
-sudo vim /etc/systemd/system/jupyter.service .       // ubuntu</code></pre>打开<code>jupyter.service</code>文件并写入<pre><code>[Unit]
+sudo vim /etc/systemd/system/jupyter.service .       // ubuntu</code></pre>打开<code>jupyter.service</code>文件并写入</li>
+</ol>
+<pre><code>[Unit]
 Description = remote jupyter
 After = network.target
-</code></pre></li>
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/jupyter.sh
+
+[Install]
+WantedBy=multi-user.target</code></pre><ol start="3">
+<li>启动进程:v启动进程主要用到<code>systemctl</code>相关命令</li>
 </ol>
-<p>[Service]<br>Type=simple<br>ExecStart=/usr/sbin/jupyter.sh</p>
-<p>[Install]<br>WantedBy=multi-user.target</p>
-<pre><code>3. 启动进程:v启动进程主要用到`systemctl`相关命令</code></pre><h1 id="重新加载配置文件"><a href="#重新加载配置文件" class="headerlink" title="重新加载配置文件"></a>重新加载配置文件</h1><p>systemctl daemon-reload</p>
-<h1 id="启动进程"><a href="#启动进程" class="headerlink" title="启动进程"></a>启动进程</h1><p>systemctl start jupyter.service</p>
-<pre><code>相关命令：</code></pre><p>systemctl start ctlist    # 启动<br>systemctl stop ctlist     # 停止<br>systemctl restart ctlist  # 重启<br>systemctl status ctlist   # 查看状态</p>
-<pre><code>###  使用 nohup ###
-1. 创建启动文件</code></pre><p>vim /usr/sbin/jupyter.sh</p>
-<pre><code>2. 写入启动命令</code></pre><p>nohup jupyter notebook –allow-root –ip=0.0.0.0 &gt; deep.log &amp;</p>
-<pre><code>3. 运行启动文件</code></pre><p>./jupyter.sh</p>
-<pre><code>
-## 绑定域名 ##
-&gt; 提示：有宝塔面板的直接使用宝塔就行，没有的就可以使用caddy，2选1即可。
-### 宝塔面板 ###
-先进入宝塔面板，然后点击左侧网站，添加站点，再点击添加好了的域名名称，这时候就进入了站点配置，点击反向代理，目标`URL`填入`http://127.0.0.1:8000`，不要设置缓存，再启用反向代理即可。
+<pre><code># 重新加载配置文件
+systemctl daemon-reload
+# 启动进程
+systemctl start jupyter.service</code></pre><p>相关命令：</p>
+<pre><code>systemctl start ctlist    # 启动
+systemctl stop ctlist     # 停止
+systemctl restart ctlist  # 重启
+systemctl status ctlist   # 查看状态</code></pre><h3 id="使用-nohup"><a href="#使用-nohup" class="headerlink" title="使用 nohup"></a>使用 nohup</h3><ol>
+<li>创建启动文件<pre><code>vim /usr/sbin/jupyter.sh</code></pre></li>
+<li>写入启动命令<pre><code>nohup jupyter notebook --allow-root --ip=0.0.0.0 &gt; deep.log &amp;</code></pre></li>
+<li>运行启动文件<pre><code>./jupyter.sh</code></pre></li>
+</ol>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><blockquote>
+<p>提示：有宝塔面板的直接使用宝塔就行，没有的就可以使用caddy，2选1即可。</p>
+</blockquote>
+<h3 id="宝塔面板"><a href="#宝塔面板" class="headerlink" title="宝塔面板"></a>宝塔面板</h3><p>先进入宝塔面板，然后点击左侧网站，添加站点，再点击添加好了的域名名称，这时候就进入了站点配置，点击反向代理，目标<code>URL</code>填入<code>http://127.0.0.1:8000</code>，不要设置缓存，再启用反向代理即可。</p>
+<p>如果要启用<code>SSL</code>，就需要在设置反向代理之前，直接在站点配置点击<code>SSL</code>，申请免费<code>let</code>证书，然后再启用反代即可。</p>
+<h3 id="Caddy绑定"><a href="#Caddy绑定" class="headerlink" title="Caddy绑定"></a>Caddy绑定</h3><p>安装<code>Caddy</code>：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><p>配置<code>Caddy</code>：</p>
+<pre><code>#以下全部内容是一个整体，请修改域名后一起复制到SSH运行！
 
-如果要启用`SSL`，就需要在设置反向代理之前，直接在站点配置点击`SSL`，申请免费`let`证书，然后再启用反代即可。
+#http访问，该配置不会自动签发SSL
+echo &quot;jupyter.yinuxy.com {
+ gzip
+ tls admin@yinuxy.com
+ proxy / 127.0.0.1:1234
+}&quot; &gt; /usr/local/caddy/Caddyfile
 
-### Caddy绑定 ###
-安装`Caddy`：</code></pre><p>wget -N –no-check-certificate <a href="https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh" target="_blank" rel="noopener">https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh</a> &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh<br>#备用地址<br>wget -N –no-check-certificate <a href="https://www.moerats.com/usr/shell/Caddy/caddy_install.sh" target="_blank" rel="noopener">https://www.moerats.com/usr/shell/Caddy/caddy_install.sh</a> &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</p>
-<pre><code>配置`Caddy`：</code></pre><p>#以下全部内容是一个整体，请修改域名后一起复制到SSH运行！</p>
-<p>#http访问，该配置不会自动签发SSL<br>echo “jupyter.yinuxy.com {<br> gzip<br> tls <a href="mailto:admin@yinuxy.com">admin@yinuxy.com</a><br> proxy / 127.0.0.1:1234<br>}” &gt; /usr/local/caddy/Caddyfile</p>
-<p>#https访问，该配置会自动签发SSL，请提前解析域名到VPS服务器<br>echo “jupyter.yinuxy.com {<br> gzip<br> tls <a href="mailto:admin@yinuxy.com">admin@yinuxy.com</a><br> proxy / 127.0.0.1:1234<br>}” &gt; /usr/local/caddy/Caddyfile</p>
-<pre><code>启动`Caddy`：</code></pre><p>/etc/init.d/caddy start</p>
-<pre><code>就可以打开域名进行访问了。
-</code></pre>
+#https访问，该配置会自动签发SSL，请提前解析域名到VPS服务器
+echo &quot;jupyter.yinuxy.com {
+ gzip
+ tls admin@yinuxy.com
+ proxy / 127.0.0.1:1234
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p>启动<code>Caddy</code>：</p>
+<pre><code>/etc/init.d/caddy start</code></pre><p>就可以打开域名进行访问了。</p>
+
           
             <div class='article_footer'>
               
@@ -867,10 +889,10 @@ After = network.target
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-15T11:32:04+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-14T20:58:28+08:00">
   <a class='notlink'>
     <i class="fas fa-save fa-fw" aria-hidden="true"></i>
-    <p>本页文档最后更新于：2020年6月15日</p>
+    <p>本页文档最后更新于：2020年7月14日</p>
   </a>
 </div>
 
@@ -972,7 +994,7 @@ Centos7下搭建Jupyter Notebook服务
 
   
     
-  <article class="post white-box reveal comments shadow blur">
+  <article class="post white-box reveal comments shadow">
     <section class="article typo">
       <p ct><i class='fas fa-comments'></i> 评论</p>
       
@@ -1141,7 +1163,7 @@ Centos7下搭建Jupyter Notebook服务
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装python环境"><span class="toc-text">安装python环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装基础依赖环境"><span class="toc-text">安装基础依赖环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建Python3的目录"><span class="toc-text">创建Python3的目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解压下载文件并进入解压后目录"><span class="toc-text">解压下载文件并进入解压后目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行自定义安装"><span class="toc-text">执行自定义安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建软链接"><span class="toc-text">创建软链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试命令"><span class="toc-text">测试命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装jupyter"><span class="toc-text">安装jupyter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#更新pip"><span class="toc-text">更新pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装jupyter-1"><span class="toc-text">安装jupyter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成配置文件"><span class="toc-text">生成配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用systemd"><span class="toc-text">使用systemd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编辑配置文件"><span class="toc-text">编辑配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将Jupyter远程服务设置为守护进程"><span class="toc-text">将Jupyter远程服务设置为守护进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用systemd-1"><span class="toc-text">使用systemd</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装python环境"><span class="toc-text">安装python环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装基础依赖环境"><span class="toc-text">安装基础依赖环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建Python3的目录"><span class="toc-text">创建Python3的目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解压下载文件并进入解压后目录"><span class="toc-text">解压下载文件并进入解压后目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行自定义安装"><span class="toc-text">执行自定义安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建软链接"><span class="toc-text">创建软链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试命令"><span class="toc-text">测试命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装jupyter"><span class="toc-text">安装jupyter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#更新pip"><span class="toc-text">更新pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装jupyter-1"><span class="toc-text">安装jupyter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成配置文件"><span class="toc-text">生成配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用systemd"><span class="toc-text">使用systemd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编辑配置文件"><span class="toc-text">编辑配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将Jupyter远程服务设置为守护进程"><span class="toc-text">将Jupyter远程服务设置为守护进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用systemd-1"><span class="toc-text">使用systemd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-nohup"><span class="toc-text">使用 nohup</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#绑定域名"><span class="toc-text">绑定域名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#宝塔面板"><span class="toc-text">宝塔面板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Caddy绑定"><span class="toc-text">Caddy绑定</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -1483,8 +1505,8 @@ Centos7下搭建Jupyter Notebook服务
           }
           shuffle(imgs);
         }
-        if ('.cover') {
-          $('.cover').backstretch(
+        if ('') {
+          $('').backstretch(
             imgs,
           {
             duration: "20000",
@@ -1817,8 +1839,8 @@ new MiniValine({
         pjax_fancybox();
         
           
-          if ('.cover') {
-            $('.cover').backstretch("resize");
+          if ('') {
+            $('').backstretch("resize");
           } else {
             $.backstretch("resize");
           }
@@ -1881,9 +1903,9 @@ new MiniValine({
   <!-- 样式二（飘动的彩带） 
   <script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>-->
 
-  <!-- 数字雨-->
+  <!-- 数字雨
   <canvas id="canvas" width="1440" height="900" ></canvas>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/DigitalRain.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/DigitalRain.js"></script>-->
 
   <!--浏览器搞笑标题 -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.48/blog/source/js/FunnyTitle.js"></script>
