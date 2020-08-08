@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -23,9 +21,15 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020/2 - YINUXY | 理想的生活就是生活的理想</title>
+  <title>Python格式化输出 - YINUXY | 理想的生活就是生活的理想</title>
+  
+    <meta name="keywords" content="Python小技巧">
   
 
+  
+    <meta name="description" content="
+Python格式化输出
+">
   
 
   <!-- feed -->
@@ -109,7 +113,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -575,7 +579,7 @@
   </div>
   
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量-->
@@ -584,26 +588,32 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">Python格式化输出</div>
   <div id="pjax-enable-cover">true</div>
   
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
+  
+  
+  <div id="minivaline-path">none</div>
+  <div id="minivaline-placeholder">none</div>
   
 </div>
 
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("blog" == "none") { // 移除封面
+  if ("none" == "none") { // 移除封面
     document.getElementsByClassName('cover')[0].style.display = "none";
     document.getElementsByClassName('l_body')[0].classList.add("nocover");
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("blog" == "blog") { // 半屏
+    if ("none" == "blog") { // 半屏
       document.getElementsByClassName('cover')[0].classList.remove("full");
       document.getElementsByClassName('cover')[0].classList.add("half");
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("blog" == "docs") { // 全屏
+    } else if ("none" == "docs") { // 全屏
       document.getElementsByClassName('cover')[0].classList.remove("half");
       document.getElementsByClassName('cover')[0].classList.add("full");
       document.getElementsByClassName('scroll-down')[0].style.display = "";
@@ -618,44 +628,27 @@
       
 
 <div class='l_main'>
-	
-		
-  <section class="post-list ">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
   
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
     
       
       
-        <a title='Maven学习心得（情人节快乐！）' href='/post/Experience/MavenShell/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/thumbnail/maven.jpg'></a>
+        <a title='Python格式化输出' href='/post/Python/Skill/Skills-2/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/Python.jpg'></a>
       
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/post/Experience/MavenShell/">
-      Maven学习心得（情人节快乐！）
+  <h1 class="title">
+    <a href="/post/Python/Skill/Skills-2/">
+      Python格式化输出
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -667,23 +660,10 @@
               
 <div class='new-meta-item author'>
   <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/avatar/avatar.png">
     <p>YINUXY</p>
   </a>
 </div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Docker/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Docker</p>
-    </a>
-  </div>
-
 
             
           
@@ -691,234 +671,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年2月14日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/Experience/MavenShell/" class="leancloud_visitors" data-flag-title="Maven学习心得（情人节快乐！）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5" color = "#1BC3FB"  face = "楷体">Maven学习心得（祝天下码农终成眷属！）</font></center>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/Experience/MavenShell/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-        <a title='Docker常用命令' href='/post/Experience/DockerShell/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.30/thumbnail/docker.jpg'></a>
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/post/Experience/DockerShell/">
-      Docker常用命令
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
-    <p>YINUXY</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Docker/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Docker</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年2月13日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/Experience/DockerShell/" class="leancloud_visitors" data-flag-title="Docker常用命令">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5" color = "#1BC3FB"  face = "楷体">Docker常用命令</font></center>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/Experience/DockerShell/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-        <a title='Anaconda中的python版本降级' href='/post/TechShare/condaDown/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/script_%E7%9C%8B%E5%9B%BE%E7%8E%8B.jpg'></a>
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/post/TechShare/condaDown/">
-      Anaconda中的python版本降级
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
-    <p>YINUXY</p>
+    <p>发布日期：2020年6月13日</p>
   </a>
 </div>
 
@@ -938,27 +691,12 @@
             
           
             
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年2月11日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
               
   <div class="new-meta-item browse valine">
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/post/TechShare/condaDown/" class="leancloud_visitors" data-flag-title="Anaconda中的python版本降级">
+      <span id="/post/Python/Skill/Skills-2/" class="leancloud_visitors" data-flag-title="Python格式化输出">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -988,162 +726,378 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5" color = "#1BC3FB"  face = "楷体">Anaconda中的python版本降级</font></center>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <blockquote>
+<center><font  size = "5"  face = "楷体">Python格式化输出</font></center>
 </blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/TechShare/condaDown/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
+<a id="more"></a>
+<h2 id="Python格式化输出的三种方式"><a href="#Python格式化输出的三种方式" class="headerlink" title="Python格式化输出的三种方式"></a>Python格式化输出的三种方式</h2><h3 id="1-格式化"><a href="#1-格式化" class="headerlink" title="1. %-格式化"></a>1. <code>%-</code>格式化</h3><p>Python常用字符串格式化符号：<br>| 符号     | 含义 |<br>| :—–:| :—- |<br>| %s     | 字符串|<br>| %d     | 有符号的十进制整数|<br>| %f   |     浮点数|<br>使用方法：</p>
+<pre><code># 定义变量
+sales = 1000
+sell_well = &#39;苹果&#39;
+sell_bad = &#39;柠檬&#39;
+===========================================================================================
+&#39;农名伯伯每天销售水果 %d 千克，销量最好的是 %s，销量不好的是 %s。&#39; %(sales, sell_well, sell_bad)
+# 输出：&#39;农名伯伯每天销售水果 1000 千克，销量最好的是 苹果，销量不好的是 柠檬。&#39;
+===========================================================================================
+# 交换销量好坏的顺序
+&#39;农名伯伯每天销售水果 %d 千克，销量最好的是 %s，销量不好的是 %s。&#39; %(sales, sell_bad, sell_well)
+# 输出：&#39;农名伯伯每天销售水果 1000 千克，销量最好的是 柠檬，销量不好的是 苹果。&#39;</code></pre><p><code>%-</code>格式化方法要点：</p>
+<ul>
+<li>在字符串中以格式化符号占位，然后在字符串结尾以%()格式指定格式化符号代表的变量</li>
+<li>%()括号里的内容存在顺序关系</li>
+</ul>
+<h3 id="2-str-format-格式化"><a href="#2-str-format-格式化" class="headerlink" title="2. str.format()格式化"></a>2. <code>str.format()</code>格式化</h3><p>使用方法：</p>
+<pre><code># 默认顺序取值，使用 {} 占位
+&#39;农名伯伯每天销售水果 {} 千克，销量最好的是 {}，销量不好的是 {}。&#39;.format(sales, sell_well, sell_bad)
+# 输出：&#39;农名伯伯每天销售水果 1000 千克，销量最好的是 苹果，销量不好的是 柠檬。&#39;
+===========================================================================================
+# 通过(sales, sell_well, sell_bad)的索引进行取值
+&#39;农名伯伯每天销售水果 {0} 千克，销量最好的是 {2}，销量不好的是 {1}。&#39;.format(sales, sell_well, sell_bad)
+# 输出：&#39;农名伯伯每天销售水果 1000 千克，销量最好的是 柠檬，销量不好的是 苹果。&#39;
+===========================================================================================
+# 单独定义变量取值
+&#39;农名伯伯每天销售水果 {a} 千克，销量最好的是 {b}，销量不好的是 {c}。&#39;.format(a=sales, b=sell_well, c=sell_bad)
+# 输出：&#39;农名伯伯每天销售水果 1000 千克，销量最好的是 苹果，销量不好的是 柠檬。&#39;
+===========================================================================================
+# 使用字典取值
+data = {&#39;a&#39;: sales,
+        &#39;b&#39;: sell_well,
+        &#39;c&#39;: sell_bad}
+&#39;农名伯伯每天销售水果 {a} 千克，销量最好的是 {b}，销量不好的是 {c}。&#39;.format(**data)
+# 输出：&#39;农名伯伯每天销售水果 1000 千克，销量最好的是 苹果，销量不好的是 柠檬。&#39;</code></pre><h3 id="3-f‘’格式化"><a href="#3-f‘’格式化" class="headerlink" title="3. f‘’格式化"></a>3. <code>f‘’</code>格式化</h3><p>使用方法：</p>
+<pre><code># 以f字符开头，{} 内直接使用变量
+f&#39;农名伯伯每天销售水果 {sales} 千克，销量最好的是 {sell_well}，销量不好的是 {sell_bad}。&#39;
+# 输出：&#39;农名伯伯每天销售水果 1000 千克，销量最好的是 苹果，销量不好的是 柠檬。&#39;
+===========================================================================================
+# 直接在 {} 内进行数学计算
+f&#39;{2 + 3 * 5 - 1}&#39;
+# 输出：&#39;16&#39;
+===========================================================================================
+# 调用Python内置函数
+fruit = &#39;APPLE&#39;
+f&#39;{fruit.lower()}&#39;
+# 输出：&#39;apple&#39;
+===========================================================================================
+# 调用自定义函数
+fun = lambda x : x
+f&#39;{fun(fruit)}&#39;
+# 输出：&#39;APPLE&#39;</code></pre><h2 id="Python格式化输出的精度和位数控制"><a href="#Python格式化输出的精度和位数控制" class="headerlink" title="Python格式化输出的精度和位数控制"></a>Python格式化输出的精度和位数控制</h2><h3 id="1-小数精度控制"><a href="#1-小数精度控制" class="headerlink" title="1. 小数精度控制"></a>1. 小数精度控制</h3><p>Python中对于小数精度的控制的使用方法：</p>
+<pre><code># 定义变量
+a = 3.1415926
+===========================================================================================
+# 小数点后保留3位
+&#39;%.3f&#39;% a
+# 输出：&#39;3.142&#39;
+===========================================================================================
+# 小数点后保留6位
+&#39;%.6f&#39;% a
+# 输出：&#39;3.141593&#39;
+===========================================================================================
+# 最小宽度为7，小数点后保留2位，默认左边使用空格补位
+&#39;%7.2f&#39;% a
+# 输出：&#39;   3.14&#39;
+===========================================================================================
+# 最小宽度为7，小数点后保留2位，左边补零
+&#39;%07.2f&#39;% a
+# 输出：&#39;0003.14&#39;
+===========================================================================================
+# 最小宽度为7，小数点后保留2位，左边补零，带符号
+&#39;%+07.2f&#39;% a
+# 输出：&#39;+003.14&#39;
+===========================================================================================
+# 整数的最小宽度为6，左边补零
+b = 3
+&#39;%06d&#39;% b
+# 输出：&#39;000003&#39;</code></pre><h3 id="小数精度控制要点"><a href="#小数精度控制要点" class="headerlink" title="小数精度控制要点"></a>小数精度控制要点</h3><p>一般语法为<code>%a.bf</code> 或 <code>%.bf</code>两种，<code>a</code>表示字符串最小宽度，<code>b</code>表示数字精度，中间必须用<code>.</code>隔开。</p>
+<h3 id="2-字符串位数控制"><a href="#2-字符串位数控制" class="headerlink" title="2. 字符串位数控制"></a>2. 字符串位数控制</h3><p>字符串输出位数的控制对于类似表格的输出结果非常有用。<br>使用方法：</p>
+<pre><code># 定义一个字符串列表
+indexs = [&#39;apple&#39;, &#39;banana&#39;, &#39;strawberry&#39;, &#39;pear&#39;, &#39;pineapple&#39;]
 
-          </div>
+# 使用print()依次输出：
+===========================================================================================
+for index in indexs:
+    print(&quot;{} 索引输出结果&quot;.format(index))</code></pre><p>输出结果：<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/08/08/2de89e4539e4f4963582941dee8b175e.png" alt=""><br>可以看到，输出结果并未对齐。当数据量小时，还能勉强阅读，但如果数据量很大，字符串又都很长，阅读起来就很费眼睛了。所以，接下来将演示如何控制「输出位数」和「对齐方式」。</p>
+<pre><code># 取10位，默认左对齐
+for index in indexs:
+    print(&quot;{:10s} 索引输出结果&quot;.format(index))</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/08/08/e7bcbcaa98320b6d75a33ffa7c678281.png" alt=""></p>
+<pre><code># 取20位，默认左对齐
+for index in indexs:
+    print(&quot;{:20s} 索引输出结果&quot;.format(index))</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/08/08/f1892f46848c286873548b02e63ada73.png" alt=""></p>
+<pre><code># 取10位，右对齐
+for index in indexs:
+    print(&quot;{:&gt;10s} 索引输出结果&quot;.format(index))</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/08/08/354546d66a50736c7d3aedd166b736b9.png" alt=""></p>
+<pre><code># 取10位，居中对齐
+for index in indexs:
+    print(&quot;{:^10s} 索引输出结果&quot;.format(index))</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/08/08/cc921e58e68c34600eec17cb19884536.png" alt=""></p>
+<p>控制输出字符串位数后的效果更加具有层次感。</p>
+<p>常用对齐符号：</p>
+<ul>
+<li><code>&lt;：</code>左对齐（默认）</li>
+<li><code>&gt;：</code>右对齐</li>
+<li><code>^：</code>居中对齐</li>
+</ul>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
         
-      
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)<br> 如需转载请注明出处@<a href="https://blog.yinuxy.com">Copyright © 2019-2020 YINUXY</a></p>
+
+          
         
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+          
+            
+          
+        
+          
+            <p>本文永久链接是：<a href=https://blog.yinuxy.com/post/Python/Skill/Skills-2/>https://blog.yinuxy.com/post/Python/Skill/Skills-2/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
   
 
 
-  <section class='meta'>
-    
-      
-      
-        <a title='解决No module named 'mpl_toolkits.basemap'问题' href='/post/CodeError/basemap/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/script_%E7%9C%8B%E5%9B%BE%E7%8E%8B.jpg'></a>
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/post/CodeError/basemap/">
-      解决No module named 'mpl_toolkits.basemap'问题
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
               
-<div class='new-meta-item author'>
-  <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
-    <p>YINUXY</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Python/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Python</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年2月10日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/CodeError/basemap/" class="leancloud_visitors" data-flag-title="解决No module named 'mpl_toolkits.basemap'问题">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
+            </div>
           
         </div>
         
-          <hr>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/InfiniteYinux/yinuxypic@1.06/source/css/reward.css">
+<div id="reward">
+    
+    <div class="reward">
+      <a href="https://github.com/Kaiyuan/donate-page" target="_blank" class=" tr3" title="Github"><span
+          id="github"></span></a>
+      <ul id="RewardBox" class="list pos-f tr3">
         
+        <li id="PayPal" title="PayPal打赏"><a href="https://paypal.me/yyy7111" target="_blank">PayPal</a></li>
+        
+        
+        <li id="AliPayOR" title="支付宝打赏">AliPay</li>
+        
+        
+        <li id="WeChatPayOR" title="微信打赏">WeChatPay</li>
+        
+        
+        <li id="QQPayOR" title="QQ打赏">QQPay</li>
+        
+      </ul>
+      <div id="RewardText" class="tr3">Donate</div>
+      <div id="QRBox" class="pos-f left-100">
+        <div id="MainBox"></div>
       </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5" color = "#1BC3FB"  face = "楷体">解决No module named 'mpl_toolkits.basemap'问题</font></center>
-</blockquote>
-      
     </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/CodeError/basemap/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
+  </div>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+  <script>
+    jQuery(document).ready(function () {
+      var QRBox = $('#QRBox');
+      var MainBox = $('#MainBox');
+      var AliPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/alipay.png';
+      var WeChatPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/wechat.png';
+      var QQPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/qq.png';
+  
+      function showQR(QR) {
+        if (QR) {
+          MainBox.css('background-image', 'url(' + QR + ')');
+        }
+        $('#RewardText,#RewardBox,#github').addClass('blureward');
+        QRBox.fadeIn(300, function (argument) {
+          MainBox.addClass('showQR');
+        });
+      }
+  
+      $('#RewardBox>li').click(function (event) {
+        var thisID = $(this).attr('id');
+        if (thisID === 'AliPayOR') {
+          showQR(AliPayOR);
+        } else if (thisID === 'WeChatPayOR') {
+          showQR(WeChatPayOR);
+        } else if (thisID === 'QQPayOR') {
+          showQR(QQPayOR);
+        }
+      });
+  
+      MainBox.click(function (event) {
+        MainBox.removeClass('showQR').addClass('hideQR');
+        setTimeout(function (a) {
+          QRBox.fadeOut(300, function (argument) {
+            MainBox.removeClass('hideQR');
+          });
+          $('#RewardText,#RewardBox,#github').removeClass('blureward');
+        }, 600);
+  
+      });
+    });
+  </script>
+  
+        
+        
+          
 
-          </div>
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-08T20:27:31+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save fa-fw" aria-hidden="true"></i>
+    <p>本页文档最后更新于：2020年8月8日</p>
+  </a>
+</div>
+
         
       
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Python小技巧</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.yinuxy.com/post/Python/Skill/Skills-2/&title=Python格式化输出 - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/Python.jpg&summary=
+Python格式化输出
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.yinuxy.com/post/Python/Skill/Skills-2/&title=Python格式化输出 - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/Python.jpg&summary=
+Python格式化输出
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://blog.yinuxy.com/post/Python/Skill/Skills-2/&title=Python格式化输出 - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/Python.jpg&summary=
+Python格式化输出
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/post/Python/Skill/jupyterCreated/'>
+                <p class='title'>Centos7下搭建Jupyter Notebook服务<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+Centos7下搭建Jupyter Notebook服务
+
+
+安装python环境安装基础依赖环境yum -y install zlib-devel bzip2-devel openssl-d...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-      <script>
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="minivaline_container">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <script>
   // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
@@ -1195,12 +1149,8 @@
   }
 </script>
 
-    
-
-  
 
 
-	
 </div>
 <aside class='l_side'>
   
@@ -1283,105 +1233,24 @@
     
     
 
-<section class="widget grid shadow blur desktop mobile">
-  
+
+
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
+    
   <header>
     
-      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>站内导航</span>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
-  <div class='content'>
-    <div class="grid navigation">
-      
-        <a class="flat-box" title="/archives/" href="/archives/"
-          
-          
-          id="archives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a>
-      
-        <a class="flat-box" title="/categories/" href="/categories/"
-          
-          
-          id="categories">
-          
-            <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-          
-          所有分类
-        </a>
-      
-        <a class="flat-box" title="/tags/" href="/tags/"
-          
-          
-          id="tags">
-          
-            <i class="fas fa-tags fa-fw" aria-hidden="true"></i>
-          
-          文章标签
-        </a>
-      
-        <a class="flat-box" title="https://music.163.com/#/user/home?id=641108605" href="https://music.163.com/#/user/home?id=641108605"
-          
-          
-          id="https:music163com#userhome?id=641108605">
-          
-            <i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>
-          
-          歌单分享
-        </a>
-      
-        <a class="flat-box" title="/atom.xml" href="/atom.xml"
-          
-          
-          id="atomxml">
-          
-            <i class="fas fa-rss fa-fw" aria-hidden="true"></i>
-          
-          RSS订阅
-        </a>
-      
-        <a class="flat-box" title="https://img.yinuxy.com/" href="https://img.yinuxy.com/"
-          
-            rel="nofollow"
-          
-          
-          id="https:imgyinuxycom">
-          
-            <i class="fas fa-images fa-fw" aria-hidden="true"></i>
-          
-          免费图床
-        </a>
-      
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python格式化输出的三种方式"><span class="toc-text">Python格式化输出的三种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-格式化"><span class="toc-text">1. %-格式化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-str-format-格式化"><span class="toc-text">2. str.format()格式化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-f‘’格式化"><span class="toc-text">3. f‘’格式化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python格式化输出的精度和位数控制"><span class="toc-text">Python格式化输出的精度和位数控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-小数精度控制"><span class="toc-text">1. 小数精度控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小数精度控制要点"><span class="toc-text">小数精度控制要点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-字符串位数控制"><span class="toc-text">2. 字符串位数控制</span></a></li></ol></li></ol>
     </div>
-  </div>
-</section>
+  </section>
+
 
   
-
-  
-    
-    
-
-<section class="widget text shadow blur desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-handshake fa-fw" aria-hidden="true"></i><span class='name'>欢迎光临</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <center><font  size = "4" color = "#FFB6C1"  face = "楷体">欢</font><font  size = "4" color = "#FFC0CB"  face = "楷体">迎</font><font  size = "4" color = "#DC143C"  face = "楷体">光</font><font  size = "4" color = "#7B68EE "  face = "楷体">临</font><font  size = "4" color = "#DB7093"  face = "楷体">本</font><font  size = "4" color = "#FF69B4"  face = "楷体">站</center><center></font><font  size = "4" color = "#FF1493"  face = "楷体">如</font><font  size = "4" color = "#C71585"  face = "楷体">果</font><font  size = "4" color = "#DA70D6"  face = "楷体">对</font><font  size = "4" color = "#D8BFD8"  face = "楷体">您</font><font  size = "4" color = "#DDA0DD"  face = "楷体">有</font><font  size = "4" color = "#EE82EE"  face = "楷体">帮</font><font  size = "4" color = "#FF00FF"  face = "楷体">助</font><font  size = "4" color = "#FF00FF"  face = "楷体">的</font><font  size = "4" color = "#8B008B"  face = "楷体">话</center><center></font><font  size = "4" color = "#800080"  face = "楷体">记</font><font  size = "4" color = "#BA55D3"  face = "楷体">得</font><font  size = "4" color = "#9400D3"  face = "楷体">分</font><font  size = "4" color = "#9932CC"  face = "楷体">享</font><font  size = "4" color = "#4B0082"  face = "楷体">转</font><font  size = "4" color = "#8A2BE2"  face = "楷体">发</font><font  size = "4" color = "#9370DB"  face = "楷体">哦</font></center>
-    
-  </div>
-</section>
 
   
 
@@ -1462,31 +1331,6 @@
   
     
     
-
-<section class="widget qrcode shadow blur desktop">
-  
-  <header>
-    
-      <i class="fab fa-weixin fa-fw" aria-hidden="true"></i><span class='name'>微信公众号</span>
-    
-  </header>
-
-
-  <div class='content article-entry'>
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/qrcode.jpg'
-        ></div>
-      
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
   
 
   <section class="widget tagcloud shadow blur desktop mobile">
@@ -1506,70 +1350,31 @@
 
   
 
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow blur desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Python\Skill\jupyterCreated\" title="Centos7下搭建Jupyter Notebook服务" rel="bookmark">Centos7下搭建Jupyter Notebook服务</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Python\Skill\Skills-1\" title="Python读取Excel数据转化为字典并另存为josn文件" rel="bookmark">Python读取Excel数据转化为字典并另存为josn文件</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\CodeError\basemap\" title="解决No module named 'mpl_toolkits.basemap'问题" rel="bookmark">解决No module named 'mpl_toolkits.basemap'问题</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
 
 </aside>
 
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
-	    <script>
-  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    // 文章章节标题不能为 “MathJax” ，否则会报错。
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-	
 
 
     </div>

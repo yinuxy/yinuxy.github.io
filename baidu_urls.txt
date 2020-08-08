@@ -1,3 +1,4 @@
+https://blog.yinuxy.com/post/Python/Skill/Skills-2/
 https://blog.yinuxy.com/post/Python/Skill/jupyterCreated/
 https://blog.yinuxy.com/post/Experience/vpsDeftcc/
 https://blog.yinuxy.com/post/Experience/buttonStream/
@@ -24,8 +25,8 @@ https://blog.yinuxy.com/post/Algorithm/Algorithm-1/
 https://blog.yinuxy.com/post/TechShare/Kettle/
 https://blog.yinuxy.com/post/OJContest/AlgorithmNote-2/
 https://blog.yinuxy.com/post/Activity/70th/
-https://blog.yinuxy.com/post/OJContest/AlgorithmNote-1/
 https://blog.yinuxy.com/post/Script/dontCry/
+https://blog.yinuxy.com/post/OJContest/AlgorithmNote-1/
 https://blog.yinuxy.com/post/Experience/jspEnvBulid/
 https://blog.yinuxy.com/post/Experience/matplotlib-2/
 https://blog.yinuxy.com/post/Experience/matplotlib-1/
