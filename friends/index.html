@@ -676,7 +676,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年7月14日</p>
+    <p>发布日期：2020年8月31日</p>
   </a>
 </div>
 
@@ -935,14 +935,14 @@
                     </a>
                   
                     <a class='friend-card' style='background:#FF6699; color:#FFFFFF'
-                      target="_blank" rel="external nofollow noopener noreferrer" href='https://pbas.club/'>
+                      target="_blank" rel="external nofollow noopener noreferrer" href='https://imashen.cn/'>
                       <div class='friend-left'>
                         
                           <img class='avatar' src='https://cdn.jsdelivr.net/gh/TaylorLottner/images/images/logo.png'/>
                         
                       </div>
                       <div class='friend-right'>
-                        <p class="friend-name">🎉梨花町の肾兄さん🎉</p>
+                        <p class="friend-name">梨花镇的阿肾</p>
                         
                         
                           <div class='friend-tags-wrapper'>
@@ -1339,10 +1339,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-14T22:56:23+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-31T15:32:32+08:00">
   <a class='notlink'>
     <i class="fas fa-save fa-fw" aria-hidden="true"></i>
-    <p>本页文档最后更新于：2020年7月14日</p>
+    <p>本页文档最后更新于：2020年8月31日</p>
   </a>
 </div>
 
@@ -1418,9 +1418,7 @@
       <p ct><i class='fas fa-comments'></i> 评论</p>
       
       <section id="comments">
-        <div id="minivaline_container">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
+        <div id="gitalk-container"></div>
 
       </section>
     </section>
@@ -1867,49 +1865,21 @@
 
 <!-- 评论 （PS：只对 valine 做了 Pjax 兼容） -->
 
-  
-  
-<script src="https://cdn.jsdelivr.net/npm/minivaline@3.0.0-alpha.10/dist/MiniValine.min.js"></script>
-
-
-
-
-
-
-<script>
-function pjax_minivaline() {
-  var minivalinePath = $.trim($('#minivaline-path').text()) === "none" ?
-      window.location.pathname : $.trim($('#minivaline-path').text());
-  var minivalinePlaceholder = $.trim($('#minivaline-placeholder').text()) === "none" ?
-      "快来评论吧~" : $.trim($('#minivaline-placeholder').text());
-  var ALLPATH = '';
-  if(ALLPATH != '') minivalinePath = ALLPATH;
-new MiniValine({
-  el: '#minivaline_container',
-  appId: 'U9OdTDHgTOJI55c10xHM6h9y-gzGzoHsz',
-  appKey: 'CoeIhTz2oLfa5Pp7EVNfAUQa',
-  mode: 'xCss',
-  placeholder: minivalinePlaceholder,
-  pathname: minivalinePath,
-  lang: '',
-  adminEmailMd5: '10c8cf610da00464fcde646651d2b471',
-  tagMeta: ["管理员", "小伙伴", "访客"],
-  master: ["10c8cf610da00464fcde646651d2b471", "f9ef8984b65e6ded92e6c4ffc588e80a"],
-  friends: ["5f3ac0628f92ca389ce613423c71ae2e"],
-  math: true,  /*布尔值 字符串无效 下同*/
-  md: true,
-  enableQQ: false,
-  NoRecordIP: false,
-  visitor: true,
-  maxNest: 6,
-  pageSize: 6,
-  emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
-  serverURLs: ''
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "c617dfbc3bf9a2f4a4ac",
+    clientSecret: "d728caf04c661a3754f48195880f7d6c46b7932e",
+    repo: "cloud",
+    owner: "InfiniteYinux",
+    admin: "InfiniteYinux,yinuxy",
+    
+      id: location.pathname,      // Ensure uniqueness and length less than 50
+    
+    distractionFreeMode: false  // Facebook-like distraction free mode
   });
-}
-  $(function () {
-    pjax_minivaline();
-  });
+  gitalk.render('gitalk-container');
 </script>
 
 

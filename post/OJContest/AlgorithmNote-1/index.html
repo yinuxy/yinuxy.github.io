@@ -23,7 +23,7 @@
   
   <title>Comet OJ - Contest  \#11 eon题解 - YINUXY | 理想的生活就是生活的理想</title>
   
-    <meta name="keywords" content="ACM,数论">
+    <meta name="keywords" content="数论,ACM">
   
 
   
@@ -956,7 +956,7 @@ int main(){
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ACM/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>ACM</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E8%AE%BA/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数论</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E8%AE%BA/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数论</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ACM/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>ACM</p></a></div>
 
 
         
@@ -1069,9 +1069,7 @@ int main(){
       <p ct><i class='fas fa-comments'></i> 评论</p>
       
       <section id="comments">
-        <div id="minivaline_container">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
+        <div id="gitalk-container"></div>
 
       </section>
     </section>
@@ -1609,49 +1607,21 @@ int main(){
 
 <!-- 评论 （PS：只对 valine 做了 Pjax 兼容） -->
 
-  
-  
-<script src="https://cdn.jsdelivr.net/npm/minivaline@3.0.0-alpha.10/dist/MiniValine.min.js"></script>
-
-
-
-
-
-
-<script>
-function pjax_minivaline() {
-  var minivalinePath = $.trim($('#minivaline-path').text()) === "none" ?
-      window.location.pathname : $.trim($('#minivaline-path').text());
-  var minivalinePlaceholder = $.trim($('#minivaline-placeholder').text()) === "none" ?
-      "快来评论吧~" : $.trim($('#minivaline-placeholder').text());
-  var ALLPATH = '';
-  if(ALLPATH != '') minivalinePath = ALLPATH;
-new MiniValine({
-  el: '#minivaline_container',
-  appId: 'U9OdTDHgTOJI55c10xHM6h9y-gzGzoHsz',
-  appKey: 'CoeIhTz2oLfa5Pp7EVNfAUQa',
-  mode: 'xCss',
-  placeholder: minivalinePlaceholder,
-  pathname: minivalinePath,
-  lang: '',
-  adminEmailMd5: '10c8cf610da00464fcde646651d2b471',
-  tagMeta: ["管理员", "小伙伴", "访客"],
-  master: ["10c8cf610da00464fcde646651d2b471", "f9ef8984b65e6ded92e6c4ffc588e80a"],
-  friends: ["5f3ac0628f92ca389ce613423c71ae2e"],
-  math: true,  /*布尔值 字符串无效 下同*/
-  md: true,
-  enableQQ: false,
-  NoRecordIP: false,
-  visitor: true,
-  maxNest: 6,
-  pageSize: 6,
-  emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
-  serverURLs: ''
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "c617dfbc3bf9a2f4a4ac",
+    clientSecret: "d728caf04c661a3754f48195880f7d6c46b7932e",
+    repo: "cloud",
+    owner: "InfiniteYinux",
+    admin: "InfiniteYinux,yinuxy",
+    
+      id: location.pathname,      // Ensure uniqueness and length less than 50
+    
+    distractionFreeMode: false  // Facebook-like distraction free mode
   });
-}
-  $(function () {
-    pjax_minivaline();
-  });
+  gitalk.render('gitalk-container');
 </script>
 
 
