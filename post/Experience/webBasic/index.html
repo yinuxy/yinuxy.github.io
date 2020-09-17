@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -23,9 +21,15 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020 - YINUXY | 理想的生活就是生活的理想</title>
+  <title>网页前端基础 - YINUXY | 理想的生活就是生活的理想</title>
+  
+    <meta name="keywords" content="网站开发">
   
 
+  
+    <meta name="description" content="
+网页前端基础
+">
   
 
   <!-- feed -->
@@ -109,7 +113,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -575,7 +579,7 @@
   </div>
   
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量-->
@@ -584,26 +588,32 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">网页前端基础</div>
   <div id="pjax-enable-cover">true</div>
   
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
+  
+  
+  <div id="minivaline-path">none</div>
+  <div id="minivaline-placeholder">none</div>
   
 </div>
 
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("blog" == "none") { // 移除封面
+  if ("none" == "none") { // 移除封面
     document.getElementsByClassName('cover')[0].style.display = "none";
     document.getElementsByClassName('l_body')[0].classList.add("nocover");
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("blog" == "blog") { // 半屏
+    if ("none" == "blog") { // 半屏
       document.getElementsByClassName('cover')[0].classList.remove("full");
       document.getElementsByClassName('cover')[0].classList.add("half");
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("blog" == "docs") { // 全屏
+    } else if ("none" == "docs") { // 全屏
       document.getElementsByClassName('cover')[0].classList.remove("half");
       document.getElementsByClassName('cover')[0].classList.add("full");
       document.getElementsByClassName('scroll-down')[0].style.display = "";
@@ -618,32 +628,27 @@
       
 
 <div class='l_main'>
-	
-		
-  <section class="post-list ">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
   
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
     
       
       
-        <a title='Python读取Excel数据转化为字典并另存为josn文件' href='/post/Python/Skill/Skills-1/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/Python.jpg'></a>
+        <a title='网页前端基础' href='/post/Experience/webBasic/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/Python.jpg'></a>
       
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/post/Python/Skill/Skills-1/">
-      Python读取Excel数据转化为字典并另存为josn文件
+  <h1 class="title">
+    <a href="/post/Experience/webBasic/">
+      网页前端基础
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -663,23 +668,10 @@
             
           
             
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Python/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Python</p>
-    </a>
-  </div>
-
-
-            
-          
-            
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年3月13日</p>
+    <p>发布日期：2020年6月18日</p>
   </a>
 </div>
 
@@ -687,6 +679,14 @@
           
             
               
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>网站开发</p>
+    </a>
+  </div>
+
 
             
           
@@ -696,7 +696,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/post/Python/Skill/Skills-1/" class="leancloud_visitors" data-flag-title="Python读取Excel数据转化为字典并另存为josn文件">
+      <span id="/post/Experience/webBasic/" class="leancloud_visitors" data-flag-title="网页前端基础">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -726,1183 +726,477 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5"  face = "楷体">Python读取Excel数据转化为字典并另存为josn文件</font></center>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <blockquote>
+<center><font  size = "5"  face = "楷体">网页前端基础</font></center>
 </blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/Python/Skill/Skills-1/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
+<a id="more"></a>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+<h2 id="HTTP请求方式与过程"><a href="#HTTP请求方式与过程" class="headerlink" title="HTTP请求方式与过程"></a>HTTP请求方式与过程</h2><p>爬虫在爬取数据时将会作为客户端模拟整个HTTP通信过程，该过程也需要通过HTTP协议实现。HTTP请求过程如下。</p>
+<ul>
+<li>由HTTP客户端向服务器发起一个请求，创建一个到服务器指定端口（默认是80端口）的TCP连接。</li>
+<li>HTTP服务器从该端口监听客户端的请求。</li>
+<li>一旦收到请求，服务器会向客户端返回一个状态，比如“HTTP/1.1 200 OK”，以及返回的响应内容，如请求的文件、错误消息、或其它信息。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/09/17/6dd53ff797fc765c8f42f377ef8a758e.png" alt=""></li>
+</ul>
+<h3 id="1-请求方法"><a href="#1-请求方法" class="headerlink" title="1. 请求方法"></a>1. 请求方法</h3><ul>
+<li>在HTTP/1.1协议中共定义了8种方法（也叫“动作”）来以不同方式操作指定的资源，常用方法有GET、HEAD、POST等。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">请求方法</th>
+<th align="center">方法描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">GET</td>
+<td align="center">请求指定的页面信息，并返回实体主体。GET可能会被网络爬虫等随意访问，因此GET方法应该只用在读取数据，而不应当被用于产生“副作用”的操作中，例如在Web Application中</td>
+</tr>
+<tr>
+<td align="center">HEAD</td>
+<td align="center">与GET方法一样，都是向服务器发出指定资源的请求。只不过服务器将不传回具体的内容，使用这个方法可以在不必传输全部内容的情况下，就可以获取其中该资源的相关信息（元信息或称元数据）</td>
+</tr>
+<tr>
+<td align="center">POST</td>
+<td align="center">向指定资源提交数据，请求服务器进行处理（例如提交表单或者上传文件）。数据会被包含在请求中，这个请求可能会创建新的资源或修改现有资源，或二者皆有</td>
+</tr>
+<tr>
+<td align="center">PUT</td>
+<td align="center">从客户端上传指定资源的最新内容，即更新服务器端的指定资源。</td>
+</tr>
+</tbody></table>
+<h3 id="2-请求（request）与响应（response）"><a href="#2-请求（request）与响应（response）" class="headerlink" title="2. 请求（request）与响应（response）"></a>2. 请求（request）与响应（response）</h3><p>HTTP协议采用了请求／响应模型。</p>
+<ul>
+<li>客户端向服务器发送一个请求报文，请求报文包含请求的方法、URL、协议版本、请求头部和请求数据。</li>
+<li>服务器以一个状态行作为响应，响应的内容包括协议的版本、响应状态、服务器信息、响应头部和响应数据。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/09/17/e269e86976b6c83cef8bfbfe557a83c1.png" alt=""><br>客户端与服务器间的请求与响应的具体步骤如下。</li>
+<li><strong>连接Web服务器</strong>：由一个HTTP客户端发起连接，与Web服务器的HTTP端口（默认为80）建立一个TCP套接字连接。</li>
+<li><strong>发送HTTP请求</strong>：客户端经TCP套接字向Web服务器发送一个文本的请求报文。</li>
+<li><strong>服务器接受请求并返回HTTP响应</strong>：Web服务器解析请求，定位该次的请求资源。之后将资源复本写至TCP套接字，由客户端进行读取。</li>
+<li><strong>释放连接TCP连接</strong>：若连接的connection模式为close，则由服务器主动关闭TCP连接，客户端将被动关闭连接，释放TCP连接；若connection模式为keepalive，则该连接会保持一段时间。</li>
+<li><strong>客户端解析HTML内容</strong>：客户端首先会对状态行进行解析，之后解析每一个响应头，最后读取响应数据。<h4 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h4></li>
+<li>请求方式：主要有GET、POST两种类型，另外还有HEAD、PUT、DELETE、OPTIONS等。</li>
+<li>请求URL：URL全称统一资源定位符，如一个网页文档、一张图片、一个视频等都可以用URL唯一确定。</li>
+<li>请求头：包含请求时的头部信息，如User-Agent、Host、Cookies等信息。</li>
+<li>请求体：请求时额外携带的数据，如表单提交时的表单数据<h4 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h4></li>
+<li>响应状态：有多种响应状态，如200代表成功、301跳转、404找不到页面、502服务器错误</li>
+<li>响应头：如内容类型、内容长度、服务器信息、设置Cookie等等。</li>
+<li>响应体：最主要的部分，包含了请求资源的内容，如网页HTML、图片二进制数据等。<h2 id="常见HTTP状态码"><a href="#常见HTTP状态码" class="headerlink" title="常见HTTP状态码"></a>常见HTTP状态码</h2><h3 id="1-HTTP状态码种类"><a href="#1-HTTP状态码种类" class="headerlink" title="1. HTTP状态码种类"></a>1. HTTP状态码种类</h3>HTTP状态码是用来表示网页服务器响应状态的3位数字代码，按首位数字分为5类状态码。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">状态码类型</th>
+<th align="center">状态码意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1XX</td>
+<td align="center">表示请求已被接受，需接后续处理。这类响应是临时响应，只包含状态行和某些可选的响应头信息，并以空行结束</td>
+</tr>
+<tr>
+<td align="center">2XX</td>
+<td align="center">表示请求已成功被服务器接收、理解并接受</td>
+</tr>
+<tr>
+<td align="center">3XX</td>
+<td align="center">表示需要客户端采取进一步的操作才能完成请求。通常用来重定向，重定向目标需在本次响应中指明</td>
+</tr>
+<tr>
+<td align="center">4XX</td>
+<td align="center">表示客户端可能发生了错误，妨碍了服务器的处理。</td>
+</tr>
+<tr>
+<td align="center">5XX</td>
+<td align="center">表示服务器在处理请求的过程中有错误或者异常状态发生，也有可能是服务器以当前的软硬件资源无法完成对请求的处理。</td>
+</tr>
+</tbody></table>
+<h3 id="2-常见HTTP状态码"><a href="#2-常见HTTP状态码" class="headerlink" title="2. 常见HTTP状态码"></a>2. 常见HTTP状态码</h3><p>HTTP状态码共有67种状态码，常见的状态码如下。</p>
+<table>
+<thead>
+<tr>
+<th align="center">常见状态码</th>
+<th align="center">状态码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">200 OK</td>
+<td align="center">请求成功，请求所希望的响应头或数据体将随此响应返回。</td>
+</tr>
+<tr>
+<td align="center">400 Bad Request</td>
+<td align="center">由于客户端的语法错误、无效的请求或欺骗性路由请求，服务器不会处理该请求</td>
+</tr>
+<tr>
+<td align="center">403 Forbidden</td>
+<td align="center">服务器已经理解该请求，但是拒绝执行，将在返回的实体内描述拒绝的原因，也可以不描述仅返回404响应</td>
+</tr>
+<tr>
+<td align="center">404 Not Found</td>
+<td align="center">请求失败，请求所希望得到的资源未被在服务器上发现，但允许用户的后续请求</td>
+</tr>
+<tr>
+<td align="center">500 Internal Server Error</td>
+<td align="center">通用错误消息，服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理，不会给出具体错误信息</td>
+</tr>
+<tr>
+<td align="center">503 Service Unavailable</td>
+<td align="center">由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是暂时的，并且将在一段时间以后恢复</td>
+</tr>
+</tbody></table>
+<h2 id="HTTP头部信息"><a href="#HTTP头部信息" class="headerlink" title="HTTP头部信息"></a>HTTP头部信息</h2><p>HTTP头部信息（HTTP header fields）是指在超文本传输协议（HTTP）的请求和响应消息中的消息头部分。头部信息定义了一个超文本传输协议事务中的操作参数。在爬虫中需要使用头部信息向服务器发送模拟信息，通过发送模拟的头部信息将自己伪装成一般的客户端。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/09/17/3226126375f5fae46c8344d6f51cf433.png" alt=""><br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/09/17/d1f8f1254097cb52779198275c260e27.png" alt=""></p>
+<h3 id="1-HTTP头部类型"><a href="#1-HTTP头部类型" class="headerlink" title="1. HTTP头部类型"></a>1. HTTP头部类型</h3><p>HTTP头部类型按用途可分为：通用头，请求头，响应头，实体头。</p>
+<ul>
+<li><strong>通用头</strong>：既适用于客户端的请求头，也适用于服务端的响应头。与HTTP消息体内最终传输的数据是无关的，只适用于要发送的消息。</li>
+<li><strong>请求头</strong>：提供更为精确的描述信息，其对象为所请求的资源或请求本身。新版HTTP增加的请求头不能在更低版本的HTTP中使用，但服务器和客户端若都能对相关头进行处理，则可以在请求中使用。</li>
+<li><strong>响应头</strong>：为响应消息提供了更多信息。例如，关于资源位置的描述Location字段，以及关于服务器本身的描述使用Server字段等。与请求头类似，新版增加的响应头也不能在更低版本的HTTP版本中使用。</li>
+<li><strong>实体头</strong>：提供了关于消息体的描述。如消息体的长度Content-Length，消息体的MIME类型Content-Type。新版的实体头可以在更低版本的HTTP版本中使用。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">字段名</th>
+<th align="center">说明</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Accept</td>
+<td align="center">可接受的响应内容类型（Content-Types）</td>
+<td align="center">Accept: text/plain</td>
+</tr>
+<tr>
+<td align="center">Accept-Charset</td>
+<td align="center">可接受的字符集</td>
+<td align="center">Accept-Charset:utf-8</td>
+</tr>
+<tr>
+<td align="center">Accept-Encoding</td>
+<td align="center">可接受的响应内容的编码方式</td>
+<td align="center">Accept-Encoding:gzip,deflate</td>
+</tr>
+<tr>
+<td align="center">Accept-Language</td>
+<td align="center">可接受的响应内容语言列表</td>
+<td align="center">Accept-Language:en-US</td>
+</tr>
+<tr>
+<td align="center">Cookie</td>
+<td align="center">由之前服务器通过Set-Cookie设置的一个HTTP协议Cookie</td>
+<td align="center">Cookie:$Version=1;Skin=new;</td>
+</tr>
+<tr>
+<td align="center">Referer</td>
+<td align="center">设置前一个页面的地址，并且前一个页面中的连接指向当前请求，意思就是如果当前请求是在A页面中发送的，那么referer就是A页面的url地址</td>
+<td align="center">Referer:<a href="https://blog.yinuxy.com">https://blog.yinuxy.com</a></td>
+</tr>
+<tr>
+<td align="center">User-Agent</td>
+<td align="center">用户代理的字符串值</td>
+<td align="center">User-Agent:Mozilla/5.0(X11;Linuxx86_64;rv:12.0)Gecko/20100101Firefox/21.0</td>
+</tr>
+</tbody></table>
+<h2 id="熟悉Cookie"><a href="#熟悉Cookie" class="headerlink" title="熟悉Cookie"></a>熟悉Cookie</h2><ul>
+<li>HTTP是一种无状态的协议，客户端与服务器建立连接并传输数据，在数据传输完成后，本次的连接将会关闭，并不会留存相关记录。</li>
+<li>服务器无法依据连接来跟踪会话，也无法从连接上知晓用户的历史操作。这严重阻碍了基于Web应用程序的交互，也影响用户的交互体验。</li>
+<li>某些网站需要用户登录才进一步操作，用户在输入账号密码登录后，才能浏览页面。对于服务器而言，由于HTTP的无状态性，服务器并不知道用户有没有登录过，当用户退出当前页面访问其他页面时，又需重新再次输入账号及密码。</li>
+</ul>
+<h3 id="1-Cookie机制"><a href="#1-Cookie机制" class="headerlink" title="1. Cookie机制"></a>1. Cookie机制</h3><p>为解决HTTP的无状态性带来的负面作用，Cookie机制应运而生。Cookie本质上是一段文本信息。</p>
+<ul>
+<li>当客户端请求服务器时，若服务器需要记录用户状态，就在响应用户请求时发送一段Cookie信息。</li>
+<li>客户端浏览器会保存该Cookie信息，当用户再次访问该网站时，浏览器会把Cookie做为请求信息的一部分提交给服务器。</li>
+<li>服务器对Cookie进行验证，以此来判断用户状态，当且仅当该Cookie合法且未过期时，用户才可直接登录网站。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/09/17/c8dd21d55064a8ec75e09b8bf87a4db4.png" alt=""></li>
+</ul>
+<h3 id="2-Cookie的存储方式"><a href="#2-Cookie的存储方式" class="headerlink" title="2. Cookie的存储方式"></a>2. Cookie的存储方式</h3><p>Cookie由用户客户端浏览器进行保存，按其存储位置可分为内存式存储和硬盘式存储。</p>
+<ul>
+<li>内存式存储将Cookie保存在内存中，在浏览器关闭后就会消失，由于其存储时间较短，因此也被称为非持久Cookie或会话Cookie。</li>
+<li>硬盘式存储将Cookie保存在硬盘中，其不会随浏览器的关闭而消失，除非用户手工清理或到了过期时间。由于硬盘式Cookie存储时间是长期的，因此也被称为持久Cookie。<h3 id="3-Cookie的实现过程"><a href="#3-Cookie的实现过程" class="headerlink" title="3. Cookie的实现过程"></a>3. Cookie的实现过程</h3>客户端与服务器间的Cookie实现过程的具体步骤如下。</li>
+<li>客户端请求服务器：客户端请求网站页面</li>
+<li>服务器响应请求：Cookie是一种字符串，为key=value形式，服务器需要记录这个客户端请求的状态，在响应头中增加一个Set-Cookie字段。</li>
+<li>客户端再次请求服务器：<br>客户端会对服务器响应的Set-Cookie头信息进行存储。<br>当再次请求时，将会在请求头中包含服务器响应的Cookie信息。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/09/17/1c27c2ed44da3faa52acf0a807f4b54c.png" alt=""></li>
+</ul>
+<h2 id="可抓取的数据"><a href="#可抓取的数据" class="headerlink" title="可抓取的数据"></a>可抓取的数据</h2><ul>
+<li>网页文本：如HTML文档、Json格式文本等。</li>
+<li>图片：获取到的是二进制文件，保存为图片格式。</li>
+<li>视频：同为二进制文件，保存为视频格式即可。</li>
+<li>其他：只要是能请求到的，都能获取。</li>
+</ul>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
   
 
-
-  <section class='meta'>
-    
-      
-      
-        <a title='CentOS防火墙配置' href='/post/Experience/centosFirewall/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/Linux.jpg'></a>
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/post/Experience/centosFirewall/">
-      CentOS防火墙配置
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
-    <p>YINUXY</p>
-  </a>
-</div>
-
-            
-          
-            
-              
   
-  <div class='new-meta-item category'>
-    <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Linux</p>
-    </a>
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)<br> 如需转载请注明出处@<a href="https://blog.yinuxy.com">Copyright © 2019-2020 YINUXY</a></p>
+
+          
+        
+          
+            
+          
+        
+          
+            <p>本文永久链接是：<a href=https://blog.yinuxy.com/post/Experience/webBasic/>https://blog.yinuxy.com/post/Experience/webBasic/</a></p>
+          
+        
+      </blockquote>
+    
   </div>
+</section>
+
+  
 
 
-            
+              
+            </div>
           
-            
-              <div class="new-meta-item date">
+        </div>
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/InfiniteYinux/yinuxypic@1.06/source/css/reward.css">
+<div id="reward">
+    
+    <div class="reward">
+      <a href="https://github.com/Kaiyuan/donate-page" target="_blank" class=" tr3" title="Github"><span
+          id="github"></span></a>
+      <ul id="RewardBox" class="list pos-f tr3">
+        
+        <li id="PayPal" title="PayPal打赏"><a href="https://paypal.me/yyy7111" target="_blank">PayPal</a></li>
+        
+        
+        <li id="AliPayOR" title="支付宝打赏">AliPay</li>
+        
+        
+        <li id="WeChatPayOR" title="微信打赏">WeChatPay</li>
+        
+        
+        <li id="QQPayOR" title="QQ打赏">QQPay</li>
+        
+      </ul>
+      <div id="RewardText" class="tr3">Donate</div>
+      <div id="QRBox" class="pos-f left-100">
+        <div id="MainBox"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+  <script>
+    jQuery(document).ready(function () {
+      var QRBox = $('#QRBox');
+      var MainBox = $('#MainBox');
+      var AliPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/alipay.png';
+      var WeChatPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/wechat.png';
+      var QQPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/qq.png';
+  
+      function showQR(QR) {
+        if (QR) {
+          MainBox.css('background-image', 'url(' + QR + ')');
+        }
+        $('#RewardText,#RewardBox,#github').addClass('blureward');
+        QRBox.fadeIn(300, function (argument) {
+          MainBox.addClass('showQR');
+        });
+      }
+  
+      $('#RewardBox>li').click(function (event) {
+        var thisID = $(this).attr('id');
+        if (thisID === 'AliPayOR') {
+          showQR(AliPayOR);
+        } else if (thisID === 'WeChatPayOR') {
+          showQR(WeChatPayOR);
+        } else if (thisID === 'QQPayOR') {
+          showQR(QQPayOR);
+        }
+      });
+  
+      MainBox.click(function (event) {
+        MainBox.removeClass('showQR').addClass('hideQR');
+        setTimeout(function (a) {
+          QRBox.fadeOut(300, function (argument) {
+            MainBox.removeClass('hideQR');
+          });
+          $('#RewardText,#RewardBox,#github').removeClass('blureward');
+        }, 600);
+  
+      });
+    });
+  </script>
+  
+        
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-17T23:12:50+08:00">
   <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年3月11日</p>
+    <i class="fas fa-save fa-fw" aria-hidden="true"></i>
+    <p>本页文档最后更新于：2020年9月17日</p>
   </a>
 </div>
 
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        
       
-      <span id="/post/Experience/centosFirewall/" class="leancloud_visitors" data-flag-title="CentOS防火墙配置">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
         
-          <hr>
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>网站开发</p></a></div>
+
+
         
-      </div>
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<center><font  size = "5"  face = "楷体">CentOS防火墙配置</font></center>
-</blockquote>
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.yinuxy.com/post/Experience/webBasic/&title=网页前端基础 - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/Python.jpg&summary=
+网页前端基础
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.yinuxy.com/post/Experience/webBasic/&title=网页前端基础 - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/Python.jpg&summary=
+网页前端基础
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://blog.yinuxy.com/post/Experience/webBasic/&title=网页前端基础 - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/Python.jpg&summary=
+网页前端基础
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
       
     </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/Experience/centosFirewall/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
   </section>
-</article>
 
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/post/Python/Skill/Skills-2/'>
+                <p class='title'>Python格式化输出<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+Python格式化输出
+
+
+Python格式化输出的三种方式1. %-格式化Python常用字符串格式化符号：
+
+
+
+符号
+含义
+
+
+
+%s
+字符串
+
+
+%d
+有符号的十进制整数
+
+
+%f
+浮...</p>
+              </a>
+            
           </div>
         
+      </section>
+    </article>
+  
+
+  
+    
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
       
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+      <section id="comments">
+        <div id="gitalk-container"></div>
+
+      </section>
+    </section>
+  </article>
+
+
   
 
 
-  <section class='meta'>
-    
-      
-      
-        <a title='Hexo主题美化 | 给你的博客加上GITHUB日历云和分类雷达图' href='/post/TechShare/HexoPersonal/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/hexo.png'></a>
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/post/TechShare/HexoPersonal/">
-      Hexo主题美化 | 给你的博客加上GITHUB日历云和分类雷达图
-    </a>
-  </h2>
 
 
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/avatar/avatar.png">
-    <p>YINUXY</p>
-  </a>
-</div>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Hexo/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Hexo</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年3月10日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/TechShare/HexoPersonal/" class="leancloud_visitors" data-flag-title="Hexo主题美化 | 给你的博客加上GITHUB日历云和分类雷达图">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5"  face = "楷体">Hexo主题美化 | 给你的博客加上GITHUB日历云和分类雷达图</font></center>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/TechShare/HexoPersonal/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-        <a title='使用 Python可视化神器 Plotly 动态演示全球疫情变化趋势' href='/post/Python/Visual/2020nCovVisualization/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/script_%E7%9C%8B%E5%9B%BE%E7%8E%8B.jpg'></a>
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/post/Python/Visual/2020nCovVisualization/">
-      使用 Python可视化神器 Plotly 动态演示全球疫情变化趋势
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
-    <p>YINUXY</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E5%8F%AF%E8%A7%86%E5%8C%96/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>可视化</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年3月9日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/Python/Visual/2020nCovVisualization/" class="leancloud_visitors" data-flag-title="使用 Python可视化神器 Plotly 动态演示全球疫情变化趋势">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5"  face = "楷体">使用 Python可视化神器 Plotly 动态演示全球疫情变化趋势</font></center>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/Python/Visual/2020nCovVisualization/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-        <a title='自用的一些Linux一键脚本（持续更新中···）' href='/post/Experience/LinuxScript/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/Linux.jpg'></a>
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/post/Experience/LinuxScript/">
-      自用的一些Linux一键脚本（持续更新中···）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
-    <p>YINUXY</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Linux</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年3月7日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/Experience/LinuxScript/" class="leancloud_visitors" data-flag-title="自用的一些Linux一键脚本（持续更新中···）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5"  face = "楷体">Linux一键脚本</font></center>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/Experience/LinuxScript/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-        <a title='Linux常用命令大全（整理自用）' href='/post/Experience/LinuxShell/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.40/thumbnail/Linux.jpg'></a>
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/post/Experience/LinuxShell/">
-      Linux常用命令大全（整理自用）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
-    <p>YINUXY</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Linux/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Linux</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年3月7日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/Experience/LinuxShell/" class="leancloud_visitors" data-flag-title="Linux常用命令大全（整理自用）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5"  face = "楷体">Linux常用命令大全（整理自用）</font></center>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/Experience/LinuxShell/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-        <a title='使用Python爬取知乎上的高颜值小姐姐' href='/post/Script/zhihuPrettyGril/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/script_%E7%9C%8B%E5%9B%BE%E7%8E%8B.jpg'></a>
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/post/Script/zhihuPrettyGril/">
-      使用Python爬取知乎上的高颜值小姐姐
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
-    <p>YINUXY</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Python/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Python</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年3月6日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/Script/zhihuPrettyGril/" class="leancloud_visitors" data-flag-title="使用Python爬取知乎上的高颜值小姐姐">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5"  face = "楷体">“你见过的有些人能漂亮到什么程度？”</font></center>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/Script/zhihuPrettyGril/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-        <a title='Maven学习心得（情人节快乐！）' href='/post/Experience/MavenShell/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/thumbnail/maven.jpg'></a>
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/post/Experience/MavenShell/">
-      Maven学习心得（情人节快乐！）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
-    <p>YINUXY</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Docker/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Docker</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年2月14日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/Experience/MavenShell/" class="leancloud_visitors" data-flag-title="Maven学习心得（情人节快乐！）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5" color = "#1BC3FB"  face = "楷体">Maven学习心得（祝天下码农终成眷属！）</font></center>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/Experience/MavenShell/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-        <a title='Docker常用命令' href='/post/Experience/DockerShell/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.30/thumbnail/docker.jpg'></a>
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/post/Experience/DockerShell/">
-      Docker常用命令
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
-    <p>YINUXY</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Docker/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Docker</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年2月13日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/Experience/DockerShell/" class="leancloud_visitors" data-flag-title="Docker常用命令">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5" color = "#1BC3FB"  face = "楷体">Docker常用命令</font></center>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/Experience/DockerShell/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-        <a title='Anaconda中的python版本降级' href='/post/TechShare/condaDown/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/script_%E7%9C%8B%E5%9B%BE%E7%8E%8B.jpg'></a>
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/post/TechShare/condaDown/">
-      Anaconda中的python版本降级
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="httpS://blog.yinuxy.com" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/avatar/avatar.png">
-    <p>YINUXY</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Python/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Python</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2020年2月11日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/TechShare/condaDown/" class="leancloud_visitors" data-flag-title="Anaconda中的python版本降级">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<center><font  size = "5" color = "#1BC3FB"  face = "楷体">Anaconda中的python版本降级</font></center>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/post/TechShare/condaDown/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2020/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 3
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2020/page/3/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-      <script>
+  <script>
   // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
@@ -1954,12 +1248,8 @@
   }
 </script>
 
-    
-
-  
 
 
-	
 </div>
 <aside class='l_side'>
   
@@ -2042,105 +1332,24 @@
     
     
 
-<section class="widget grid shadow blur desktop mobile">
-  
+
+
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
+    
   <header>
     
-      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>站内导航</span>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
-  <div class='content'>
-    <div class="grid navigation">
-      
-        <a class="flat-box" title="/archives/" href="/archives/"
-          
-          
-          id="archives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a>
-      
-        <a class="flat-box" title="/categories/" href="/categories/"
-          
-          
-          id="categories">
-          
-            <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-          
-          所有分类
-        </a>
-      
-        <a class="flat-box" title="/tags/" href="/tags/"
-          
-          
-          id="tags">
-          
-            <i class="fas fa-tags fa-fw" aria-hidden="true"></i>
-          
-          文章标签
-        </a>
-      
-        <a class="flat-box" title="https://music.163.com/#/user/home?id=641108605" href="https://music.163.com/#/user/home?id=641108605"
-          
-          
-          id="https:music163com#userhome?id=641108605">
-          
-            <i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>
-          
-          歌单分享
-        </a>
-      
-        <a class="flat-box" title="/atom.xml" href="/atom.xml"
-          
-          
-          id="atomxml">
-          
-            <i class="fas fa-rss fa-fw" aria-hidden="true"></i>
-          
-          RSS订阅
-        </a>
-      
-        <a class="flat-box" title="https://img.yinuxy.com/" href="https://img.yinuxy.com/"
-          
-            rel="nofollow"
-          
-          
-          id="https:imgyinuxycom">
-          
-            <i class="fas fa-images fa-fw" aria-hidden="true"></i>
-          
-          免费图床
-        </a>
-      
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP请求方式与过程"><span class="toc-text">HTTP请求方式与过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-请求方法"><span class="toc-text">1. 请求方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-请求（request）与响应（response）"><span class="toc-text">2. 请求（request）与响应（response）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Request"><span class="toc-text">Request</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Response"><span class="toc-text">Response</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见HTTP状态码"><span class="toc-text">常见HTTP状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-HTTP状态码种类"><span class="toc-text">1. HTTP状态码种类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-常见HTTP状态码"><span class="toc-text">2. 常见HTTP状态码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP头部信息"><span class="toc-text">HTTP头部信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-HTTP头部类型"><span class="toc-text">1. HTTP头部类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#熟悉Cookie"><span class="toc-text">熟悉Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Cookie机制"><span class="toc-text">1. Cookie机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Cookie的存储方式"><span class="toc-text">2. Cookie的存储方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Cookie的实现过程"><span class="toc-text">3. Cookie的实现过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可抓取的数据"><span class="toc-text">可抓取的数据</span></a></li></ol>
     </div>
-  </div>
-</section>
+  </section>
+
 
   
-
-  
-    
-    
-
-<section class="widget text shadow blur desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-handshake fa-fw" aria-hidden="true"></i><span class='name'>欢迎光临</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <center><font  size = "4" color = "#FFB6C1"  face = "楷体">欢</font><font  size = "4" color = "#FFC0CB"  face = "楷体">迎</font><font  size = "4" color = "#DC143C"  face = "楷体">光</font><font  size = "4" color = "#7B68EE "  face = "楷体">临</font><font  size = "4" color = "#DB7093"  face = "楷体">本</font><font  size = "4" color = "#FF69B4"  face = "楷体">站</center><center></font><font  size = "4" color = "#FF1493"  face = "楷体">如</font><font  size = "4" color = "#C71585"  face = "楷体">果</font><font  size = "4" color = "#DA70D6"  face = "楷体">对</font><font  size = "4" color = "#D8BFD8"  face = "楷体">您</font><font  size = "4" color = "#DDA0DD"  face = "楷体">有</font><font  size = "4" color = "#EE82EE"  face = "楷体">帮</font><font  size = "4" color = "#FF00FF"  face = "楷体">助</font><font  size = "4" color = "#FF00FF"  face = "楷体">的</font><font  size = "4" color = "#8B008B"  face = "楷体">话</center><center></font><font  size = "4" color = "#800080"  face = "楷体">记</font><font  size = "4" color = "#BA55D3"  face = "楷体">得</font><font  size = "4" color = "#9400D3"  face = "楷体">分</font><font  size = "4" color = "#9932CC"  face = "楷体">享</font><font  size = "4" color = "#4B0082"  face = "楷体">转</font><font  size = "4" color = "#8A2BE2"  face = "楷体">发</font><font  size = "4" color = "#9370DB"  face = "楷体">哦</font></center>
-    
-  </div>
-</section>
 
   
 
@@ -2221,31 +1430,6 @@
   
     
     
-
-<section class="widget qrcode shadow blur desktop">
-  
-  <header>
-    
-      <i class="fab fa-weixin fa-fw" aria-hidden="true"></i><span class='name'>微信公众号</span>
-    
-  </header>
-
-
-  <div class='content article-entry'>
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/qrcode.jpg'
-        ></div>
-      
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
   
 
   <section class="widget tagcloud shadow blur desktop mobile">
@@ -2265,70 +1449,31 @@
 
   
 
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow blur desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Experience\buttonStream\" title="【HTML+CSS】CSS3实现炫酷的流光按钮效果" rel="bookmark">【HTML+CSS】CSS3实现炫酷的流光按钮效果</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
 
 </aside>
 
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
-	    <script>
-  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    // 文章章节标题不能为 “MathJax” ，否则会报错。
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-	
 
 
     </div>

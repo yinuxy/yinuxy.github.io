@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.yinuxy.com/"/>
-  <updated>2020-08-08T12:36:14.095Z</updated>
+  <updated>2020-09-17T15:12:50.740Z</updated>
   <id>https://blog.yinuxy.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网页前端基础</title>
+    <link href="https://blog.yinuxy.com/post/Experience/webBasic/"/>
+    <id>https://blog.yinuxy.com/post/Experience/webBasic/</id>
+    <published>2020-06-18T04:06:04.000Z</published>
+    <updated>2020-09-17T15:12:50.740Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><center><font  size = "5"  face = "楷体">网页前端基础</font></center></blockquote><a id="more"></a><h2 id="HTTP请求方式与过程"><a href="#HTTP请求方式与过程" class="headerlink" title="HTTP请求方式与过程"></a>HTTP请求方式与过程</h2><p>爬虫在爬取数据时将会作为客户端模拟整个HTTP通信过程，该过程也需要通过HTTP协议实现。HTTP请求过程如下。</p><ul><li>由HTTP客户端向服务器发起一个请求，创建一个到服务器指定端口（默认是80端口）的TCP连接。</li><li>HTTP服务器从该端口监听客户端的请求。</li><li>一旦收到请求，服务器会向客户端返回一个状态，比如“HTTP/1.1 200 OK”，以及返回的响应内容，如请求的文件、错误消息、或其它信息。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/09/17/6dd53ff797fc765c8f42f377ef8a758e.png" alt=""></li></ul><h3 id="1-请求方法"><a href="#1-请求方法" class="headerlink" title="1. 请求方法"></a>1. 请求方法</h3><ul><li>在HTTP/1.1协议中共定义了8种方法（也叫“动作”）来以不同方式操作指定的资源，常用方法有GET、HEAD、POST等。</li></ul><table><thead><tr><th align="center">请求方法</th><th align="center">方法描述</th></tr></thead><tbody><tr><td align="center">GET</td><td align="center">请求指定的页面信息，并返回实体主体。GET可能会被网络爬虫等随意访问，因此GET方法应该只用在读取数据，而不应当被用于产生“副作用”的操作中，例如在Web Application中</td></tr><tr><td align="center">HEAD</td><td align="center">与GET方法一样，都是向服务器发出指定资源的请求。只不过服务器将不传回具体的内容，使用这个方法可以在不必传输全部内容的情况下，就可以获取其中该资源的相关信息（元信息或称元数据）</td></tr><tr><td align="center">POST</td><td align="center">向指定资源提交数据，请求服务器进行处理（例如提交表单或者上传文件）。数据会被包含在请求中，这个请求可能会创建新的资源或修改现有资源，或二者皆有</td></tr><tr><td align="center">PUT</td><td align="center">从客户端上传指定资源的最新内容，即更新服务器端的指定资源。</td></tr></tbody></table><h3 id="2-请求（request）与响应（response）"><a href="#2-请求（request）与响应（response）" class="headerlink" title="2. 请求（request）与响应（response）"></a>2. 请求（request）与响应（response）</h3><p>HTTP协议采用了请求／响应模型。</p><ul><li>客户端向服务器发送一个请求报文，请求报文包含请求的方法、URL、协议版本、请求头部和请求数据。</li><li>服务器以一个状态行作为响应，响应的内容包括协议的版本、响应状态、服务器信息、响应头部和响应数据。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/09/17/e269e86976b6c83cef8bfbfe557a83c1.png" alt=""><br>客户端与服务器间的请求与响应的具体步骤如下。</li><li><strong>连接Web服务器</strong>：由一个HTTP客户端发起连接，与Web服务器的HTTP端口（默认为80）建立一个TCP套接字连接。</li><li><strong>发送HTTP请求</strong>：客户端经TCP套接字向Web服务器发送一个文本的请求报文。</li><li><strong>服务器接受请求并返回HTTP响应</strong>：Web服务器解析请求，定位该次的请求资源。之后将资源复本写至TCP套接字，由客户端进行读取。</li><li><strong>释放连接TCP连接</strong>：若连接的connection模式为close，则由服务器主动关闭TCP连接，客户端将被动关闭连接，释放TCP连接；若connection模式为keepalive，则该连接会保持一段时间。</li><li><strong>客户端解析HTML内容</strong>：客户端首先会对状态行进行解析，之后解析每一个响应头，最后读取响应数据。<h4 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h4></li><li>请求方式：主要有GET、POST两种类型，另外还有HEAD、PUT、DELETE、OPTIONS等。</li><li>请求URL：URL全称统一资源定位符，如一个网页文档、一张图片、一个视频等都可以用URL唯一确定。</li><li>请求头：包含请求时的头部信息，如User-Agent、Host、Cookies等信息。</li><li>请求体：请求时额外携带的数据，如表单提交时的表单数据<h4 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h4></li><li>响应状态：有多种响应状态，如200代表成功、301跳转、404找不到页面、502服务器错误</li><li>响应头：如内容类型、内容长度、服务器信息、设置Cookie等等。</li><li>响应体：最主要的部分，包含了请求资源的内容，如网页HTML、图片二进制数据等。<h2 id="常见HTTP状态码"><a href="#常见HTTP状态码" class="headerlink" title="常见HTTP状态码"></a>常见HTTP状态码</h2><h3 id="1-HTTP状态码种类"><a href="#1-HTTP状态码种类" class="headerlink" title="1. HTTP状态码种类"></a>1. HTTP状态码种类</h3>HTTP状态码是用来表示网页服务器响应状态的3位数字代码，按首位数字分为5类状态码。</li></ul><table><thead><tr><th align="center">状态码类型</th><th align="center">状态码意义</th></tr></thead><tbody><tr><td align="center">1XX</td><td align="center">表示请求已被接受，需接后续处理。这类响应是临时响应，只包含状态行和某些可选的响应头信息，并以空行结束</td></tr><tr><td align="center">2XX</td><td align="center">表示请求已成功被服务器接收、理解并接受</td></tr><tr><td align="center">3XX</td><td align="center">表示需要客户端采取进一步的操作才能完成请求。通常用来重定向，重定向目标需在本次响应中指明</td></tr><tr><td align="center">4XX</td><td align="center">表示客户端可能发生了错误，妨碍了服务器的处理。</td></tr><tr><td align="center">5XX</td><td align="center">表示服务器在处理请求的过程中有错误或者异常状态发生，也有可能是服务器以当前的软硬件资源无法完成对请求的处理。</td></tr></tbody></table><h3 id="2-常见HTTP状态码"><a href="#2-常见HTTP状态码" class="headerlink" title="2. 常见HTTP状态码"></a>2. 常见HTTP状态码</h3><p>HTTP状态码共有67种状态码，常见的状态码如下。</p><table><thead><tr><th align="center">常见状态码</th><th align="center">状态码含义</th></tr></thead><tbody><tr><td align="center">200 OK</td><td align="center">请求成功，请求所希望的响应头或数据体将随此响应返回。</td></tr><tr><td align="center">400 Bad Request</td><td align="center">由于客户端的语法错误、无效的请求或欺骗性路由请求，服务器不会处理该请求</td></tr><tr><td align="center">403 Forbidden</td><td align="center">服务器已经理解该请求，但是拒绝执行，将在返回的实体内描述拒绝的原因，也可以不描述仅返回404响应</td></tr><tr><td align="center">404 Not Found</td><td align="center">请求失败，请求所希望得到的资源未被在服务器上发现，但允许用户的后续请求</td></tr><tr><td align="center">500 Internal Server Error</td><td align="center">通用错误消息，服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理，不会给出具体错误信息</td></tr><tr><td align="center">503 Service Unavailable</td><td align="center">由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是暂时的，并且将在一段时间以后恢复</td></tr></tbody></table><h2 id="HTTP头部信息"><a href="#HTTP头部信息" class="headerlink" title="HTTP头部信息"></a>HTTP头部信息</h2><p>HTTP头部信息（HTTP header fields）是指在超文本传输协议（HTTP）的请求和响应消息中的消息头部分。头部信息定义了一个超文本传输协议事务中的操作参数。在爬虫中需要使用头部信息向服务器发送模拟信息，通过发送模拟的头部信息将自己伪装成一般的客户端。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/09/17/3226126375f5fae46c8344d6f51cf433.png" alt=""><br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/09/17/d1f8f1254097cb52779198275c260e27.png" alt=""></p><h3 id="1-HTTP头部类型"><a href="#1-HTTP头部类型" class="headerlink" title="1. HTTP头部类型"></a>1. HTTP头部类型</h3><p>HTTP头部类型按用途可分为：通用头，请求头，响应头，实体头。</p><ul><li><strong>通用头</strong>：既适用于客户端的请求头，也适用于服务端的响应头。与HTTP消息体内最终传输的数据是无关的，只适用于要发送的消息。</li><li><strong>请求头</strong>：提供更为精确的描述信息，其对象为所请求的资源或请求本身。新版HTTP增加的请求头不能在更低版本的HTTP中使用，但服务器和客户端若都能对相关头进行处理，则可以在请求中使用。</li><li><strong>响应头</strong>：为响应消息提供了更多信息。例如，关于资源位置的描述Location字段，以及关于服务器本身的描述使用Server字段等。与请求头类似，新版增加的响应头也不能在更低版本的HTTP版本中使用。</li><li><strong>实体头</strong>：提供了关于消息体的描述。如消息体的长度Content-Length，消息体的MIME类型Content-Type。新版的实体头可以在更低版本的HTTP版本中使用。</li></ul><table><thead><tr><th align="center">字段名</th><th align="center">说明</th><th align="center">示例</th></tr></thead><tbody><tr><td align="center">Accept</td><td align="center">可接受的响应内容类型（Content-Types）</td><td align="center">Accept: text/plain</td></tr><tr><td align="center">Accept-Charset</td><td align="center">可接受的字符集</td><td align="center">Accept-Charset:utf-8</td></tr><tr><td align="center">Accept-Encoding</td><td align="center">可接受的响应内容的编码方式</td><td align="center">Accept-Encoding:gzip,deflate</td></tr><tr><td align="center">Accept-Language</td><td align="center">可接受的响应内容语言列表</td><td align="center">Accept-Language:en-US</td></tr><tr><td align="center">Cookie</td><td align="center">由之前服务器通过Set-Cookie设置的一个HTTP协议Cookie</td><td align="center">Cookie:$Version=1;Skin=new;</td></tr><tr><td align="center">Referer</td><td align="center">设置前一个页面的地址，并且前一个页面中的连接指向当前请求，意思就是如果当前请求是在A页面中发送的，那么referer就是A页面的url地址</td><td align="center">Referer:<a href="https://blog.yinuxy.com">https://blog.yinuxy.com</a></td></tr><tr><td align="center">User-Agent</td><td align="center">用户代理的字符串值</td><td align="center">User-Agent:Mozilla/5.0(X11;Linuxx86_64;rv:12.0)Gecko/20100101Firefox/21.0</td></tr></tbody></table><h2 id="熟悉Cookie"><a href="#熟悉Cookie" class="headerlink" title="熟悉Cookie"></a>熟悉Cookie</h2><ul><li>HTTP是一种无状态的协议，客户端与服务器建立连接并传输数据，在数据传输完成后，本次的连接将会关闭，并不会留存相关记录。</li><li>服务器无法依据连接来跟踪会话，也无法从连接上知晓用户的历史操作。这严重阻碍了基于Web应用程序的交互，也影响用户的交互体验。</li><li>某些网站需要用户登录才进一步操作，用户在输入账号密码登录后，才能浏览页面。对于服务器而言，由于HTTP的无状态性，服务器并不知道用户有没有登录过，当用户退出当前页面访问其他页面时，又需重新再次输入账号及密码。</li></ul><h3 id="1-Cookie机制"><a href="#1-Cookie机制" class="headerlink" title="1. Cookie机制"></a>1. Cookie机制</h3><p>为解决HTTP的无状态性带来的负面作用，Cookie机制应运而生。Cookie本质上是一段文本信息。</p><ul><li>当客户端请求服务器时，若服务器需要记录用户状态，就在响应用户请求时发送一段Cookie信息。</li><li>客户端浏览器会保存该Cookie信息，当用户再次访问该网站时，浏览器会把Cookie做为请求信息的一部分提交给服务器。</li><li>服务器对Cookie进行验证，以此来判断用户状态，当且仅当该Cookie合法且未过期时，用户才可直接登录网站。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/09/17/c8dd21d55064a8ec75e09b8bf87a4db4.png" alt=""></li></ul><h3 id="2-Cookie的存储方式"><a href="#2-Cookie的存储方式" class="headerlink" title="2. Cookie的存储方式"></a>2. Cookie的存储方式</h3><p>Cookie由用户客户端浏览器进行保存，按其存储位置可分为内存式存储和硬盘式存储。</p><ul><li>内存式存储将Cookie保存在内存中，在浏览器关闭后就会消失，由于其存储时间较短，因此也被称为非持久Cookie或会话Cookie。</li><li>硬盘式存储将Cookie保存在硬盘中，其不会随浏览器的关闭而消失，除非用户手工清理或到了过期时间。由于硬盘式Cookie存储时间是长期的，因此也被称为持久Cookie。<h3 id="3-Cookie的实现过程"><a href="#3-Cookie的实现过程" class="headerlink" title="3. Cookie的实现过程"></a>3. Cookie的实现过程</h3>客户端与服务器间的Cookie实现过程的具体步骤如下。</li><li>客户端请求服务器：客户端请求网站页面</li><li>服务器响应请求：Cookie是一种字符串，为key=value形式，服务器需要记录这个客户端请求的状态，在响应头中增加一个Set-Cookie字段。</li><li>客户端再次请求服务器：<br>客户端会对服务器响应的Set-Cookie头信息进行存储。<br>当再次请求时，将会在请求头中包含服务器响应的Cookie信息。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://gitee.com/yinuxy/cdn/raw/master/2020/09/17/1c27c2ed44da3faa52acf0a807f4b54c.png" alt=""></li></ul><h2 id="可抓取的数据"><a href="#可抓取的数据" class="headerlink" title="可抓取的数据"></a>可抓取的数据</h2><ul><li>网页文本：如HTML文档、Json格式文本等。</li><li>图片：获取到的是二进制文件，保存为图片格式。</li><li>视频：同为二进制文件，保存为视频格式即可。</li><li>其他：只要是能请求到的，都能获取。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;center&gt;&lt;font  size = &quot;5&quot;  face = &quot;楷体&quot;&gt;网页前端基础&lt;/font&gt;&lt;/center&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="网站开发" scheme="https://blog.yinuxy.com/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="网站开发" scheme="https://blog.yinuxy.com/tags/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>Python格式化输出</title>
@@ -480,33 +505,6 @@
     
     
       <category term="Anaconda" scheme="https://blog.yinuxy.com/tags/Anaconda/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决No module named &#39;mpl_toolkits.basemap&#39;问题</title>
-    <link href="https://blog.yinuxy.com/post/CodeError/basemap/"/>
-    <id>https://blog.yinuxy.com/post/CodeError/basemap/</id>
-    <published>2020-02-10T03:37:16.000Z</published>
-    <updated>2020-07-14T13:52:12.037Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><center><font  size = "5" color = "#1BC3FB"  face = "楷体">解决No module named 'mpl_toolkits.basemap'问题</font></center></blockquote><a id="more"></a><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Python3.x版本导入<code>from mpl_toolkits.basemap import Basemap</code>包时出现问题：<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.28/img/Error/Feb/output_1.png" alt=""></p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol><li>安装pyproj：<br><code>pip install pyproj -i https://pypi.tuna.tsinghua.edu.cn/simple</code><br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.28/img/Error/Feb/output_2.png" alt=""></li><li>进入<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#basemap" target="_blank" rel="noopener">https://www.lfd.uci.edu/~gohlke/pythonlibs/#basemap</a>   ctrl + F   搜索 basemap，下载<img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.28/img/Error/Feb/output_3.png" alt=""><br>下载时请与自身系统所用python版本对应；如python版本为3.6.X、amd64可选用图中红框版本</li><li>下载完后使用Shell命令进入文件根目录运行<code>pip install packagename</code>即可安装成功！<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.29/img/Error/Feb/output_4.png" alt=""></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;center&gt;&lt;font  size = &quot;5&quot; color = &quot;#1BC3FB&quot;  face = &quot;楷体&quot;&gt;解决No module named &#39;mpl_toolkits.basemap&#39;问题&lt;/font&gt;&lt;/center&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="https://blog.yinuxy.com/categories/Python/"/>
-    
-    
-      <category term="basemap" scheme="https://blog.yinuxy.com/tags/basemap/"/>
-    
-      <category term="pyproj" scheme="https://blog.yinuxy.com/tags/pyproj/"/>
     
   </entry>
   
