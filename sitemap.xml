@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.yinuxy.com/post/Experience/simulationLogin/</loc>
+    
+    <lastmod>2020-10-14T08:33:00.902Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.yinuxy.com/about/index.html</loc>
+    
+    <lastmod>2020-09-28T01:14:30.541Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.yinuxy.com/post/Experience/webBasic/</loc>
     
     <lastmod>2020-09-17T15:12:50.740Z</lastmod>
@@ -285,13 +299,6 @@
     <loc>https://blog.yinuxy.com/post/Experience/jspEnvBulid/</loc>
     
     <lastmod>2020-04-01T05:11:16.342Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.yinuxy.com/about/index.html</loc>
-    
-    <lastmod>2020-03-21T01:57:22.854Z</lastmod>
     
   </url>
   

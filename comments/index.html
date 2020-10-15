@@ -691,6 +691,20 @@
           
             
               
+<div class="new-meta-item comments-count">
+  
+  <a href="/comments/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/comments/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
 
             
           
@@ -828,7 +842,7 @@
       <p ct><i class='fas fa-comments'></i> 评论</p>
       
       <section id="comments">
-        <div id="minivaline_container">
+        <div id="valine_container" class="valine_thread">
   <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
@@ -1099,46 +1113,75 @@
 
   
   
-<script src="https://cdn.jsdelivr.net/npm/minivaline@4.0.1/dist/MiniValine.min.js"></script>
-
-
-
-
+<script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
 
 
 <script>
-function pjax_minivaline() {
-  var minivalinePath = $.trim($('#minivaline-path').text()) === "none" ?
-      window.location.pathname : $.trim($('#minivaline-path').text());
-  var minivalinePlaceholder = $.trim($('#minivaline-placeholder').text()) === "none" ?
-      "快来评论吧~" : $.trim($('#minivaline-placeholder').text());
-  var ALLPATH = '';
-  if(ALLPATH != '') minivalinePath = ALLPATH;
-new MiniValine({
-  el: '#minivaline_container',
-  appId: 'rpPAByYeXYpemMiAgGNPV0yP-MdYXbMMI',
-  appKey: 'k6ERhQGWVN4qxDx4O7OL1lX8',
-  mode: 'xCss',
-  placeholder: minivalinePlaceholder,
-  pathname: minivalinePath,
-  lang: '',
-  adminEmailMd5: '10c8cf610da00464fcde646651d2b471',
-  tagMeta: ["管理员", "小伙伴", "访客"],
-  master: ["10c8cf610da00464fcde646651d2b471", "f9ef8984b65e6ded92e6c4ffc588e80a"],
-  friends: ["5f3ac0628f92ca389ce613423c71ae2e"],
-  math: true,  /*布尔值 字符串无效 下同*/
-  md: true,
-  enableQQ: true,
-  NoRecordIP: false,
-  visitor: true,
-  maxNest: 6,
-  pageSize: 6,
-  emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
-  serverURLs: ''
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
   });
-}
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    var valinePath = $.trim($('#valine-path').text()) === "none" ?
+            window.location.pathname : $.trim($('#valine-path').text());
+
+    var valinePlaceholder = $.trim($('#valine-placeholder').text()) === "none" ?
+            "快来评论吧~" : $.trim($('#valine-placeholder').text());
+
+    var ALLPATH = '';
+    if(ALLPATH != '') valinePath = ALLPATH;
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: valinePlaceholder,
+      path: valinePath,
+      appId: "6HCAeCetOM3uzm6nknvTidDh-gzGzoHsz",
+      appKey: "VW0ogTxxl0mifTMqdssXLSrx",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/",
+      emojiMaps: emojiMaps,
+      master: '[10c8cf610da00464fcde646651d2b471,f9ef8984b65e6ded92e6c4ffc588e80a]',
+      friends: '[5f3ac0628f92ca389ce613423c71ae2e]'
+    })
+  }
+
   $(function () {
-    pjax_minivaline();
+    pjax_valine();
   });
 </script>
 
