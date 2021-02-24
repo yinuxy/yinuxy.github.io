@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.yinuxy.com//post/Activity/Nogugu/</loc>
+    <lastmod>2021-02-24</lastmod>
+  </url>  <url>
+    <loc>https://blog.yinuxy.com//post/Experience/DockerShell/</loc>
+    <lastmod>2020-10-21</lastmod>
+  </url>  <url>
+    <loc>https://blog.yinuxy.com//post/Python/Skill/jupyterCreated/</loc>
+    <lastmod>2020-10-16</lastmod>
+  </url>  <url>
     <loc>https://blog.yinuxy.com//post/Experience/simulationLogin/</loc>
     <lastmod>2020-10-14</lastmod>
   </url>  <url>
@@ -11,9 +20,6 @@
     <lastmod>2020-08-08</lastmod>
   </url>  <url>
     <loc>https://blog.yinuxy.com//post/Python/Visual/2020nCovVisualization/</loc>
-    <lastmod>2020-07-14</lastmod>
-  </url>  <url>
-    <loc>https://blog.yinuxy.com//post/Python/Skill/jupyterCreated/</loc>
     <lastmod>2020-07-14</lastmod>
   </url>  <url>
     <loc>https://blog.yinuxy.com//post/Python/Skill/Skills-1/</loc>
@@ -83,9 +89,6 @@
     <lastmod>2020-07-14</lastmod>
   </url>  <url>
     <loc>https://blog.yinuxy.com//post/Experience/LinuxShell/</loc>
-    <lastmod>2020-07-14</lastmod>
-  </url>  <url>
-    <loc>https://blog.yinuxy.com//post/Experience/DockerShell/</loc>
     <lastmod>2020-07-14</lastmod>
   </url>  <url>
     <loc>https://blog.yinuxy.com//post/Experience/LinuxScript/</loc>

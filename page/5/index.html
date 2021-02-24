@@ -5,6 +5,10 @@
   <!-- SEO相关 -->
   
     
+      
+        <meta name="robots" content="noindex,follow">
+      
+    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -21,13 +25,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>Seaborn中文教程（转） - YINUXY | 理想的生活就是生活的理想</title>
-  
-    <meta name="keywords" content="Python可视化,seaborn">
+  <title>YINUXY | 理想的生活就是生活的理想</title>
   
 
-  
-    <meta name="description" content="Seaborn是基于matplotlib的图形可视化python包。它提供了一种高度交互式界面，便于用户能够做出各种有吸引力的统计图表。Seaborn是在matplotlib的基础上进行了更高级的API封装，从而使得作图更加容易，在大多数情况下使用seaborn能做出很具有吸引力的图，而使用matplotlib就...">
   
 
   <!-- feed -->
@@ -111,7 +111,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover post' style="display: none;">
+    <cover class='cover ' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -586,16 +586,10 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">Seaborn中文教程（转）</div>
+  <div id="pjax-ispage">false</div>
+  <div id="pjax-pageTitle"></div>
   <div id="pjax-enable-cover">true</div>
   
-  <div id="valine-path">none</div>
-  <div id="valine-placeholder">none</div>
-  
-  
-  <div id="minivaline-path">none</div>
-  <div id="minivaline-placeholder">none</div>
   
 </div>
 
@@ -627,26 +621,46 @@
 
 <div class='l_main'>
   
-
-  
-    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+  <section class="post-list ">
+    
+    
       
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
 
 
   <section class='meta'>
     
       
+        
+
+  
+    <meting-js
+      mini='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='401722227'>
+    </meting-js>
+  
+
+
       
-        <a title='Seaborn中文教程（转）' href='/post/Experience/Seaborn/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/seaborn.jpg'></a>
+      
+        <a title='Hello Stranger' href='/post/hello_world/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/friends.jpg'></a>
       
       <div class="meta" id="header-meta">
         
           
-  <h1 class="title">
-    <a href="/post/Experience/Seaborn/">
-      Seaborn中文教程（转）
+  <h2 class="title">
+    <a href="/post/hello_world/">
+      Hello Stranger
     </a>
-  </h1>
+  </h2>
 
 
         
@@ -669,22 +683,16 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布日期：2019年7月25日</p>
+    <p>发布日期：2019年7月4日</p>
   </a>
 </div>
 
             
           
             
+          
+            
               
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E5%8F%AF%E8%A7%86%E5%8C%96/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>可视化</p>
-    </a>
-  </div>
-
 
             
           
@@ -694,7 +702,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/post/Experience/Seaborn/" class="leancloud_visitors" data-flag-title="Seaborn中文教程（转）">
+      <span id="/post/hello_world/" class="leancloud_visitors" data-flag-title="Hello Stranger">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -702,30 +710,6 @@
     </a>
   </div>
 
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/post/Experience/Seaborn/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/post/Experience/Seaborn/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-              
 
             
           
@@ -738,733 +722,50 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          
-          <p>Seaborn是基于matplotlib的图形可视化python包。它提供了一种高度交互式界面，便于用户能够做出各种有吸引力的统计图表。<br>Seaborn是在matplotlib的基础上进行了更高级的API封装，从而使得作图更加容易，在大多数情况下使用seaborn能做出很具有吸引力的图，而使用matplotlib就能制作具有更多特色的图。应该把Seaborn视为matplotlib的补充，而不是替代物。同时它能高度兼容numpy与pandas数据结构以及scipy与statsmodels等统计模式。</p>
-<a id="more"></a>
-<h1 id="章节概要"><a href="#章节概要" class="headerlink" title="章节概要"></a>章节概要</h1><ol>
-<li>Seaborn介绍：</li>
-<li>安装Seaborn</li>
-<li>加载库和数据文件</li>
-<li>Seaborn的绘图功能</li>
-<li>用Matplotlib定制</li>
-<li>Pandas的作用</li>
-<li>Seaborn 主题</li>
-<li>调色盘</li>
-<li>图形重叠</li>
-<li>融合数据</li>
-<li>迷你画廊 </li>
-</ol>
-<h2 id="安装Seaborn"><a href="#安装Seaborn" class="headerlink" title="安装Seaborn"></a>安装Seaborn</h2><p>首先确定你的电脑已安装以下应用 </p>
-<ul>
-<li>Python 2.7+ or Python 3 </li>
-<li>Pandas </li>
-<li>Matplotlib </li>
-<li>Seaborn </li>
-<li>Jupyter Notebook(可选)</li>
-</ul>
-<p>打开Jupyter Notebook, 过几秒钟会弹出网页窗口Home。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/assets@master/1.png" alt="image.png"><br>点击右侧的New，新建一个Notebook，弹出一个新的网页窗口，点击上方可命名文件。<br><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/assets@master/2.png" alt="image.png"></p>
-<h2 id="Seaborn介绍："><a href="#Seaborn介绍：" class="headerlink" title="Seaborn介绍："></a>Seaborn介绍：</h2><p>Seaborn属于Matplotlib的一个高级接口，为我们进行数据的可视化分析提供了极大的方便。 </p>
-<h2 id="加载库和数据文件"><a href="#加载库和数据文件" class="headerlink" title="加载库和数据文件"></a>加载库和数据文件</h2><p>加载pandas、matplotlib、seaborn。</p>
-<pre><code class="python"># coding: utf-8
-
-#加载pandas
-import pandas as pd
-
-#加载matplotlib
-from matplotlib import pyplot as plt
-
-#在notebook中显示数据点
-%matplotlib inline
-
-#加载seaborn
-import seaborn as sb</code></pre>
-<p>这里提供了一个数据文件，下载链接为<br><a href="https://elitedatascience.com/wp-content/uploads/2017/04/Pokemon.csv" target="_blank" rel="noopener">Pokemon.csv</a></p>
-<p>用pandas读取数据文件，并显示前五行。</p>
-<pre><code class="python">#用pandas读取Pokemon.csv
-df = pd.read_csv(&quot;f:/Pokemon.csv&quot;, encoding = &quot;unicode_escape&quot;)
-
-#读取前五行，编译后的结果为一个列表。
-df.head()</code></pre>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
-
-.dataframe thead th {
-    text-align: right;
-}</code></pre><p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>#</th>
-      <th>Name</th>
-      <th>Type 1</th>
-      <th>Type 2</th>
-      <th>Total</th>
-      <th>HP</th>
-      <th>Attack</th>
-      <th>Defense</th>
-      <th>Sp. Atk</th>
-      <th>Sp. Def</th>
-      <th>Speed</th>
-      <th>Stage</th>
-      <th>Legendary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>Bulbasaur</td>
-      <td>Grass</td>
-      <td>Poison</td>
-      <td>318</td>
-      <td>45</td>
-      <td>49</td>
-      <td>49</td>
-      <td>65</td>
-      <td>65</td>
-      <td>45</td>
-      <td>1</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>Ivysaur</td>
-      <td>Grass</td>
-      <td>Poison</td>
-      <td>405</td>
-      <td>60</td>
-      <td>62</td>
-      <td>63</td>
-      <td>80</td>
-      <td>80</td>
-      <td>60</td>
-      <td>2</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>Venusaur</td>
-      <td>Grass</td>
-      <td>Poison</td>
-      <td>525</td>
-      <td>80</td>
-      <td>82</td>
-      <td>83</td>
-      <td>100</td>
-      <td>100</td>
-      <td>80</td>
-      <td>3</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>Charmander</td>
-      <td>Fire</td>
-      <td>NaN</td>
-      <td>309</td>
-      <td>39</td>
-      <td>52</td>
-      <td>43</td>
-      <td>60</td>
-      <td>50</td>
-      <td>65</td>
-      <td>1</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>Charmeleon</td>
-      <td>Fire</td>
-      <td>NaN</td>
-      <td>405</td>
-      <td>58</td>
-      <td>64</td>
-      <td>58</td>
-      <td>80</td>
-      <td>65</td>
-      <td>80</td>
-      <td>2</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-<pre><code class="python">#绘制散点图
-sb.lmplot(x = &#39;Attack&#39;, y = &#39;Defense&#39;, data = df)</code></pre>
-<pre><code>D:\Function\Anaconda3\lib\site-packages\scipy\stats\stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
-  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
-
-
-
-
-
-&lt;seaborn.axisgrid.FacetGrid at 0x2ea94d27c50&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_8_2.png" alt="png"></p>
-<h2 id="Seaborn的绘图功能"><a href="#Seaborn的绘图功能" class="headerlink" title="Seaborn的绘图功能"></a>Seaborn的绘图功能</h2><p>Seaborn最大的优点之一在于其种类繁多的绘图功能，下面我们利用lmplot()函数，用一行代码来绘制散点图。我们希望x轴显示Attack数据，y轴显示Defense数据，则可以编写代码。 </p>
-<p>事实上seaborn并没有专门用来绘制散点图的功能，实际上我们用它来拟合和绘制回归线。<br>幸运的是，我们可以通过设置函数的参数来得到我们想要的散点图。用fit_reg = False 移去回归线，用hug参数来用不同颜色显示Pokemon进化阶段的信息。 </p>
-<pre><code class="python">#移去回归线，用不同颜色来表示pokemon的进化阶段，即刻得到散点图：
-
-sb.lmplot(x = &#39;Attack&#39;, y = &#39;Defense&#39;, data = df,
-         fit_reg = False,
-         hue = &#39;Stage&#39;)</code></pre>
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x2ea950e4278&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_11_1.png" alt="png"></p>
-<p>从散点图可以看出，所有的数据点都分布在数轴的正半轴，然而散点图的数轴从负数开始的，我们可以对它进行改进。</p>
-<h2 id="用Matplotlib定制"><a href="#用Matplotlib定制" class="headerlink" title="用Matplotlib定制"></a>用Matplotlib定制</h2><p>虽然Seaborn是Matplotlib的一个高级接口，但是我们有时候也需要用到Matplotlib。其中包括设置数轴的范围。我们利用Matplotlib的ylim()和xlim()函数来设置数轴的范围。 </p>
-<pre><code class="python">#设置数轴范围
-
-
-plt.gca().set(xlim = (0, None), ylim = (0, None),
-             xlabel=&#39;Attack&#39;, ylabel=&#39;Defense&#39;)</code></pre>
-<pre><code>[(0, 1.0), Text(0, 0.5, &#39;Defense&#39;), (0, 1.0), Text(0.5, 0, &#39;Attack&#39;)]</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_14_1.png" alt="png"></p>
-<h2 id="Pandas的作用"><a href="#Pandas的作用" class="headerlink" title="Pandas的作用"></a>Pandas的作用</h2><p>尽管这是一个Seaborn教程，pandas依然在实际应用中起到了十分重要的作用。下面我们根据Pokemon的攻击数据来绘制箱形图</p>
-<pre><code class="python">sb.boxplot(data = df)
-#得到的箱形图： </code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x2ea950c99b0&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_16_1.png" alt="png"></p>
-<p>很好，这是一个良好的开端，但是我们可以移除不需要的几列数据。</p>
-<pre><code>移除掉Total，因为我们有独立的统计数据。
-移除掉Stage跟Legendary，因为它们不是攻击统计数据。
-我们可以创建一个新的数据集stats_df，满足我们上述的要求。</code></pre><pre><code class="python">#创建新数据集
-stats_df = df.drop([&#39;Total&#39;, &#39;Stage&#39;, &#39;Legendary&#39;], axis = 1)
-
-#Boxplot
-sb.boxplot(data = stats_df)</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x2ea962be358&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_18_1.png" alt="png"></p>
-<p>得到了一个改进了的箱形图。</p>
-<h2 id="Seaborn-主题"><a href="#Seaborn-主题" class="headerlink" title="Seaborn 主题"></a>Seaborn 主题</h2><p>Seaborn的另一个好处就是其恰到好处、开箱即用的风格主题。其默认的主题为“darkgrid”<br>下一步，我们把主题改为“whitegrid”来创建一个小提琴图</p>
-<pre><code>小提琴图常常作为箱形图的替代
-小提琴图通过小提琴的厚度展示了数据的分布，而不仅仅是总结数据。
-根据Pokemon的主要类型，我们可以将Attack数据的分布可视化。 </code></pre><pre><code class="python">#设置主题
-sb.set_style(&#39;whitegrid&#39;)
-
-#violin plot
-sb.violinplot(x = &#39;Type 1&#39;, y = &#39;Attack&#39;, data = df)</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x2ea96343828&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_21_1.png" alt="png"></p>
-<p>可以得到小提琴图，x轴显示的是Pokemon的Type1，y轴显示的是不同Pokemon的攻击数值。 </p>
-<h2 id="调色盘"><a href="#调色盘" class="headerlink" title="调色盘"></a>调色盘</h2><p>Seaborn可以根据我们的需求，来设置颜色。我们可以创建一个python命令列表，用颜色的十六进制数值来设置。数值可以在<a href="https://bulbapedia.bulbagarden.net/wiki/Category:Type_color_templates" target="_blank" rel="noopener">Bulbapedia</a>中寻找。</p>
-<pre><code class="python">#创建颜色列表
-pkmn_type_colors = [&#39;#78C850&#39;,
-                    &#39;#F08030&#39;,
-                    &#39;#6890F0&#39;,
-                    &#39;#A8B820&#39;,
-                    &#39;#A8A878&#39;,
-                    &#39;#A040A0&#39;,
-                    &#39;#F8D030&#39;,
-                    &#39;#E0C068&#39;,
-                    &#39;#EE99AC&#39;,
-                    &#39;#C03028&#39;,
-                    &#39;#F85888&#39;,
-                    &#39;#B8A038&#39;,
-                    &#39;#705898&#39;,
-                    &#39;#98D8D8&#39;,
-                    &#39;#7038F8&#39;
-                   ]
-
-#导入小提琴图中
-sb.violinplot(x = &#39;Type 1&#39;, y = &#39;Attack&#39;, data = df,
-             palette = pkmn_type_colors)
-</code></pre>
-<pre><code>D:\Function\Anaconda3\lib\site-packages\scipy\stats\stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
-  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
-
-
-
-
-
-&lt;matplotlib.axes._subplots.AxesSubplot at 0x2ea94d24470&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_24_2.png" alt="png"></p>
-<p>为了能够让数据文件中的151个Pokemon都能够在图中简单展示，我们可以用群集图 swarm plot达到这一目的。 </p>
-<pre><code class="python">sb.swarmplot(x = &#39;Type 1&#39;, y = &#39;Attack&#39;, data = df,
-            palette = pkmn_type_colors)</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x2ea96d5bda0&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_26_1.png" alt="png"></p>
-<h2 id="图形重叠"><a href="#图形重叠" class="headerlink" title="图形重叠"></a>图形重叠</h2><p>我们已经绘制出了小提琴图和群集图，Seaborn允许我们将这两张图整合在一张图上，步骤如下：</p>
-<pre><code>首先，我们用Matplotlib设置图形比例。
-然后，我们绘制小提琴图，用inner = None将小提琴中间的木杆移去。
-接着，我们绘制群集图，并将数据点的颜色变为黑色。
-最后，我们可以用Matplotlib设置一个标题。</code></pre><pre><code class="python">#设置图形比例
-plt.figure(figsize = (10, 6))
-
-#创建violinplot
-sb.violinplot(x = &#39;Type 1&#39;, y = &#39;Attack&#39;, data = df,
-              inner = None,
-             palette = pkmn_type_colors)
-
-#创建swarmplot
-sb.swarmplot(x = &#39;Type 1&#39;, y = &#39;Attack&#39;, data = df,
-             color = &#39;k&#39;,
-            palette = pkmn_type_colors)
-
-#设置标题
-plt.title(&#39;Attack by Type&#39;)
-
-#其中alpha为透明度。 编译后可以得到如下图形。 </code></pre>
-<pre><code>Text(0.5, 1.0, &#39;Attack by Type&#39;)</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_28_1.png" alt="png"></p>
-<p>现在我们可以清晰的看到不同Pokemon的攻击值了。那么我们怎么看其他的数值呢？</p>
-<h2 id="融合数据"><a href="#融合数据" class="headerlink" title="融合数据"></a>融合数据</h2><p>为了展现其他的数据，我们当然可以重复以上的步骤，绘制多张图。但是我们同样也可以在一张图上表示所有的数据，这时候pandas就派上用场了。<br>我们可以利用pandas的melt()函数来将一些数据进行融合，这样就可以在不同Pokemon之间直接进行比对，melt()需要导入3个参数，分别为：</p>
-<pre><code>需要融合的数据列表
-需要保留的ID变量，其他变量将会被Pandas融合。
-融合而成的新变量的名字。</code></pre><pre><code class="python">#数据融合
-melted_df = pd.melt(stats_df,
-                   id_vars = [&#39;Name&#39;, &#39;Type 1&#39;, &#39;Type 2&#39;],
-                   var_name = &#39;Stat&#39;)
-
-#前五行
-melted_df.head()</code></pre>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
-
-.dataframe thead th {
-    text-align: right;
-}</code></pre><p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Type 1</th>
-      <th>Type 2</th>
-      <th>Stat</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Bulbasaur</td>
-      <td>Grass</td>
-      <td>Poison</td>
-      <td>#</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Ivysaur</td>
-      <td>Grass</td>
-      <td>Poison</td>
-      <td>#</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Venusaur</td>
-      <td>Grass</td>
-      <td>Poison</td>
-      <td>#</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Charmander</td>
-      <td>Fire</td>
-      <td>NaN</td>
-      <td>#</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Charmeleon</td>
-      <td>Fire</td>
-      <td>NaN</td>
-      <td>#</td>
-      <td>5</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-<p>我们为已经融合的数据列表melted_df绘制群集图。</p>
-<pre><code class="python">#数据融合
-melted_df = pd.melt(stats_df,
-                   id_vars = [&#39;Name&#39;, &#39;Type 1&#39;, &#39;Type 2&#39;],
-                   var_name = &#39;Stat&#39;)
-
-#前五行
-melted_df.head()
-
-#绘制群集图
-sb.swarmplot(x = &#39;Stat&#39;, y = &#39;value&#39;, data = melted_df,
-            hue = &#39;Type 1&#39;)
-
-#就可以得到如下的群集图。x轴为Stat中融合的六个变量，y轴为Stat的值，不同颜色代表不同的Pokemon Type 1。</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x2ea9887da58&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_33_1.png" alt="png"></p>
-<p>这张图表有一些细节需要完善：</p>
-<pre><code>扩大图表。
-使用split = True 来分隔色调。
-使用我们自定义的颜色。
-调整y轴的范围
-将图例放在右侧。</code></pre><pre><code class="python">#扩大图表
-plt.figure(figsize = (10, 8))
-
-#绘制群集图，使用split = True 来分割，使用自定义的颜色
-sb.swarmplot(x = &#39;Stat&#39;, y = &#39;value&#39;, data = melted_df,
-            hue = &quot;Type 1&quot;,
-            split = True,
-            palette = pkmn_type_colors)
-
-#调整Y轴的范围
-plt.ylim(0,260)
-
-#将图例放在右侧
-plt.legend(bbox_to_anchor = (1,1), loc = 2)</code></pre>
-<pre><code>D:\Function\Anaconda3\lib\site-packages\seaborn\categorical.py:2974: UserWarning: The `split` parameter has been renamed to `dodge`.
-  warnings.warn(msg, UserWarning)
-
-
-
-
-
-&lt;matplotlib.legend.Legend at 0x2ea98a7f0b8&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_35_2.png" alt="png"></p>
-<p>即可得到一个已经细节完善后的图表。 </p>
-<h2 id="迷你画廊"><a href="#迷你画廊" class="headerlink" title="迷你画廊"></a>迷你画廊</h2><h3 id="Heatmap"><a href="#Heatmap" class="headerlink" title="Heatmap"></a>Heatmap</h3><p>Heatmap可以帮助可视化矩阵状的数据。</p>
-<pre><code class="python">#计算相关性
-corr = stats_df.corr()
-
-#Hteatmap
-sb.heatmap(corr)</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x2ea98dac4e0&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_38_1.png" alt="png"></p>
-<h3 id="Histogram"><a href="#Histogram" class="headerlink" title="Histogram"></a>Histogram</h3><p>Histogram能够绘制变量的数值分布。</p>
-<pre><code class="python">#绘制直方图
-sb.distplot(df.Attack)</code></pre>
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x2ea988d2da0&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_40_1.png" alt="png"></p>
-<h3 id="Bar-Plot"><a href="#Bar-Plot" class="headerlink" title="Bar Plot"></a>Bar Plot</h3><p>条形图可以帮助分类变量的可视化。 </p>
-<pre><code class="python">#绘制条形图abs
-sb.countplot(x = &#39;Type 1&#39;, data = df, palette = pkmn_type_colors)
-
-#倾斜x轴的标签
-plt.xticks(rotation = -45)</code></pre>
-<pre><code>(array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14]),
- &lt;a list of 15 Text xticklabel objects&gt;)</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_42_1.png" alt="png"></p>
-<h3 id="Factor-plots"><a href="#Factor-plots" class="headerlink" title="Factor plots"></a>Factor plots</h3><p>Factor plots能够根据类别分离图表。 </p>
-<pre><code class="python">#分离图表
-g = sb.factorplot(x = &#39;Type 1&#39;,
-                  y = &#39;Attack&#39;,
-                  data = df,
-                  hue = &#39;Stage&#39;,  #用不同的颜色表示Stage
-                  col = &#39;Stage&#39;,  #根据Stage来分离图表
-                  kind = &#39;swarm&#39;, #创建群集图
-                 )
-
-#倾斜x轴的标签
-plt.xticks(rotation = -45)</code></pre>
-<pre><code>D:\Function\Anaconda3\lib\site-packages\seaborn\categorical.py:3666: UserWarning: The `factorplot` function has been renamed to `catplot`. The original name will be removed in a future release. Please update your code. Note that the default `kind` in `factorplot` (`&#39;point&#39;`) has changed `&#39;strip&#39;` in `catplot`.
-  warnings.warn(msg)
-
-
-
-
-
-(array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14]),
- &lt;a list of 15 Text xticklabel objects&gt;)</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_44_2.png" alt="png"></p>
-<p>可以得到根据Stage分离的三个图表，分别用不同颜色的点表示不同的Pokemon。 </p>
-<h3 id="Density-Plot"><a href="#Density-Plot" class="headerlink" title="Density Plot"></a>Density Plot</h3><p>密度图显示的是两个变量之间的分布。<br>曲线越密集的地方说明两个变量的关系越近，越稀疏的地方说明关系越远。 </p>
-<pre><code class="python">#创建密度图
-sb.kdeplot(df.Attack, df.Defense)</code></pre>
-<pre><code>D:\Function\Anaconda3\lib\site-packages\scipy\stats\stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
-  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
-
-
-
-
-
-&lt;matplotlib.axes._subplots.AxesSubplot at 0x2ea9a8d6f60&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_47_2.png" alt="png"></p>
-<h3 id="Joint-Distribution-Plot"><a href="#Joint-Distribution-Plot" class="headerlink" title="Joint Distribution Plot"></a>Joint Distribution Plot</h3><p>联合分布图将散点图和直方图的信息结合起来，提供双变量分布的详细信息。 </p>
-<pre><code class="python">#创建联合分布图
-sb.jointplot(x = &#39;Attack&#39;, y = &#39;Defense&#39;, data = df)</code></pre>
-<pre><code>&lt;seaborn.axisgrid.JointGrid at 0x2ea9ab74da0&gt;</code></pre><p><img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.45/img/seaborn/output_49_1.png" alt="png"></p>
-<p>这里只是介绍了Seaborn常用的绘图功能，还有更强大的功能<a href="http://seaborn.pydata.org/examples/anscombes_quartet.html" target="_blank" rel="noopener">Example gallery</a>需要我们去学习，去探索。</p>
-<pre><code class="python"></code></pre>
-
-          
-            <div class='article_footer'>
-              
-                
-  
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://www.codingpy.cn" target="_blank" rel="noopener">Yinxu’s Blog</a>! This is your very first post. Check <a href="https://xaoxuu.com/wiki/" target="_blank" rel="noopener">documentation</a> for more info. </p>
+      
+    </div>
     
-    
-
-
-
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-<section class="widget copyright  desktop mobile">
-  <div class='content'>
-    
-      <blockquote>
-        
-          
-            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)<br> 如需转载请注明出处@<a href="https://blog.yinuxy.com">Copyright © 2019-2020 YINUXY</a></p>
-
-          
-        
-          
-            
-          
-        
-          
-            <p>本文永久链接是：<a href=https://blog.yinuxy.com/post/Experience/Seaborn/>https://blog.yinuxy.com/post/Experience/Seaborn/</a></p>
-          
-        
-      </blockquote>
-    
-  </div>
-</section>
-
-  
-
-
-              
-            </div>
-          
+      
+        <div class="button readmore">
+          <a href="/post/hello_world/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
         </div>
-        
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/InfiniteYinux/yinuxypic@1.06/source/css/reward.css">
-<div id="reward">
-    
-    <div class="reward">
-      <a href="https://github.com/Kaiyuan/donate-page" target="_blank" class=" tr3" title="Github"><span
-          id="github"></span></a>
-      <ul id="RewardBox" class="list pos-f tr3">
-        
-        <li id="PayPal" title="PayPal打赏"><a href="https://paypal.me/yyy7111" target="_blank">PayPal</a></li>
-        
-        
-        <li id="AliPayOR" title="支付宝打赏">AliPay</li>
-        
-        
-        <li id="WeChatPayOR" title="微信打赏">WeChatPay</li>
-        
-        
-        <li id="QQPayOR" title="QQ打赏">QQPay</li>
-        
-      </ul>
-      <div id="RewardText" class="tr3">Donate</div>
-      <div id="QRBox" class="pos-f left-100">
-        <div id="MainBox"></div>
-      </div>
-    </div>
-  </div>
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
-  <script>
-    jQuery(document).ready(function () {
-      var QRBox = $('#QRBox');
-      var MainBox = $('#MainBox');
-      var AliPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/alipay.png';
-      var WeChatPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/wechat.png';
-      var QQPayOR = 'https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.36/donate/qq.png';
-  
-      function showQR(QR) {
-        if (QR) {
-          MainBox.css('background-image', 'url(' + QR + ')');
-        }
-        $('#RewardText,#RewardBox,#github').addClass('blureward');
-        QRBox.fadeIn(300, function (argument) {
-          MainBox.addClass('showQR');
-        });
-      }
-  
-      $('#RewardBox>li').click(function (event) {
-        var thisID = $(this).attr('id');
-        if (thisID === 'AliPayOR') {
-          showQR(AliPayOR);
-        } else if (thisID === 'WeChatPayOR') {
-          showQR(WeChatPayOR);
-        } else if (thisID === 'QQPayOR') {
-          showQR(QQPayOR);
-        }
-      });
-  
-      MainBox.click(function (event) {
-        MainBox.removeClass('showQR').addClass('hideQR');
-        setTimeout(function (a) {
-          QRBox.fadeOut(300, function (argument) {
-            MainBox.removeClass('hideQR');
-          });
-          $('#RewardText,#RewardBox,#github').removeClass('blureward');
-        }, 600);
-  
-      });
-    });
-  </script>
-  
-        
-        
-          
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-14T21:52:12+08:00">
-  <a class='notlink'>
-    <i class="fas fa-save fa-fw" aria-hidden="true"></i>
-    <p>本页文档最后更新于：2020年7月14日</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python%E5%8F%AF%E8%A7%86%E5%8C%96/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Python可视化</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/seaborn/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>seaborn</p></a></div>
-
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.yinuxy.com/post/Experience/Seaborn/&title=Seaborn中文教程（转） - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/seaborn.jpg&summary=Seaborn是基于matplotlib的图形可视化python包。它提供了一种高度交互式界面，便于用户能够做出各种有吸引力的统计图表。Seaborn是在matplotlib的基础上进行了更高级的API封装，从而使得作图更加容易，在大多数情况下使用seaborn能做出很具有吸引力的图，而使用matplotlib就能制作具有更多特色的图。应该把Seaborn视为matplotlib的补充，而不是替代物。同时它能高度兼容numpy与pandas数据结构以及scipy与statsmodels等统计模式。"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
-          
-        </a>
       
     
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.yinuxy.com/post/Experience/Seaborn/&title=Seaborn中文教程（转） - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/seaborn.jpg&summary=Seaborn是基于matplotlib的图形可视化python包。它提供了一种高度交互式界面，便于用户能够做出各种有吸引力的统计图表。Seaborn是在matplotlib的基础上进行了更高级的API封装，从而使得作图更加容易，在大多数情况下使用seaborn能做出很具有吸引力的图，而使用matplotlib就能制作具有更多特色的图。应该把Seaborn视为matplotlib的补充，而不是替代物。同时它能高度兼容numpy与pandas数据结构以及scipy与statsmodels等统计模式。"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://blog.yinuxy.com/post/Experience/Seaborn/&title=Seaborn中文教程（转） - YINUXY | 理想的生活就是生活的理想&pics=https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.13/thumbnail/seaborn.jpg&summary=Seaborn是基于matplotlib的图形可视化python包。它提供了一种高度交互式界面，便于用户能够做出各种有吸引力的统计图表。Seaborn是在matplotlib的基础上进行了更高级的API封装，从而使得作图更加容易，在大多数情况下使用seaborn能做出很具有吸引力的图，而使用matplotlib就能制作具有更多特色的图。应该把Seaborn视为matplotlib的补充，而不是替代物。同时它能高度兼容numpy与pandas数据结构以及scipy与statsmodels等统计模式。"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/images/bitmap.gif" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
   </section>
+</article>
 
-
-        
-        
-          <div class="prev-next">
-            
-              <a class='prev' href='/post/Experience/matplotlib-1/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>matplotlib - matplotlib 教程</p>
-                <p class='content'>Matplotlib 是 Python 的绘图库。 它可与 NumPy 一起使用，提供了一种有效的 MatLab 开源替代方案。
-
-
-Pyplot 教程关于pylot接口的介绍。
-matplot...</p>
-              </a>
-            
-            
-              <a class='next' href='/post/Experience/sqlShell-2/'>
-                <p class='title'>SQL学习日记（二）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>
-
-
-章节导航
-
-SQL语句的多表查询方式
-创建和管理DLL
-数据处理 DML
-约束
-
-SQL语句的多表查询方式例如：按照 department_id 查询 employees(员工表)和 de...</p>
-              </a>
-            
           </div>
         
-      </section>
-    </article>
-  
-
+      
+    
+  </section>
   
     
-  <article class="post white-box reveal comments shadow">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 评论</p>
-      
-      <section id="comments">
-        <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-      </section>
-    </section>
-  </article>
-
-
-  
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-  <script>
+      <br>
+      <div class="prev-next">
+        
+          <a class="prev" rel="prev" href="/page/4/">
+            <section class="post prev white-box shadow" >
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+            </section>
+          </a>
+        
+        <p class="current">
+          5 / 5
+        </p>
+        
+      </div>
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
+      <script>
   // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
@@ -1516,6 +817,9 @@ SQL语句的多表查询方式例如：按照 department_id 查询 employees(员
   }
 </script>
 
+    
+
+  
 
 
 </div>
@@ -1600,24 +904,105 @@ SQL语句的多表查询方式例如：按照 department_id 查询 employees(员
     
     
 
-
-
-  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
-    
+<section class="widget grid shadow blur desktop mobile">
+  
   <header>
     
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>站内导航</span>
     
   </header>
 
 
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Seaborn"><span class="toc-text">安装Seaborn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Seaborn介绍："><span class="toc-text">Seaborn介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加载库和数据文件"><span class="toc-text">加载库和数据文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Seaborn的绘图功能"><span class="toc-text">Seaborn的绘图功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用Matplotlib定制"><span class="toc-text">用Matplotlib定制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas的作用"><span class="toc-text">Pandas的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Seaborn-主题"><span class="toc-text">Seaborn 主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调色盘"><span class="toc-text">调色盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图形重叠"><span class="toc-text">图形重叠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#融合数据"><span class="toc-text">融合数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#迷你画廊"><span class="toc-text">迷你画廊</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Heatmap"><span class="toc-text">Heatmap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Histogram"><span class="toc-text">Histogram</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bar-Plot"><span class="toc-text">Bar Plot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Factor-plots"><span class="toc-text">Factor plots</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Density-Plot"><span class="toc-text">Density Plot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Joint-Distribution-Plot"><span class="toc-text">Joint Distribution Plot</span></a></li></ol></li></ol>
+  <div class='content'>
+    <div class="grid navigation">
+      
+        <a class="flat-box" title="/archives/" href="/archives/"
+          
+          
+          id="archives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a>
+      
+        <a class="flat-box" title="/categories/" href="/categories/"
+          
+          
+          id="categories">
+          
+            <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+          
+          所有分类
+        </a>
+      
+        <a class="flat-box" title="/tags/" href="/tags/"
+          
+          
+          id="tags">
+          
+            <i class="fas fa-tags fa-fw" aria-hidden="true"></i>
+          
+          文章标签
+        </a>
+      
+        <a class="flat-box" title="https://music.163.com/#/user/home?id=641108605" href="https://music.163.com/#/user/home?id=641108605"
+          
+          
+          id="https:music163com#userhome?id=641108605">
+          
+            <i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>
+          
+          歌单分享
+        </a>
+      
+        <a class="flat-box" title="/atom.xml" href="/atom.xml"
+          
+          
+          id="atomxml">
+          
+            <i class="fas fa-rss fa-fw" aria-hidden="true"></i>
+          
+          RSS订阅
+        </a>
+      
+        <a class="flat-box" title="https://img.yinuxy.com/" href="https://img.yinuxy.com/"
+          
+            rel="nofollow"
+          
+          
+          id="https:imgyinuxycom">
+          
+            <i class="fas fa-images fa-fw" aria-hidden="true"></i>
+          
+          免费图床
+        </a>
+      
     </div>
-  </section>
-
+  </div>
+</section>
 
   
+
+  
+    
+    
+
+<section class="widget text shadow blur desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-handshake fa-fw" aria-hidden="true"></i><span class='name'>欢迎光临</span>
+    
+  </header>
+
+
+  <div class='content'>
+    
+      <center><font  size = "4" color = "#FFB6C1"  face = "楷体">欢</font><font  size = "4" color = "#FFC0CB"  face = "楷体">迎</font><font  size = "4" color = "#DC143C"  face = "楷体">光</font><font  size = "4" color = "#7B68EE "  face = "楷体">临</font><font  size = "4" color = "#DB7093"  face = "楷体">本</font><font  size = "4" color = "#FF69B4"  face = "楷体">站</center><center></font><font  size = "4" color = "#FF1493"  face = "楷体">如</font><font  size = "4" color = "#C71585"  face = "楷体">果</font><font  size = "4" color = "#DA70D6"  face = "楷体">对</font><font  size = "4" color = "#D8BFD8"  face = "楷体">您</font><font  size = "4" color = "#DDA0DD"  face = "楷体">有</font><font  size = "4" color = "#EE82EE"  face = "楷体">帮</font><font  size = "4" color = "#FF00FF"  face = "楷体">助</font><font  size = "4" color = "#FF00FF"  face = "楷体">的</font><font  size = "4" color = "#8B008B"  face = "楷体">话</center><center></font><font  size = "4" color = "#800080"  face = "楷体">记</font><font  size = "4" color = "#BA55D3"  face = "楷体">得</font><font  size = "4" color = "#9400D3"  face = "楷体">分</font><font  size = "4" color = "#9932CC"  face = "楷体">享</font><font  size = "4" color = "#4B0082"  face = "楷体">转</font><font  size = "4" color = "#8A2BE2"  face = "楷体">发</font><font  size = "4" color = "#9370DB"  face = "楷体">哦</font></center>
+    
+  </div>
+</section>
 
   
 
@@ -1698,6 +1083,31 @@ SQL语句的多表查询方式例如：按照 department_id 查询 employees(员
   
     
     
+
+<section class="widget qrcode shadow blur desktop">
+  
+  <header>
+    
+      <i class="fab fa-weixin fa-fw" aria-hidden="true"></i><span class='name'>微信公众号</span>
+    
+  </header>
+
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/InfiniteYinux/cloud@2.42/qrcode.jpg'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
   
 
   <section class="widget tagcloud shadow blur desktop mobile">
@@ -1711,28 +1121,6 @@ SQL语句的多表查询方式例如：按照 department_id 查询 employees(员
 
     <div class='content'>
       <a href="/tags/ACM/" style="font-size: 17.33px; color: #828282">ACM</a> <a href="/tags/Anaconda/" style="font-size: 14px; color: #999">Anaconda</a> <a href="/tags/CentOS/" style="font-size: 14px; color: #999">CentOS</a> <a href="/tags/DDOS/" style="font-size: 14px; color: #999">DDOS</a> <a href="/tags/HTML/" style="font-size: 14px; color: #999">HTML</a> <a href="/tags/HTTP-Client/" style="font-size: 14px; color: #999">HTTP Client</a> <a href="/tags/Hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/" style="font-size: 17.33px; color: #828282">Hexo主题美化</a> <a href="/tags/JSP/" style="font-size: 14px; color: #999">JSP</a> <a href="/tags/Linux-Shell/" style="font-size: 17.33px; color: #828282">Linux Shell</a> <a href="/tags/Plotly/" style="font-size: 14px; color: #999">Plotly</a> <a href="/tags/Python/" style="font-size: 17.33px; color: #828282">Python</a> <a href="/tags/Python%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 24px; color: #555">Python可视化</a> <a href="/tags/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/" style="font-size: 20.67px; color: #6c6c6c">Python小技巧</a> <a href="/tags/SQL/" style="font-size: 17.33px; color: #828282">SQL</a> <a href="/tags/Word2Vec/" style="font-size: 14px; color: #999">Word2Vec</a> <a href="/tags/Wythoff-s-game/" style="font-size: 14px; color: #999">Wythoff's game</a> <a href="/tags/basemap/" style="font-size: 14px; color: #999">basemap</a> <a href="/tags/kettle/" style="font-size: 14px; color: #999">kettle</a> <a href="/tags/matplotlib/" style="font-size: 17.33px; color: #828282">matplotlib</a> <a href="/tags/pyproj/" style="font-size: 14px; color: #999">pyproj</a> <a href="/tags/seaborn/" style="font-size: 14px; color: #999">seaborn</a> <a href="/tags/spark/" style="font-size: 14px; color: #999">spark</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 14px; color: #999">动态规划</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14px; color: #999">大数据</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" style="font-size: 14px; color: #999">数据分析</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.33px; color: #828282">数据库</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84/" style="font-size: 17.33px; color: #828282">最优子结构</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 17.33px; color: #828282">爬虫</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/" style="font-size: 17.33px; color: #828282">网站开发</a> <a href="/tags/%E8%AF%8D%E5%90%91%E9%87%8F/" style="font-size: 14px; color: #999">词向量</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">贪心算法</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90/" style="font-size: 14px; color: #999">软件资源</a> <a href="/tags/%E9%87%8D%E5%8F%A0%E5%AD%90%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">重叠子问题</a> <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/" style="font-size: 14px; color: #999">防火墙</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget related_posts shadow blur desktop mobile">
-    
-  <header>
-    
-      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
-    
-  </header>
-
-
-    <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Experience\matplotlib-2\" title="matplotlib - Pyplot 教程" rel="bookmark">matplotlib - Pyplot 教程</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Experience\matplotlib-1\" title="matplotlib - matplotlib 教程" rel="bookmark">matplotlib - matplotlib 教程</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Python\Visual\2020nCovVisualization\" title="使用 Python可视化神器 Plotly 动态演示全球疫情变化趋势" rel="bookmark">使用 Python可视化神器 Plotly 动态演示全球疫情变化趋势</a></h3></div></li></ul>
     </div>
   </section>
 

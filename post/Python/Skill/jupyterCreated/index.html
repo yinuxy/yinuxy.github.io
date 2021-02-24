@@ -761,7 +761,8 @@ passwd()
 # 此时会让你两次输入密码（该密码作为客户端登录jupyter用），然后就会生成秘钥 （秘# 钥作为配置文件用） </code></pre>记下密钥，sha1:03c74e2b144e:7…<h3 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h3><pre><code>vim ~/.jupyter/jupyter_notebook_config.py</code></pre>修改以下几项<pre><code>c.NotebookApp.ip=&#39;*&#39;                                  # 就是设置所有ip皆可访问  
 c.NotebookApp.password = u&#39;sha1:03...&#39;       # 刚才复制的那个密文&#39;  
 c.NotebookApp.open_browser = False       # 禁止自动打开浏览器  
-c.NotebookApp.port =1234                         #随便指定一个端口  </code></pre>设置端口后要记得开放端口才能使用，具体过程可参考<a href="https://blog.yinuxy.com/post/Experience/centosFirewall/">CentOS防火墙配置</a><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><pre><code>jupyter notebook --allow-root --ip=0.0.0.0</code></pre><h2 id="将Jupyter远程服务设置为守护进程"><a href="#将Jupyter远程服务设置为守护进程" class="headerlink" title="将Jupyter远程服务设置为守护进程"></a>将Jupyter远程服务设置为守护进程</h2><h3 id="使用systemd-1"><a href="#使用systemd-1" class="headerlink" title="使用systemd"></a>使用systemd</h3></li>
+c.NotebookApp.port =1234                         #随便指定一个端口  
+c.NotebookApp.notebook_dir = &#39;/project/Jupyter_Notebook&#39;     #设置工作路径</code></pre>设置端口后要记得开放端口才能使用，具体过程可参考<a href="https://blog.yinuxy.com/post/Experience/centosFirewall/">CentOS防火墙配置</a><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><pre><code>jupyter notebook --allow-root --ip=0.0.0.0</code></pre><h2 id="将Jupyter远程服务设置为守护进程"><a href="#将Jupyter远程服务设置为守护进程" class="headerlink" title="将Jupyter远程服务设置为守护进程"></a>将Jupyter远程服务设置为守护进程</h2><h3 id="使用systemd-1"><a href="#使用systemd-1" class="headerlink" title="使用systemd"></a>使用systemd</h3></li>
 <li>编写<code>jupyter</code>启动脚本,在<code>/usr/sbin</code>目录下新建<code>jupyter.sh</code>文件<pre><code>sudo vim /usr/sbin/jupyter.sh</code></pre>在<code>jupyter.sh</code>中写入<pre><code>#!/bin/sh
 jupyter notebook --allow-root --ip=0.0.0.0</code></pre>此时创建的脚本文件还没有执行权限，所以执行下面这条命令<pre><code>sudo chmod +x /usr/sbin/jupyter.sh</code></pre></li>
 <li>编写守护进程配置文件:守护进程的配置文件存放在<code>/usr/lib/systemd/system/</code>目录下，在该目录下新建<code>jupyter.service</code>文件<pre><code>sudo vim /etc/systemd/system/jupyter.service  // centos
@@ -950,10 +951,10 @@ echo &quot;jupyter.yinuxy.com {
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-14T21:52:12+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-16T17:41:50+08:00">
   <a class='notlink'>
     <i class="fas fa-save fa-fw" aria-hidden="true"></i>
-    <p>本页文档最后更新于：2020年7月14日</p>
+    <p>本页文档最后更新于：2020年10月16日</p>
   </a>
 </div>
 
@@ -1371,7 +1372,7 @@ Python格式化输出的三种方式1. %-格式化Python常用字符串格式化
 
 
     <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Python\Skill\Skills-1\" title="Python读取Excel数据转化为字典并另存为josn文件" rel="bookmark">Python读取Excel数据转化为字典并另存为josn文件</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Python\Skill\Skills-2\" title="Python格式化输出" rel="bookmark">Python格式化输出</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\CodeError\basemap\" title="解决No module named 'mpl_toolkits.basemap'问题" rel="bookmark">解决No module named 'mpl_toolkits.basemap'问题</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Python\Skill\Skills-2\" title="Python格式化输出" rel="bookmark">Python格式化输出</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\Python\Skill\Skills-1\" title="Python读取Excel数据转化为字典并另存为josn文件" rel="bookmark">Python读取Excel数据转化为字典并另存为josn文件</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\post\CodeError\basemap\" title="解决No module named 'mpl_toolkits.basemap'问题" rel="bookmark">解决No module named 'mpl_toolkits.basemap'问题</a></h3></div></li></ul>
     </div>
   </section>
 
